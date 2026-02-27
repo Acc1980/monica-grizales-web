@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Marca */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <SparkleIcon className="w-5 h-5 text-malva-400" />
+              <SparkleIcon className="w-5 h-5 text-ciruela-600" />
               <h3 className="font-serif text-xl font-bold text-white">
                 Mónica Grizales
               </h3>

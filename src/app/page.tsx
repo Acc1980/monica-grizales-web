@@ -64,7 +64,7 @@ export default function HomePage() {
       <section className="py-20 md:py-28 bg-arena-200/50">
         <div className="section-container text-center">
           <ScrollReveal>
-            <SparkleIcon className="w-8 h-8 text-malva-400 mx-auto mb-8" />
+            <SparkleIcon className="w-8 h-8 text-ciruela-600 mx-auto mb-8" />
             <blockquote className="font-serif text-2xl md:text-3xl text-humo-600 leading-relaxed max-w-3xl mx-auto">
               &ldquo;El poder no es control.
               <br />

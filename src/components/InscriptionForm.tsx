@@ -233,7 +233,7 @@ export default function InscriptionForm() {
       <div className="lg:col-span-2">
         <div className="card border-arena-200 sticky top-28">
           <div className="flex items-center gap-2 mb-6">
-            <SparkleIcon className="w-5 h-5 text-malva-400" />
+            <SparkleIcon className="w-5 h-5 text-ciruela-600" />
             <h3 className="font-serif text-xl font-bold text-humo-700">
               Reconociendo mi Poder
             </h3>

@@ -51,7 +51,7 @@ export default function AbundanciaConscientePage() {
       {/* ════════ FRASE ANCLA ════════ */}
       <section className="py-16 md:py-20 bg-arena-200/50">
         <div className="section-container text-center">
-          <SparkleIcon className="w-7 h-7 text-malva-400 mx-auto mb-6" />
+          <SparkleIcon className="w-7 h-7 text-ciruela-600 mx-auto mb-6" />
           <blockquote className="font-serif text-2xl md:text-3xl text-humo-600 leading-relaxed max-w-3xl mx-auto">
             &ldquo;La abundancia es una respuesta de agradecimiento del
             Universo a nuestro agradecimiento. La palabra clave de la
@@ -94,7 +94,7 @@ export default function AbundanciaConscientePage() {
             {/* Card visual */}
             <div className="card border-malva-200 text-center py-12">
               <div className="w-20 h-20 rounded-full bg-malva-100/60 flex items-center justify-center mx-auto mb-6">
-                <SparkleIcon className="w-10 h-10 text-malva-400" />
+                <SparkleIcon className="w-10 h-10 text-ciruela-600" />
               </div>
               <h3 className="font-serif text-2xl font-bold text-humo-700 mb-4">
                 El éxito no es un resultado.
@@ -380,7 +380,7 @@ export default function AbundanciaConscientePage() {
       <section className="py-20 md:py-28 bg-ciruela-600 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-ciruela-700/80 to-malva-400/20" />
         <div className="section-container relative text-center">
-          <SparkleIcon className="w-8 h-8 text-malva-300 mx-auto mb-6" />
+          <SparkleIcon className="w-8 h-8 text-ciruela-300 mx-auto mb-6" />
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
             Ser Oferta
           </h2>

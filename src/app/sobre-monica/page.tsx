@@ -50,7 +50,7 @@ export default function SobreMonicaPage() {
                 </em>
               </p>
               <div className="flex items-start gap-3">
-                <SparkleIcon className="w-5 h-5 text-malva-400 shrink-0 mt-1" />
+                <SparkleIcon className="w-5 h-5 text-ciruela-600 shrink-0 mt-1" />
                 <p className="font-serif italic text-malva-400 text-lg leading-relaxed">
                   &ldquo;Cuando una mujer se reconoce, todo lo demás comienza a
                   alinearse.&rdquo;
@@ -252,7 +252,7 @@ export default function SobreMonicaPage() {
       <section className="py-16 md:py-20 bg-arena-50">
         <div className="section-container">
           <div className="card max-w-3xl mx-auto text-center py-12 border-arena-200">
-            <SparkleIcon className="w-7 h-7 text-malva-400 mx-auto mb-6" />
+            <SparkleIcon className="w-7 h-7 text-ciruela-600 mx-auto mb-6" />
             <p className="font-serif text-xl md:text-2xl text-humo-600 leading-relaxed max-w-xl mx-auto">
               &ldquo;Más que motivación, Mónica facilita procesos de orden
               interno. Porque cuando una mujer se reconoce, todo lo demás
