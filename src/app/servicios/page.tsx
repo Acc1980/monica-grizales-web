@@ -35,7 +35,7 @@ const servicios = [
     subtitle: "Relaciones Conscientes",
     description:
       "Comprende tus vínculos desde la adultez emocional y el orden sistémico. Descubre los 5 pilares de la relación en pareja.",
-    detail: "Con José Daniel Duarte y CEFODIP",
+    detail: "Presencial y Virtual",
     available: true,
   },
   {
