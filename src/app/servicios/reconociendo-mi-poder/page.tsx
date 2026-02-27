@@ -395,8 +395,8 @@ export default function ReconociendoMiPoderPage() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ciruela-700/80 to-transparent p-6 pt-16">
-                <p className="text-white font-serif italic text-sm">
+              <div className="absolute bottom-0 left-4 right-4 bg-malva-400/90 backdrop-blur-sm text-white p-5 rounded-t-xl">
+                <p className="font-serif italic text-sm md:text-base leading-relaxed">
                   &ldquo;No te falta fuerza, te sobra mandato.&rdquo;
                 </p>
               </div>
