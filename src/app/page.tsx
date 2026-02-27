@@ -87,7 +87,7 @@ export default function HomePage() {
               {/* Cita superpuesta */}
               <div className="absolute bottom-0 left-4 right-4 md:left-8 md:right-8 bg-malva-400/90 backdrop-blur-sm text-white p-5 rounded-t-xl">
                 <p className="font-serif italic text-sm md:text-base leading-relaxed">
-                  &ldquo;Ser buena hija no debería costarte tu vida.&rdquo;
+                  &ldquo;Ser buena hija no debería costarte tu voz.&rdquo;
                 </p>
               </div>
             </div>
