@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Conoce los procesos de transformación que ofrece Mónica Grizales: Reconociendo mi Poder, Entrenamiento de Parejas y Abundancia Consciente.",
+    "Conoce los procesos de transformación que ofrece Mónica Grizales: Reconociendo mi Poder, Entrenamiento de Parejas, Abundancia Consciente y Sesiones 1 a 1 de Coaching.",
 };
 
 function SparkleIcon({ className }: { className?: string }) {
@@ -57,6 +57,20 @@ const servicios = [
     detail: "Próximamente",
     available: false,
   },
+  {
+    slug: "coaching-individual",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+      </svg>
+    ),
+    title: "Sesiones 1 a 1 de Coaching",
+    subtitle: "Acompañamiento Personal",
+    description:
+      "Proceso individual de coaching ontológico para trabajar en profundidad tu historia, tus emociones y tus decisiones. Un espacio íntimo y a tu ritmo.",
+    detail: "Agenda tu sesión",
+    available: true,
+  },
 ];
 
 export default function ServiciosPage() {
@@ -81,7 +95,7 @@ export default function ServiciosPage() {
       {/* Servicios */}
       <section className="section-padding bg-arena-50">
         <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {servicios.map((servicio) => (
               <div
                 key={servicio.slug}
