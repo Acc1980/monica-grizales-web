@@ -559,7 +559,7 @@ export default function ReconociendoMiPoderPage() {
                 desc: "en procesos de sanación emocional y liderazgo personal.",
               },
               {
-                number: "10+",
+                number: "15+",
                 label: "Años de experiencia",
                 desc: "en crecimiento personal, transformación de liderazgo y equipos de alto rendimiento.",
               },
