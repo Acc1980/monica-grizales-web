@@ -17,7 +17,7 @@ function SparkleIcon({ className }: { className?: string }) {
   );
 }
 
-const WHATSAPP_NUMBER = "573000000000";
+const WHATSAPP_NUMBER = "573217968856";
 const WHATSAPP_MSG = encodeURIComponent(
   "Hola Mónica, quiero inscribirme en el entrenamiento Reconociendo mi Poder del 15 y 16 de abril. 🙌"
 );

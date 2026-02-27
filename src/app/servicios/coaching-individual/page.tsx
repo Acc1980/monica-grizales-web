@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Acompañamiento individual de coaching ontológico con Mónica Grizales. Trabaja en profundidad tu historia, tus emociones y tus decisiones en un espacio íntimo y a tu ritmo.",
 };
 
-const WHATSAPP_NUMBER = "573000000000";
+const WHATSAPP_NUMBER = "573217968856";
 const WHATSAPP_MSG = encodeURIComponent(
   "Hola Mónica, me gustaría agendar una sesión individual de coaching. ¿Podrías darme más información?"
 );
