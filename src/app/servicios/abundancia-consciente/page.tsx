@@ -30,12 +30,13 @@ export default function AbundanciaConscientePage() {
             Abundancia Consciente
           </h1>
           <p className="text-humo-500 text-lg md:text-xl leading-relaxed max-w-2xl mb-6">
-            El dinero, la abundancia y la construcción de tu identidad
-            profesional como una oferta poderosa para el mundo.
+            ¿Cuántas veces inicia el año con declaraciones, deseos y anhelos...
+            y cuántos de esos realmente se cumplen? La forma de cambiar tu
+            realidad es cambiando tu percepción.
           </p>
           <p className="text-malva-400 italic font-serif text-lg mb-10">
-            Un proceso donde descubres que la abundancia no se busca: se
-            ordena.
+            La única forma de que llegue abundancia es entrenando tu mente,
+            porque todo lo que te dé bienestar es abundancia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/contacto" className="btn-primary">
@@ -72,22 +73,33 @@ export default function AbundanciaConscientePage() {
                 ¿Qué es la Abundancia?
               </h2>
               <p className="text-humo-500 text-lg leading-relaxed mb-4">
-                Desde un nivel emocional, la abundancia es una de las facetas
-                del éxito. No es algo que se persigue: es algo que fluye cuando
-                hay orden interno.
+                Muchas veces creemos que la abundancia depende del esfuerzo...
+                pero olvidamos algo esencial:{" "}
+                <strong className="text-humo-700">
+                  nuestro sistema familiar sigue hablando a través de nosotros.
+                </strong>
               </p>
               <p className="text-humo-500 text-lg leading-relaxed mb-4">
-                Lo contrario a la abundancia no es la pobreza.{" "}
-                <strong className="text-humo-700">
-                  Lo contrario a la abundancia es la queja.
-                </strong>{" "}
-                Cuando vivimos desde la queja, cerramos el flujo. Cuando
-                vivimos desde la gratitud, todo comienza a alinearse.
+                El dinero, el éxito y la expansión no solo se construyen:
+                también se heredan, se bloquean o se ordenan desde historias
+                que no siempre conocemos.{" "}
+                <em className="text-ciruela-600">
+                  ¿Y si la escasez no fuera tuya? ¿Y si la abundancia
+                  estuviera esperando que mires con amor lo que quedó atrás?
+                </em>
+              </p>
+              <p className="text-humo-500 text-lg leading-relaxed mb-4">
+                Para ser próspero hay que soltar la creencia de que la
+                prosperidad solo se mide con el dinero. Necesitamos esa
+                conexión con algo más grande, porque nos inspira agradecimiento
+                y humildad cuando recibimos.
               </p>
               <p className="text-humo-500 text-lg leading-relaxed">
-                Este proceso integra mirada sistémica y coaching ontológico
-                para que puedas ver qué patrones familiares y emocionales
-                están bloqueando tu relación con el dinero y la prosperidad.
+                <strong className="text-humo-700">
+                  Humildad y gratitud son los mejores antídotos contra el miedo
+                  y la envidia
+                </strong>{" "}
+                al abrirnos a la riqueza.
               </p>
             </div>
 
@@ -371,6 +383,38 @@ export default function AbundanciaConscientePage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════ CONSTELACIONES Y LINAJE ════════ */}
+      <section className="section-padding bg-arena-100/60">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center">
+            <SparkleIcon className="w-8 h-8 text-ciruela-600 mx-auto mb-6" />
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-8">
+              Tu linaje y tu abundancia
+            </h2>
+            <div className="space-y-6 text-humo-500 text-lg leading-relaxed text-left">
+              <p>
+                En este entrenamiento, basado en{" "}
+                <strong className="text-humo-700">constelaciones familiares</strong>,
+                vamos a revelar lealtades invisibles, soltar cargas que no te
+                corresponden y abrir espacio para recibir desde un lugar nuevo:{" "}
+                <em>el orden, la conciencia y la fuerza de tu linaje.</em>
+              </p>
+              <p>
+                Cuando honras a tu sistema, la vida fluye.{" "}
+                <strong className="text-ciruela-600">
+                  Cuando tomas a tus ancestros, la abundancia te toma a ti.
+                </strong>
+              </p>
+              <p className="font-serif italic text-ciruela-600 text-xl text-center pt-4">
+                Si sientes el llamado, no es casualidad. Es tu historia
+                pidiendo ser ordenada... para que tu presente y tu prosperidad
+                puedan crecer.
+              </p>
             </div>
           </div>
         </div>
