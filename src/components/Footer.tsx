@@ -79,7 +79,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com/monigrizales"
+                  href="https://www.instagram.com/monigrizales/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-arena-300 hover:text-white transition-colors"

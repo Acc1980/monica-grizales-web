@@ -62,7 +62,7 @@ export default function ContactoPage() {
 
                 {/* Instagram */}
                 <a
-                  href="https://instagram.com/monigrizales"
+                  href="https://www.instagram.com/monigrizales/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 p-5 rounded-xl bg-white border border-arena-200 hover:border-malva-300 transition-colors group"

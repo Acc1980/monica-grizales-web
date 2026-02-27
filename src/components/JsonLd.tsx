@@ -8,7 +8,7 @@ const personSchema = {
   description:
     "Acompañante de procesos de sanación emocional y liderazgo femenino. Coaching ontológico, mirada sistémica y bioneuroterapia.",
   url: BASE_URL,
-  sameAs: ["https://instagram.com/monigrizales"],
+  sameAs: ["https://www.instagram.com/monigrizales/"],
   knowsAbout: [
     "Coaching Ontológico",
     "Sanación Emocional",
