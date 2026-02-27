@@ -105,6 +105,56 @@ export default function ReconociendoMiPoderPage() {
         </div>
       </section>
 
+      {/* ════════ CONEXIÓN EMOCIONAL ════════ */}
+      <section className="section-padding bg-arena-50">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-4">
+                Es hora de que sepas que{" "}
+                <span className="text-ciruela-600">
+                  tus emociones no son un problema
+                </span>
+              </h2>
+            </div>
+            <div className="space-y-6">
+              {[
+                "¿Sabías que tú te tratas como te trataron de niña?",
+                "¿Sigues aceptando menos de lo que mereces?",
+                "La forma como te amas o permites que te amen hoy... no la decidiste tú.",
+                "¿Eres consciente de cómo te hablas cuando cometes un error?",
+              ].map((pregunta, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-4 p-5 rounded-xl bg-white border border-arena-200"
+                >
+                  <div className="w-8 h-8 rounded-full bg-ciruela-600/10 text-ciruela-600 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                    </svg>
+                  </div>
+                  <p className="font-serif text-lg text-humo-600 italic leading-relaxed">
+                    {pregunta}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-10 text-center space-y-4">
+              <p className="text-humo-500 text-lg leading-relaxed">
+                Todo esto lo aprendiste y no lo pudiste cuestionar.{" "}
+                <strong className="text-humo-700">
+                  ¿Y si te dijera que esto lo puedes sanar?
+                </strong>
+              </p>
+              <p className="font-serif text-xl text-ciruela-600 italic leading-relaxed">
+                Deja de repetir tu historia... date el permiso de crear una
+                versión donde te sientas suficiente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ════════ LA EXPERIENCIA FEMENINA ════════ */}
       <section className="section-padding bg-arena-50">
         <div className="section-container">
