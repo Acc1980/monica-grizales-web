@@ -76,18 +76,39 @@ export default function ReconociendoMiPoderPage() {
       </section>
 
       {/* ════════ CREADO POR ════════ */}
-      <section className="py-12 bg-arena-200/40">
-        <div className="section-container text-center">
-          <p className="uppercase tracking-[0.25em] text-sm text-humo-400 font-medium mb-3">
-            Creado por
-          </p>
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 mb-3">
-            Mónica Andrea Grizales
-          </h2>
-          <p className="text-humo-500 max-w-xl mx-auto">
-            Coach ontológico, terapeuta y líder de procesos de sanación
-            emocional y liderazgo personal femenino.
-          </p>
+      <section className="py-16 md:py-20 bg-arena-200/40">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="uppercase tracking-[0.25em] text-sm text-humo-400 font-medium mb-3">
+              Creado por
+            </p>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 mb-2">
+              Mónica Andrea Grizales Cuartas
+            </h2>
+            <p className="text-ciruela-600 font-medium mb-8">
+              Ingeniera Industrial y Coach Ontológica con mirada sistémica.
+            </p>
+            <div className="text-humo-500 text-left space-y-4 leading-relaxed">
+              <p>
+                Hace 16 años inició un profundo proceso de transformación personal
+                que la llevó a descubrir su propósito: acompañar a las personas a
+                recuperar la esperanza y la alegría de vivir.
+              </p>
+              <p>
+                Es entrenadora del Programa Transformacional de Liderazgo y creadora
+                del entrenamiento para mujeres <strong className="text-humo-700">Reconociendo mi Poder</strong>.
+                Facilita procesos para parejas y equipos enfocados en solución de
+                conflictos y trabajo en equipo, con experiencia en Colombia, Perú y
+                Estados Unidos, y realiza sesiones de coaching uno a uno para
+                acompañar procesos individuales de crecimiento y transformación.
+                Actualmente se forma en Bioneuroterapia.
+              </p>
+              <p className="font-serif text-ciruela-600 italic text-center text-lg">
+                Hoy acompaña desde la experiencia vivida, con la certeza de que
+                crecer emocionalmente nos acerca a la plenitud que anhelamos.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
