@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
@@ -33,10 +34,16 @@ export default function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-serif text-xl md:text-2xl font-bold text-humo-700 hover:text-ciruela-600 transition-colors"
+          className="flex items-center hover:opacity-80 transition-opacity"
         >
-          <SparkleIcon className="w-5 h-5 text-malva-400" />
-          Mónica Grizales
+          <Image
+            src="/images/logo.png"
+            alt="Mónica Grizales"
+            width={180}
+            height={48}
+            className="h-10 md:h-12 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}
