@@ -15,11 +15,19 @@ export default function HomePage() {
   return (
     <>
       {/* ════════ HERO ════════ */}
-      <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-arena-100/60">
-        {/* Fondo decorativo suave */}
-        <div className="absolute inset-0 bg-gradient-to-b from-arena-50 via-arena-100/50 to-arena-200/30" />
-        <div className="absolute top-20 right-10 w-80 h-80 bg-malva-200/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-10 w-96 h-96 bg-arena-300/30 rounded-full blur-3xl" />
+      <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        {/* Imagen de fondo — mujer caminando en la playa */}
+        <Image
+          src="/images/hero-playa.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+          quality={80}
+        />
+        {/* Overlay difuminado para legibilidad */}
+        <div className="absolute inset-0 bg-arena-50/70 backdrop-blur-sm" />
 
         <div className="section-container relative">
           <div className="max-w-3xl">
