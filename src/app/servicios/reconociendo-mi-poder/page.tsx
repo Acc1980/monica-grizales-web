@@ -193,8 +193,8 @@ export default function ReconociendoMiPoderPage() {
             </div>
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
-                src="/images/grupo.jpg"
-                alt="Mujeres en proceso de transformación"
+                src="/images/foto4.jpg"
+                alt="Mujer sonriendo entre girasoles"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
