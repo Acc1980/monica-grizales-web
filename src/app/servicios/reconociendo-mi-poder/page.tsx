@@ -389,7 +389,7 @@ export default function ReconociendoMiPoderPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-square max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden">
               <Image
-                src="/images/monica.png"
+                src="/images/foto6.png"
                 alt="Mónica Grizales"
                 fill
                 className="object-cover"
