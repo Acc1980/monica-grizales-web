@@ -84,8 +84,8 @@ export default function HomePage() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl bg-arena-200 overflow-hidden">
                 <Image
-                  src="/images/monica.png"
-                  alt="Mónica Grizales — Coach Ontológica Certificada"
+                  src="/images/foto3.png"
+                  alt="Mónica Grizales — Sanación emocional y liderazgo femenino"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
