@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import SparkleIcon from "@/components/SparkleIcon";
 
@@ -69,8 +70,18 @@ export default function ServiciosPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-arena-100/60">
-        <div className="section-container">
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+        <Image
+          src="/images/foto7.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+          quality={80}
+        />
+        <div className="absolute inset-0 bg-arena-50/75 backdrop-blur-[2px]" />
+        <div className="section-container relative">
           <p className="uppercase tracking-[0.25em] text-sm text-malva-400 font-medium mb-4">
             Servicios
           </p>
