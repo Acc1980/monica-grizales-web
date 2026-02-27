@@ -47,8 +47,8 @@ const servicios = [
     subtitle: "Relación con la Abundancia",
     description:
       "Descubre la relación entre tus procesos internos y tus resultados externos en dinero y bienestar personal. Libérate de patrones de escasez.",
-    detail: "Próximamente",
-    available: false,
+    detail: "100% Virtual",
+    available: true,
   },
   {
     slug: "coaching-individual",
