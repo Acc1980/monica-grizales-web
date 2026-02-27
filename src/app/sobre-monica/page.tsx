@@ -113,7 +113,7 @@ export default function SobreMonicaPage() {
                   <SparkleIcon className="w-7 h-7" />
                 ),
                 title: "Relación con la abundancia",
-                description: "Liberar patrones de escasez y expandirse",
+                description: "Prosperar desde la gratitud, más allá del dinero",
               },
             ].map((item, index) => (
               <div key={index} className="card text-center">
