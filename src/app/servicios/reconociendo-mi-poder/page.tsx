@@ -20,7 +20,7 @@ export default function ReconociendoMiPoderPage() {
       {/* ════════ HERO ════════ */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
         <Image
-          src="/images/hero-playa.jpg"
+          src="/images/foto5.jpg"
           alt=""
           fill
           className="object-cover"
