@@ -242,35 +242,42 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
                 quote:
-                  "Entendí que cuidar de todos no significa olvidarme de mí. Este proceso me devolvió mi voz.",
-                name: "María C.",
+                  "No hay un día de mi vida que no te piense. Las sesiones de coaching contigo me han llevado a donde estoy hoy. Tranquila, con nuevos hábitos que más allá de buscar belleza exterior, me ha permitido conseguir esa belleza interior y sobre todo paz. Tu ayuda en darme herramientas para avanzar hacen parte de esta bonita vida que hoy tengo.",
+                name: "Mariana H.",
+                type: "Sesiones 1 a 1 de Coaching",
               },
               {
                 quote:
-                  "Dejé de sentir culpa por elegirme. Ahora sé que no es egoísmo, es supervivencia.",
-                name: "Ana P.",
-              },
-              {
-                quote:
-                  "Aprendí que el poder no es control, es presencia. Eso cambió mi forma de estar en el mundo.",
-                name: "Laura M.",
+                  "El entrenamiento de mujeres fue una experiencia maravillosa para mí, el cual me dio herramientas para fortalecer mi autoestima y desarrollar mi independencia emocional. Algo lindo fue sentir las emociones a través de la conexión con mi cuerpo y mi mente. Lo que me llevo es el empoderamiento emocional donde trabajamos esas creencias que tenemos desde pequeños y los patrones que heredamos de nuestros ancestros. Aprendí a darle el valor y el lugar a cada persona de mi familia.",
+                name: "Johana G.",
+                type: "Reconociendo mi Poder",
               },
             ].map((testimonio, index) => (
               <ScrollReveal key={index} delay={index * 150}>
                 <div className="card h-full">
+                  <p className="text-ciruela-600 text-xs font-medium uppercase tracking-wider mb-4">
+                    {testimonio.type}
+                  </p>
                   <p className="text-humo-600 italic leading-relaxed mb-6">
                     &ldquo;{testimonio.quote}&rdquo;
                   </p>
-                  <p className="text-malva-400 font-medium text-sm">
+                  <p className="text-ciruela-600 font-medium text-sm">
                     — {testimonio.name}
                   </p>
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+          <div className="mt-8 text-center">
+            <p className="font-serif text-lg md:text-xl text-ciruela-600 italic leading-relaxed max-w-2xl mx-auto">
+              &ldquo;Mujer, cuando decides crecer, nada te detiene. Un
+              entrenamiento no te cambia... te revela el poder que siempre ha
+              estado en ti.&rdquo;
+            </p>
           </div>
         </div>
       </section>
