@@ -41,7 +41,7 @@ export default function InscriptionForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...form,
-          edad: form.edad ? Number(form.edad) : undefined,
+          mayorDeEdad: form.edad === "si",
         }),
       });
 
@@ -142,22 +142,21 @@ export default function InscriptionForm() {
           />
         </div>
 
-        {/* Edad */}
-        <div>
-          <label htmlFor="edad" className="block text-sm font-medium text-humo-700 mb-2">
-            Edad
-          </label>
+        {/* Mayor de edad */}
+        <div className="flex items-start gap-3">
           <input
-            type="number"
+            type="checkbox"
             id="edad"
             name="edad"
-            min="16"
-            max="99"
-            value={form.edad}
-            onChange={handleChange}
-            placeholder="Tu edad"
-            className="input-field"
+            checked={form.edad === "si"}
+            onChange={(e) =>
+              setForm((prev) => ({ ...prev, edad: e.target.checked ? "si" : "" }))
+            }
+            className="mt-1 w-4 h-4 rounded border-arena-300 text-ciruela-600 focus:ring-ciruela-600 cursor-pointer"
           />
+          <label htmlFor="edad" className="text-sm text-humo-600 cursor-pointer">
+            Confirmo que soy <strong>mayor de edad</strong> (18 años o más)
+          </label>
         </div>
 
         {/* Cómo nos encontraste */}
