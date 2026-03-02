@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import SparkleIcon from "@/components/SparkleIcon";
+
+export const metadata: Metadata = {
+  title: "Mónica Grizales — Sanación Emocional y Liderazgo Femenino",
+  description:
+    "Centro de experiencia de sanación emocional y liderazgo femenino. Entrenamientos, coaching ontológico y procesos de transformación para mujeres y parejas.",
+};
 
 export default function HomePage() {
   return (
