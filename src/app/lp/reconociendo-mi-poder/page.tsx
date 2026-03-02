@@ -23,7 +23,7 @@ function CtaButton({ variant = "dark" }: { variant?: "dark" | "light" }) {
         rel="noopener noreferrer"
         className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-ciruela-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
       >
-        Quiero inscribirme — $89 USD
+        Reservar mi cupo — $89 USD
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
         </svg>
@@ -37,7 +37,7 @@ function CtaButton({ variant = "dark" }: { variant?: "dark" | "light" }) {
       rel="noopener noreferrer"
       className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-ciruela-600 text-white font-bold text-lg hover:bg-ciruela-700 transition-all duration-300 shadow-xl shadow-ciruela-600/30 hover:-translate-y-0.5 gap-2"
     >
-      Quiero inscribirme — $89 USD
+      Reservar mi cupo — $89 USD
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
       </svg>
