@@ -197,8 +197,8 @@ export default function SobreMonicaPage() {
             <div className="relative">
               <div className="aspect-square rounded-2xl bg-arena-200 overflow-hidden shadow-lg">
                 <Image
-                  src="/images/foto9.jpg"
-                  alt="Mónica Grizales"
+                  src="/images/foto2.png"
+                  alt="Mujeres unidas frente al mar en proceso de transformación"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
