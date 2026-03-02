@@ -85,7 +85,7 @@ export default function ContactoPage() {
 
                 {/* Email */}
                 <a
-                  href="mailto:contacto@monigrizales.com"
+                  href="mailto:contacto@monicagrizales.com"
                   className="flex items-start gap-4 p-5 rounded-xl bg-white border border-arena-200 hover:border-malva-300 transition-colors group"
                 >
                   <div className="w-12 h-12 rounded-full bg-malva-50 flex items-center justify-center shrink-0 group-hover:bg-malva-100 transition-colors">
@@ -101,7 +101,7 @@ export default function ContactoPage() {
                       Para consultas más detalladas
                     </p>
                     <p className="text-malva-400 text-sm font-medium">
-                      contacto@monigrizales.com
+                      contacto@monicagrizales.com
                     </p>
                   </div>
                 </a>

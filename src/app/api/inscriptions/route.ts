@@ -1,9 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { connectDB } from "@/lib/mongodb";
-import Inscription from "@/models/Inscription";
+import nodemailer from "nodemailer";
 import { isValidEmail, sanitize } from "@/lib/validations";
 import { rateLimit } from "@/lib/rate-limit";
 import type { ApiResponse } from "@/lib/validations";
+
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || "smtp.gmail.com",
+  port: Number(process.env.SMTP_PORT) || 587,
+  secure: false,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
 
 export async function POST(
   request: NextRequest
@@ -39,45 +48,68 @@ export async function POST(
       );
     }
 
-    await connectDB();
+    const safeName = sanitize(nombre);
+    const safeEmail = email.toLowerCase().trim();
+    const safePhone = sanitize(telefono);
+    const safeAge = edad ? Number(edad) : null;
+    const safeSource = comoNosEncontraste ? sanitize(comoNosEncontraste) : "No especificó";
+    const safeMotivation = motivacion ? sanitize(motivacion) : "No especificó";
 
-    const existing = await Inscription.findOne({
-      email: email.toLowerCase().trim(),
-      programa: "Reconociendo mi Poder",
-    });
+    const contactEmail = process.env.CONTACT_EMAIL || "contacto@monicagrizales.com";
 
-    if (existing) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Este correo ya está inscrito en el programa",
-        },
-        { status: 409 }
-      );
-    }
-
-    const inscription = await Inscription.create({
-      nombre: sanitize(nombre),
-      email: email.toLowerCase().trim(),
-      telefono: sanitize(telefono),
-      edad: edad ? Number(edad) : undefined,
-      comoNosEncontraste: comoNosEncontraste
-        ? sanitize(comoNosEncontraste)
-        : undefined,
-      motivacion: motivacion ? sanitize(motivacion) : undefined,
-      programa: "Reconociendo mi Poder",
+    await transporter.sendMail({
+      from: `"Sitio Web Mónica Grizales" <${process.env.SMTP_USER}>`,
+      to: contactEmail,
+      replyTo: safeEmail,
+      subject: `Nueva inscripción: ${safeName} — Reconociendo mi Poder`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <div style="background: #5a3d6a; padding: 20px; border-radius: 12px 12px 0 0;">
+            <h2 style="color: white; margin: 0;">Nueva inscripción — Reconociendo mi Poder</h2>
+          </div>
+          <div style="background: #f9f7f5; padding: 24px; border: 1px solid #e8e2db;">
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; width: 140px; vertical-align: top;">Nombre:</td>
+                <td style="padding: 8px 0;">${safeName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; vertical-align: top;">Email:</td>
+                <td style="padding: 8px 0;"><a href="mailto:${safeEmail}">${safeEmail}</a></td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; vertical-align: top;">Teléfono:</td>
+                <td style="padding: 8px 0;">${safePhone}</td>
+              </tr>
+              ${safeAge ? `<tr><td style="padding: 8px 0; font-weight: bold; vertical-align: top;">Edad:</td><td style="padding: 8px 0;">${safeAge} años</td></tr>` : ""}
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; vertical-align: top;">Nos encontró por:</td>
+                <td style="padding: 8px 0;">${safeSource}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; font-weight: bold; vertical-align: top;">Motivación:</td>
+                <td style="padding: 8px 0;">${safeMotivation}</td>
+              </tr>
+            </table>
+          </div>
+          <div style="background: #eae3dc; padding: 12px; border-radius: 0 0 12px 12px; text-align: center;">
+            <p style="margin: 0; font-size: 12px; color: #6b6b6b;">
+              Enviado desde el formulario de inscripción de monicagrizales.com
+            </p>
+          </div>
+        </div>
+      `,
     });
 
     return NextResponse.json(
       {
         success: true,
         data: {
-          id: inscription._id,
-          nombre: inscription.nombre,
-          email: inscription.email,
+          nombre: safeName,
+          email: safeEmail,
         },
       },
-      { status: 201 }
+      { status: 200 }
     );
   } catch (error) {
     console.error("Error en inscripción:", error);
