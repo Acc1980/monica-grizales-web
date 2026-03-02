@@ -134,13 +134,13 @@ export default function LandingReconociendoPage() {
             Tu facilitadora
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div className="relative aspect-square max-w-sm mx-auto rounded-2xl overflow-hidden">
+            <div className="relative aspect-square w-full max-w-sm mx-auto rounded-2xl overflow-hidden">
               <Image
                 src="/images/foto9.jpg"
                 alt="Mónica Grizales"
                 fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 384px"
               />
               <div className="absolute bottom-0 left-4 right-4 bg-malva-400/90 backdrop-blur-sm text-white p-4 rounded-t-xl">
                 <p className="font-serif italic text-sm leading-relaxed">
