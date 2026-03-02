@@ -14,6 +14,37 @@ const WHATSAPP_MSG = encodeURIComponent(
 );
 const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
 
+function CtaButton({ variant = "dark" }: { variant?: "dark" | "light" }) {
+  if (variant === "light") {
+    return (
+      <a
+        href={WA_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-ciruela-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
+      >
+        Quiero inscribirme — $89 USD
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    );
+  }
+  return (
+    <a
+      href={WA_LINK}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-ciruela-600 text-white font-bold text-lg hover:bg-ciruela-700 transition-all duration-300 shadow-xl shadow-ciruela-600/30 hover:-translate-y-0.5 gap-2"
+    >
+      Quiero inscribirme — $89 USD
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+      </svg>
+    </a>
+  );
+}
+
 export default function LandingReconociendoPage() {
   return (
     <div className="bg-arena-50">
@@ -30,33 +61,23 @@ export default function LandingReconociendoPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-arena-50/85 via-arena-50/75 to-arena-50/90" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative text-center">
-          <SparkleIcon className="w-12 h-12 text-ciruela-600 mx-auto mb-4" />
-          <p className="uppercase tracking-[0.3em] text-xs text-ciruela-600 font-semibold mb-3">
+          <p className="uppercase tracking-[0.3em] text-xs text-ciruela-600 font-semibold mb-5">
             Entrenamiento virtual &middot; 15 y 16 de abril 2026
           </p>
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-humo-700 mb-5 leading-tight">
+          <p className="text-humo-600 text-xl md:text-2xl max-w-2xl mx-auto mb-4 leading-relaxed">
+            Si eres una mujer <strong className="text-humo-700">fuerte por fuera</strong>…
+            pero <strong className="text-ciruela-600">agotada por dentro</strong>,
+            este espacio es para ti.
+          </p>
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-humo-700 mb-4 leading-tight">
             Reconociendo{" "}
             <span className="text-ciruela-600">mi Poder</span>
           </h1>
-          <p className="text-humo-600 text-lg md:text-xl max-w-xl mx-auto mb-3">
-            Un espacio para reconocerte como autora de tu vida, habitar tu
-            cuerpo y elegir desde tu poder personal.
-          </p>
-          <p className="font-serif text-ciruela-600 italic text-lg mb-8">
+          <p className="font-serif text-ciruela-600 italic text-lg mb-8 max-w-md mx-auto">
             &ldquo;Ser buena hija no debería costarte tu voz.&rdquo;
           </p>
-          <a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-ciruela-600 text-white font-bold text-lg hover:bg-ciruela-700 transition-all duration-300 shadow-xl shadow-ciruela-600/30 hover:-translate-y-0.5 gap-2 mb-4"
-          >
-            Quiero inscribirme — $89 USD
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </a>
-          <p className="text-humo-400 text-sm">
+          <CtaButton />
+          <p className="text-humo-400 text-sm mt-4">
             Solo <strong className="text-ciruela-600">40 cupos</strong> &middot; Inscripciones hasta el 10 de abril
           </p>
         </div>
@@ -69,7 +90,7 @@ export default function LandingReconociendoPage() {
         </p>
       </div>
 
-      {/* ════════ ¿TE IDENTIFICAS? ════════ */}
+      {/* ════════ ¿TE IDENTIFICAS? (DOLOR) ════════ */}
       <section className="py-14 md:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 text-center mb-10">
@@ -95,18 +116,66 @@ export default function LandingReconociendoPage() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <p className="text-humo-500 text-lg">
+            <p className="text-humo-500 text-lg mb-6">
               Todo esto lo aprendiste y no lo pudiste cuestionar.{" "}
               <strong className="text-ciruela-600">
                 ¿Y si te dijera que esto lo puedes sanar?
               </strong>
             </p>
+            <CtaButton />
+          </div>
+        </div>
+      </section>
+
+      {/* ════════ MÓNICA — AUTORIDAD (antes del contenido y precio) ════════ */}
+      <section className="py-14 md:py-20 bg-arena-100/60">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <p className="uppercase tracking-[0.25em] text-xs text-ciruela-600 font-semibold mb-8 text-center">
+            Tu facilitadora
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="relative aspect-square max-w-sm mx-auto rounded-2xl overflow-hidden">
+              <Image
+                src="/images/foto6.png"
+                alt="Mónica Grizales"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute bottom-0 left-4 right-4 bg-malva-400/90 backdrop-blur-sm text-white p-4 rounded-t-xl">
+                <p className="font-serif italic text-sm leading-relaxed">
+                  &ldquo;No te falta fuerza, te sobra mandato.&rdquo;
+                </p>
+              </div>
+            </div>
+            <div>
+              <h2 className="font-serif text-2xl font-bold text-humo-700 mb-1">
+                Mónica Andrea Grizales Cuartas
+              </h2>
+              <p className="text-ciruela-600 font-medium text-sm mb-4">
+                Ingeniera Industrial y Coach Ontológica con mirada sistémica
+              </p>
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="text-center p-3 bg-white rounded-xl border border-arena-200">
+                  <p className="font-serif text-2xl font-bold text-ciruela-600">+5,000</p>
+                  <p className="text-humo-400 text-xs">Mujeres acompañadas</p>
+                </div>
+                <div className="text-center p-3 bg-white rounded-xl border border-arena-200">
+                  <p className="font-serif text-2xl font-bold text-ciruela-600">15+</p>
+                  <p className="text-humo-400 text-xs">Años de experiencia</p>
+                </div>
+              </div>
+              <p className="text-humo-500 text-sm leading-relaxed">
+                Creadora de Reconociendo mi Poder. Facilita procesos para mujeres, parejas
+                y equipos en Colombia, Perú y Estados Unidos.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ════════ QUÉ VAS A TRABAJAR ════════ */}
-      <section className="py-14 md:py-20 bg-arena-100/60">
+      <section className="py-14 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 text-center mb-4">
             ¿Qué trabajarás en estos 2 días?
@@ -123,7 +192,7 @@ export default function LandingReconociendoPage() {
               { title: "Lealtades invisibles", desc: "Descubrir a quién eres leal cuando te apagas o silencias tu voz." },
               { title: "Regulación emocional", desc: "Trabajar las emociones que más te gobiernan: culpa, tristeza, rabia y miedo." },
             ].map((item, index) => (
-              <div key={index} className="flex gap-3 items-start p-4 rounded-xl bg-white border border-arena-200">
+              <div key={index} className="flex gap-3 items-start p-4 rounded-xl bg-arena-50 border border-arena-200">
                 <div className="w-8 h-8 rounded-full bg-ciruela-600 text-white flex items-center justify-center shrink-0 text-sm font-bold">
                   ✓
                 </div>
@@ -133,6 +202,9 @@ export default function LandingReconociendoPage() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <CtaButton />
           </div>
         </div>
       </section>
@@ -174,50 +246,31 @@ export default function LandingReconociendoPage() {
         </div>
       </section>
 
-      {/* ════════ MÓNICA — SOCIAL PROOF ════════ */}
+      {/* ════════ ¿QUÉ PASA SI NO LO HACES? ════════ */}
       <section className="py-14 md:py-20 bg-arena-100/60">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div className="relative aspect-square max-w-sm mx-auto rounded-2xl overflow-hidden">
-              <Image
-                src="/images/foto6.png"
-                alt="Mónica Grizales"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute bottom-0 left-4 right-4 bg-malva-400/90 backdrop-blur-sm text-white p-4 rounded-t-xl">
-                <p className="font-serif italic text-sm leading-relaxed">
-                  &ldquo;No te falta fuerza, te sobra mandato.&rdquo;
-                </p>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 mb-10">
+            ¿Qué pasa si sigues como estás?
+          </h2>
+          <div className="space-y-4 max-w-lg mx-auto">
+            {[
+              "Seguirás reaccionando en lugar de elegir.",
+              "Seguirás diciendo \"sí\" cuando quieres decir \"no\".",
+              "Seguirás repitiendo la historia que tanto criticas.",
+              "Seguirás cargando un peso que no te corresponde.",
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex items-start gap-3 p-4 rounded-xl bg-white border border-arena-200"
+              >
+                <span className="text-malva-400 text-lg shrink-0">—</span>
+                <p className="text-humo-600 text-lg leading-relaxed text-left">{item}</p>
               </div>
-            </div>
-            <div>
-              <p className="uppercase tracking-[0.25em] text-xs text-ciruela-600 font-semibold mb-2">
-                Tu facilitadora
-              </p>
-              <h2 className="font-serif text-2xl font-bold text-humo-700 mb-1">
-                Mónica Andrea Grizales Cuartas
-              </h2>
-              <p className="text-ciruela-600 font-medium text-sm mb-4">
-                Ingeniera Industrial y Coach Ontológica con mirada sistémica
-              </p>
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="text-center p-3 bg-white rounded-xl border border-arena-200">
-                  <p className="font-serif text-2xl font-bold text-ciruela-600">+5,000</p>
-                  <p className="text-humo-400 text-xs">Mujeres acompañadas</p>
-                </div>
-                <div className="text-center p-3 bg-white rounded-xl border border-arena-200">
-                  <p className="font-serif text-2xl font-bold text-ciruela-600">15+</p>
-                  <p className="text-humo-400 text-xs">Años de experiencia</p>
-                </div>
-              </div>
-              <p className="text-humo-500 text-sm leading-relaxed">
-                Creadora de Reconociendo mi Poder. Facilita procesos para mujeres, parejas
-                y equipos en Colombia, Perú y Estados Unidos.
-              </p>
-            </div>
+            ))}
           </div>
+          <p className="mt-8 font-serif text-ciruela-600 text-xl font-semibold">
+            Este entrenamiento es tu primer paso para romper ese ciclo.
+          </p>
         </div>
       </section>
 
@@ -290,17 +343,7 @@ export default function LandingReconociendoPage() {
             <p className="text-arena-300 text-sm">Pago único &middot; Acceso completo + grabación</p>
           </div>
           <div>
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-12 py-4 rounded-full bg-white text-ciruela-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
-            >
-              Quiero inscribirme
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
+            <CtaButton variant="light" />
           </div>
           <p className="text-arena-400 text-xs mt-6">
             Al hacer clic serás redirigida a WhatsApp para recibir instrucciones de pago.
