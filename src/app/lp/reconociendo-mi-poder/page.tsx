@@ -136,7 +136,7 @@ export default function LandingReconociendoPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="relative aspect-square max-w-sm mx-auto rounded-2xl overflow-hidden">
               <Image
-                src="/images/foto6.png"
+                src="/images/foto9.jpg"
                 alt="Mónica Grizales"
                 fill
                 className="object-cover"
