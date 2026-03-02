@@ -54,7 +54,7 @@ export default function SobreMonicaPage() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl bg-arena-200 overflow-hidden shadow-lg">
                 <Image
-                  src="/images/monica.png"
+                  src="/images/foto9.jpg"
                   alt="Mónica Grizales — Coach Ontológica Certificada"
                   fill
                   className="object-cover"
