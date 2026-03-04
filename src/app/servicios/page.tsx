@@ -104,7 +104,7 @@ export default function ServiciosPage() {
                 key={servicio.slug}
                 className="card group flex flex-col h-full"
               >
-                <div className="w-16 h-16 rounded-2xl bg-malva-100/60 text-malva-400 flex items-center justify-center mb-6 group-hover:bg-ciruela-600 group-hover:text-white transition-colors duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-malva-100/60 text-malva-400 flex items-center justify-center mb-6 group-hover:bg-malva-600 group-hover:text-white transition-colors duration-300">
                   {servicio.icon}
                 </div>
 
@@ -143,7 +143,7 @@ export default function ServiciosPage() {
       {/* Cita */}
       <section className="py-16 bg-arena-200/40">
         <div className="section-container text-center">
-          <SparkleIcon className="w-7 h-7 text-ciruela-600 mx-auto mb-6" />
+          <SparkleIcon className="w-7 h-7 text-malva-600 mx-auto mb-6" />
           <blockquote className="font-serif text-xl md:text-2xl text-humo-600 leading-relaxed max-w-2xl mx-auto">
             &ldquo;No se trata de hacer más, sino de elegir desde un lugar
             diferente. Cada proceso es una puerta hacia ti misma.&rdquo;

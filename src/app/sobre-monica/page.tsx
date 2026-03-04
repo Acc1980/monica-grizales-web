@@ -42,7 +42,7 @@ export default function SobreMonicaPage() {
                 </em>
               </p>
               <div className="flex items-start gap-3">
-                <SparkleIcon className="w-5 h-5 text-ciruela-600 shrink-0 mt-1" />
+                <SparkleIcon className="w-5 h-5 text-malva-600 shrink-0 mt-1" />
                 <p className="font-serif italic text-malva-400 text-lg leading-relaxed">
                   &ldquo;Cuando una mujer se reconoce, todo lo demás comienza a
                   alinearse.&rdquo;
@@ -210,8 +210,8 @@ export default function SobreMonicaPage() {
       </section>
 
       {/* ════════ CTA PROGRAMA ════════ */}
-      <section className="py-20 md:py-28 bg-ciruela-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-ciruela-700/80 to-malva-400/20" />
+      <section className="py-20 md:py-28 bg-malva-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-malva-700/80 to-malva-400/20" />
         <div className="section-container relative text-center">
           <p className="uppercase tracking-[0.25em] text-sm text-malva-300 font-medium mb-4">
             Su Entrenamiento Principal
@@ -233,7 +233,7 @@ export default function SobreMonicaPage() {
           <br />
           <Link
             href="/servicios/reconociendo-mi-poder"
-            className="inline-flex items-center justify-center px-10 py-3.5 rounded-full bg-white text-ciruela-700 font-semibold hover:bg-arena-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center px-10 py-3.5 rounded-full bg-white text-malva-700 font-semibold hover:bg-arena-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
           >
             Conocer el proceso
           </Link>
@@ -244,7 +244,7 @@ export default function SobreMonicaPage() {
       <section className="py-16 md:py-20 bg-arena-50">
         <div className="section-container">
           <div className="card max-w-3xl mx-auto text-center py-12 border-arena-200">
-            <SparkleIcon className="w-7 h-7 text-ciruela-600 mx-auto mb-6" />
+            <SparkleIcon className="w-7 h-7 text-malva-600 mx-auto mb-6" />
             <p className="font-serif text-xl md:text-2xl text-humo-600 leading-relaxed max-w-xl mx-auto">
               &ldquo;Más que motivación, Mónica facilita procesos de orden
               interno. Porque cuando una mujer se reconoce, todo lo demás

@@ -63,7 +63,7 @@ export default function HomePage() {
       <section className="py-20 md:py-28 bg-arena-200/50">
         <div className="section-container text-center">
           <ScrollReveal>
-            <SparkleIcon className="w-8 h-8 text-ciruela-600 mx-auto mb-8" />
+            <SparkleIcon className="w-8 h-8 text-malva-600 mx-auto mb-8" />
             <blockquote className="font-serif text-2xl md:text-3xl text-humo-600 leading-relaxed max-w-3xl mx-auto">
               &ldquo;El poder no es control.
               <br />
@@ -177,7 +177,7 @@ export default function HomePage() {
             ].map((eje, index) => (
               <ScrollReveal key={index} delay={index * 150}>
                 <div className="card group h-full">
-                  <div className="w-14 h-14 rounded-2xl bg-malva-100/70 text-malva-400 flex items-center justify-center mb-6 group-hover:bg-ciruela-600 group-hover:text-white transition-colors duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-malva-100/70 text-malva-400 flex items-center justify-center mb-6 group-hover:bg-malva-600 group-hover:text-white transition-colors duration-300">
                     {eje.icon}
                   </div>
                   <h3 className="font-serif text-xl font-bold text-humo-700 mb-3">
@@ -258,13 +258,13 @@ export default function HomePage() {
             ].map((testimonio, index) => (
               <ScrollReveal key={index} delay={index * 150}>
                 <div className="card h-full">
-                  <p className="text-ciruela-600 text-xs font-medium uppercase tracking-wider mb-4">
+                  <p className="text-malva-600 text-xs font-medium uppercase tracking-wider mb-4">
                     {testimonio.type}
                   </p>
                   <p className="text-humo-600 italic leading-relaxed mb-6">
                     &ldquo;{testimonio.quote}&rdquo;
                   </p>
-                  <p className="text-ciruela-600 font-medium text-sm">
+                  <p className="text-malva-600 font-medium text-sm">
                     — {testimonio.name}
                   </p>
                 </div>
@@ -272,7 +272,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <p className="font-serif text-lg md:text-xl text-ciruela-600 italic leading-relaxed max-w-2xl mx-auto">
+            <p className="font-serif text-lg md:text-xl text-malva-600 italic leading-relaxed max-w-2xl mx-auto">
               &ldquo;Mujer, cuando decides crecer, nada te detiene. Un
               entrenamiento no te cambia... te revela el poder que siempre ha
               estado en ti.&rdquo;

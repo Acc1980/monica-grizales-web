@@ -22,19 +22,19 @@ export default function CoachingIndividualPage() {
         <div className="section-container relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+              <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
                 Acompañamiento Personal
               </p>
               <h1 className="font-serif text-4xl md:text-5xl font-bold text-humo-700 leading-tight mb-6">
                 Sesiones 1 a 1{" "}
-                <span className="text-ciruela-600">de Coaching</span>
+                <span className="text-malva-600">de Coaching</span>
               </h1>
               <p className="text-humo-500 text-lg leading-relaxed mb-4">
                 Un espacio íntimo, seguro y personalizado donde puedes trabajar
                 en profundidad lo que necesitas. Sin guion, sin prisa. Solo tú,
                 tu proceso y el acompañamiento de Mónica.
               </p>
-              <p className="font-serif text-ciruela-600 italic text-lg mb-10">
+              <p className="font-serif text-malva-600 italic text-lg mb-10">
                 Tu transformación, a tu ritmo.
               </p>
               <a
@@ -86,7 +86,7 @@ export default function CoachingIndividualPage() {
                 "Quieres profundizar en tu historia familiar y sus efectos",
               ].map((item, index) => (
                 <div key={index} className="flex gap-3 items-start p-4 rounded-xl bg-white border border-arena-200">
-                  <div className="w-6 h-6 rounded-full bg-ciruela-600 text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-6 h-6 rounded-full bg-malva-600 text-white flex items-center justify-center shrink-0 mt-0.5">
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
@@ -103,7 +103,7 @@ export default function CoachingIndividualPage() {
       <section className="section-padding bg-arena-200/40">
         <div className="section-container">
           <div className="text-center mb-12">
-            <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+            <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
               Áreas de trabajo
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700">
@@ -168,7 +168,7 @@ export default function CoachingIndividualPage() {
               },
             ].map((item, index) => (
               <div key={index} className="card border-arena-200 p-6 group">
-                <div className="w-12 h-12 rounded-2xl bg-malva-100/60 text-ciruela-600 flex items-center justify-center mb-4 group-hover:bg-ciruela-600 group-hover:text-white transition-colors duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-malva-100/60 text-malva-600 flex items-center justify-center mb-4 group-hover:bg-malva-600 group-hover:text-white transition-colors duration-300">
                   {item.icon}
                 </div>
                 <h3 className="font-serif text-lg font-bold text-humo-700 mb-2">
@@ -216,7 +216,7 @@ export default function CoachingIndividualPage() {
                 },
               ].map((item) => (
                 <div key={item.step} className="flex gap-5 items-start p-5 rounded-xl bg-white border border-arena-200">
-                  <div className="w-10 h-10 rounded-full bg-ciruela-600 text-white flex items-center justify-center shrink-0 font-serif font-bold">
+                  <div className="w-10 h-10 rounded-full bg-malva-600 text-white flex items-center justify-center shrink-0 font-serif font-bold">
                     {item.step}
                   </div>
                   <div>
@@ -240,7 +240,7 @@ export default function CoachingIndividualPage() {
               { number: "100%", label: "Personalizado" },
             ].map((item, index) => (
               <div key={index}>
-                <p className="font-serif text-4xl font-bold text-ciruela-600 mb-1">
+                <p className="font-serif text-4xl font-bold text-malva-600 mb-1">
                   {item.number}
                 </p>
                 <p className="text-humo-500 font-medium">{item.label}</p>
@@ -251,8 +251,8 @@ export default function CoachingIndividualPage() {
       </section>
 
       {/* ════════ CTA ════════ */}
-      <section className="py-20 md:py-28 bg-ciruela-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-ciruela-800/50 to-malva-400/10" />
+      <section className="py-20 md:py-28 bg-malva-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-malva-800/50 to-malva-400/10" />
         <div className="section-container relative text-center">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
             Tu proceso empieza con una conversación
@@ -266,7 +266,7 @@ export default function CoachingIndividualPage() {
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-ciruela-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
+              className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-malva-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
             >
               Solicitar información
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

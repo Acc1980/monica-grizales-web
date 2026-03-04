@@ -144,7 +144,7 @@ export default function InscriptionForm() {
             onChange={(e) =>
               setForm((prev) => ({ ...prev, edad: e.target.checked ? "si" : "" }))
             }
-            className="mt-1 w-4 h-4 rounded border-arena-300 text-ciruela-600 focus:ring-ciruela-600 cursor-pointer"
+            className="mt-1 w-4 h-4 rounded border-arena-300 text-malva-600 focus:ring-malva-600 cursor-pointer"
           />
           <label htmlFor="edad" className="text-sm text-humo-600 cursor-pointer">
             Confirmo que soy <strong>mayor de edad</strong> (18 años o más)
@@ -224,7 +224,7 @@ export default function InscriptionForm() {
       <div className="lg:col-span-2">
         <div className="card border-arena-200 sticky top-28">
           <div className="flex items-center gap-2 mb-6">
-            <SparkleIcon className="w-5 h-5 text-ciruela-600" />
+            <SparkleIcon className="w-5 h-5 text-malva-600" />
             <h3 className="font-serif text-xl font-bold text-humo-700">
               Reconociendo mi Poder
             </h3>
@@ -260,7 +260,7 @@ export default function InscriptionForm() {
             ¿Tienes preguntas antes de inscribirte?{" "}
             <Link
               href="/contacto"
-              className="text-malva-400 hover:text-ciruela-600 underline transition-colors"
+              className="text-malva-400 hover:text-malva-600 underline transition-colors"
             >
               Contáctanos
             </Link>

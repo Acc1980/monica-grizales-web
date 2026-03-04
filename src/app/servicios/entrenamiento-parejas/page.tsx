@@ -36,12 +36,12 @@ export default function EntrenamientoParejasPage() {
           </p>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-humo-700 mb-6">
             El Orden y Amor{" "}
-            <span className="text-ciruela-600">en Pareja</span>
+            <span className="text-malva-600">en Pareja</span>
           </h1>
           <p className="text-humo-600 text-lg md:text-xl max-w-2xl mx-auto mb-4 font-medium">
             ¿Cuál es el más valioso, el más importante? ¿Cuál viene primero?
             El amor tiene que integrarse a un orden.{" "}
-            <strong className="text-ciruela-600">El orden precede al amor.</strong>
+            <strong className="text-malva-600">El orden precede al amor.</strong>
           </p>
           <p className="text-humo-500 text-base max-w-xl mx-auto mb-10">
             Un espacio para parejas que desean construir relaciones conscientes
@@ -67,7 +67,7 @@ export default function EntrenamientoParejasPage() {
       </section>
 
       {/* ════════ FACILITADORES ════════ */}
-      <section className="bg-ciruela-700 text-white py-4">
+      <section className="bg-malva-700 text-white py-4">
         <div className="section-container flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
           <p className="text-sm md:text-base font-medium">
             Facilitado por <strong>Mónica Grizales</strong> y <strong>José Daniel Duarte</strong> &middot; En alianza con <strong>CEFODIP</strong>
@@ -82,12 +82,12 @@ export default function EntrenamientoParejasPage() {
             <div className="text-center mb-10">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-4">
                 Cuando el amor{" "}
-                <span className="text-ciruela-600">no es suficiente</span>
+                <span className="text-malva-600">no es suficiente</span>
               </h2>
             </div>
             <div className="space-y-6">
               <div className="flex items-start gap-4 p-5 rounded-xl bg-white border border-arena-200">
-                <div className="w-8 h-8 rounded-full bg-ciruela-600/10 text-ciruela-600 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-malva-600/10 text-malva-600 flex items-center justify-center shrink-0 mt-0.5">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                   </svg>
@@ -100,7 +100,7 @@ export default function EntrenamientoParejasPage() {
                 </p>
               </div>
               <div className="flex items-start gap-4 p-5 rounded-xl bg-white border border-arena-200">
-                <div className="w-8 h-8 rounded-full bg-ciruela-600/10 text-ciruela-600 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-malva-600/10 text-malva-600 flex items-center justify-center shrink-0 mt-0.5">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                   </svg>
@@ -139,7 +139,7 @@ export default function EntrenamientoParejasPage() {
         <div className="section-container">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
-              <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+              <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
                 Reflexión profunda
               </p>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700">
@@ -154,7 +154,7 @@ export default function EntrenamientoParejasPage() {
                 "Cuando entramos en rivalidad de poder con la pareja, estamos sembrando la semilla de la separación. Hemos entrado en un juego de manipulación, estamos ciegos y sin amor.",
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-4 p-5 rounded-xl bg-white border border-arena-200">
-                  <div className="w-8 h-8 rounded-full bg-ciruela-600/10 text-ciruela-600 flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-full bg-malva-600/10 text-malva-600 flex items-center justify-center shrink-0 mt-0.5">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z" />
                     </svg>
@@ -171,7 +171,7 @@ export default function EntrenamientoParejasPage() {
       <section className="section-padding bg-arena-50">
         <div className="section-container">
           <div className="text-center mb-16">
-            <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+            <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
               Contenido del entrenamiento
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-4">
@@ -216,7 +216,7 @@ export default function EntrenamientoParejasPage() {
               },
             ].map((item) => (
               <div key={item.num} className="card border-arena-200 p-6">
-                <div className="w-10 h-10 rounded-full bg-ciruela-600 text-white flex items-center justify-center mb-4 font-serif text-lg font-bold">
+                <div className="w-10 h-10 rounded-full bg-malva-600 text-white flex items-center justify-center mb-4 font-serif text-lg font-bold">
                   {item.num}
                 </div>
                 <h3 className="font-serif text-xl font-bold text-humo-700 mb-3">
@@ -250,7 +250,7 @@ export default function EntrenamientoParejasPage() {
       <section className="section-padding bg-arena-200/40">
         <div className="section-container">
           <div className="text-center mb-12">
-            <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+            <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
               También exploraremos
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700">
@@ -347,7 +347,7 @@ export default function EntrenamientoParejasPage() {
         <div className="section-container">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
-              <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+              <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
                 ¿Para quién es?
               </p>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700">
@@ -364,7 +364,7 @@ export default function EntrenamientoParejasPage() {
                 "Quieres aprender a gestionar el amor para que florezca la dicha",
               ].map((item, index) => (
                 <div key={index} className="flex gap-3 items-center">
-                  <div className="w-6 h-6 rounded-full bg-ciruela-600 text-white flex items-center justify-center shrink-0">
+                  <div className="w-6 h-6 rounded-full bg-malva-600 text-white flex items-center justify-center shrink-0">
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
@@ -382,7 +382,7 @@ export default function EntrenamientoParejasPage() {
         <div className="section-container">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+              <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
                 Preguntas frecuentes
               </p>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700">
@@ -412,7 +412,7 @@ export default function EntrenamientoParejasPage() {
                   key={index}
                   className="group card border-arena-200 overflow-hidden"
                 >
-                  <summary className="flex items-center justify-between p-5 cursor-pointer list-none font-medium text-humo-700 hover:text-ciruela-600 transition-colors">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer list-none font-medium text-humo-700 hover:text-malva-600 transition-colors">
                     <span>{item.q}</span>
                     <svg
                       className="w-5 h-5 text-malva-400 shrink-0 ml-4 transition-transform group-open:rotate-180"
@@ -435,8 +435,8 @@ export default function EntrenamientoParejasPage() {
       </section>
 
       {/* ════════ CTA FINAL ════════ */}
-      <section className="py-20 md:py-28 bg-ciruela-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-ciruela-800/50 to-malva-400/10" />
+      <section className="py-20 md:py-28 bg-malva-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-malva-800/50 to-malva-400/10" />
         <div className="section-container relative text-center">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
             ¿Están listos para transformar su relación?
@@ -454,7 +454,7 @@ export default function EntrenamientoParejasPage() {
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-ciruela-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
+              className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-malva-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
             >
               Quiero inscribirme
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

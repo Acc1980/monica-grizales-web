@@ -30,15 +30,15 @@ export default function ReconociendoMiPoderPage() {
         />
         <div className="absolute inset-0 bg-arena-50/75 backdrop-blur-[2px]" />
         <div className="section-container relative text-center">
-          <div className="inline-flex items-center gap-2 bg-ciruela-600/10 border border-ciruela-600/20 rounded-full px-5 py-2 mb-6">
-            <svg className="w-4 h-4 text-ciruela-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="inline-flex items-center gap-2 bg-malva-600/10 border border-malva-600/20 rounded-full px-5 py-2 mb-6">
+            <svg className="w-4 h-4 text-malva-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
             </svg>
-            <span className="text-sm font-medium text-ciruela-600">15 y 16 de abril 2026 &middot; 100% Virtual</span>
+            <span className="text-sm font-medium text-malva-600">15 y 16 de abril 2026 &middot; 100% Virtual</span>
           </div>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-humo-700 mb-6">
             Reconociendo{" "}
-            <span className="text-ciruela-600">mi Poder</span>
+            <span className="text-malva-600">mi Poder</span>
           </h1>
           <p className="text-humo-600 text-lg md:text-xl max-w-2xl mx-auto mb-4 font-medium">
             Un espacio para reconocerte como autora de tu vida, habitar tu
@@ -64,7 +64,7 @@ export default function ReconociendoMiPoderPage() {
       </section>
 
       {/* ════════ BARRA DE URGENCIA ════════ */}
-      <section className="bg-ciruela-700 text-white py-4">
+      <section className="bg-malva-700 text-white py-4">
         <div className="section-container flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
           <svg className="w-5 h-5 text-arena-200 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -85,7 +85,7 @@ export default function ReconociendoMiPoderPage() {
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 mb-2">
               Mónica Andrea Grizales Cuartas
             </h2>
-            <p className="text-ciruela-600 font-medium mb-8">
+            <p className="text-malva-600 font-medium mb-8">
               Ingeniera Industrial y Coach Ontológica con mirada sistémica.
             </p>
             <div className="text-humo-500 text-left space-y-4 leading-relaxed">
@@ -103,7 +103,7 @@ export default function ReconociendoMiPoderPage() {
                 acompañar procesos individuales de crecimiento y transformación.
                 Actualmente se forma en Bioneuroterapia.
               </p>
-              <p className="font-serif text-ciruela-600 italic text-center text-lg">
+              <p className="font-serif text-malva-600 italic text-center text-lg">
                 Hoy acompaña desde la experiencia vivida, con la certeza de que
                 crecer emocionalmente nos acerca a la plenitud que anhelamos.
               </p>
@@ -119,7 +119,7 @@ export default function ReconociendoMiPoderPage() {
             <div className="text-center mb-10">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-4">
                 Es hora de que sepas que{" "}
-                <span className="text-ciruela-600">
+                <span className="text-malva-600">
                   tus emociones no son un problema
                 </span>
               </h2>
@@ -135,7 +135,7 @@ export default function ReconociendoMiPoderPage() {
                   key={index}
                   className="flex items-start gap-4 p-5 rounded-xl bg-white border border-arena-200"
                 >
-                  <div className="w-8 h-8 rounded-full bg-ciruela-600/10 text-ciruela-600 flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-full bg-malva-600/10 text-malva-600 flex items-center justify-center shrink-0 mt-0.5">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
                     </svg>
@@ -153,7 +153,7 @@ export default function ReconociendoMiPoderPage() {
                   ¿Y si te dijera que esto lo puedes sanar?
                 </strong>
               </p>
-              <p className="font-serif text-xl text-ciruela-600 italic leading-relaxed">
+              <p className="font-serif text-xl text-malva-600 italic leading-relaxed">
                 Deja de repetir tu historia... date el permiso de crear una
                 versión donde te sientas suficiente.
               </p>
@@ -167,7 +167,7 @@ export default function ReconociendoMiPoderPage() {
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+              <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
                 ¿Por qué este entrenamiento?
               </p>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-10">
@@ -197,7 +197,7 @@ export default function ReconociendoMiPoderPage() {
                   },
                 ].map((item) => (
                   <div key={item.num} className="flex gap-4 items-start">
-                    <div className="w-10 h-10 rounded-full bg-malva-100/60 text-ciruela-600 flex items-center justify-center shrink-0 font-serif text-sm font-bold">
+                    <div className="w-10 h-10 rounded-full bg-malva-100/60 text-malva-600 flex items-center justify-center shrink-0 font-serif text-sm font-bold">
                       {item.num}
                     </div>
                     <div>
@@ -284,7 +284,7 @@ export default function ReconociendoMiPoderPage() {
       <section className="section-padding bg-arena-200/40">
         <div className="section-container">
           <div className="text-center mb-16">
-            <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+            <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
               Contenido del entrenamiento
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700">
@@ -319,7 +319,7 @@ export default function ReconociendoMiPoderPage() {
               },
             ].map((item, index) => (
               <div key={index} className="card border-arena-200 p-6">
-                <div className="w-10 h-10 rounded-full bg-malva-100/60 text-ciruela-600 flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-malva-100/60 text-malva-600 flex items-center justify-center mb-4">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
@@ -341,7 +341,7 @@ export default function ReconociendoMiPoderPage() {
         <div className="section-container text-center max-w-3xl mx-auto">
           <blockquote className="font-serif text-xl md:text-2xl text-humo-600 leading-relaxed italic">
             &ldquo;Una mujer que no puede regularse, no elige: reacciona.{" "}
-            <span className="text-ciruela-600 font-semibold not-italic">
+            <span className="text-malva-600 font-semibold not-italic">
               La regulación emocional es una condición de libertad.
             </span>
             &rdquo;
@@ -354,7 +354,7 @@ export default function ReconociendoMiPoderPage() {
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+              <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
                 Resultados
               </p>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700">
@@ -370,7 +370,7 @@ export default function ReconociendoMiPoderPage() {
                 "Ocupar tu lugar frente al sistema familiar para recuperar tu fuerza",
               ].map((item, index) => (
                 <div key={index} className="flex gap-3 items-start p-4 rounded-xl bg-white border border-arena-200 shadow-sm">
-                  <div className="w-8 h-8 rounded-full bg-ciruela-600 text-white flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-malva-600 text-white flex items-center justify-center shrink-0">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
@@ -402,7 +402,7 @@ export default function ReconociendoMiPoderPage() {
               </div>
             </div>
             <div>
-              <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+              <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
                 ¿Para quién es?
               </p>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-8">
@@ -418,7 +418,7 @@ export default function ReconociendoMiPoderPage() {
                   "Quieres recuperar tu autonomía y capacidad de decidir",
                 ].map((item, index) => (
                   <div key={index} className="flex gap-3 items-center">
-                    <div className="w-6 h-6 rounded-full bg-ciruela-600 text-white flex items-center justify-center shrink-0">
+                    <div className="w-6 h-6 rounded-full bg-malva-600 text-white flex items-center justify-center shrink-0">
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
@@ -435,7 +435,7 @@ export default function ReconociendoMiPoderPage() {
       {/* ════════ QUÉ INCLUYE ════════ */}
       <section className="section-padding bg-arena-100/60">
         <div className="section-container text-center">
-          <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+          <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
             ¿Qué incluye?
           </p>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-12">
@@ -497,7 +497,7 @@ export default function ReconociendoMiPoderPage() {
       {/* ════════ DETALLES DEL ENTRENAMIENTO ════════ */}
       <section className="section-padding bg-arena-200/40">
         <div className="section-container text-center">
-          <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+          <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
             Información del proceso
           </p>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-12">
@@ -544,7 +544,7 @@ export default function ReconociendoMiPoderPage() {
       <section className="section-padding bg-arena-50">
         <div className="section-container">
           <div className="text-center mb-12">
-            <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+            <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
               Respaldo y trayectoria
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700">
@@ -570,7 +570,7 @@ export default function ReconociendoMiPoderPage() {
               },
             ].map((item, index) => (
               <div key={index} className="text-center p-6">
-                <p className="font-serif text-4xl md:text-5xl font-bold text-ciruela-600 mb-2">
+                <p className="font-serif text-4xl md:text-5xl font-bold text-malva-600 mb-2">
                   {item.number}
                 </p>
                 <p className="font-bold text-humo-700 mb-2">{item.label}</p>
@@ -586,7 +586,7 @@ export default function ReconociendoMiPoderPage() {
         <div className="section-container">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <p className="uppercase tracking-[0.25em] text-sm text-ciruela-600 font-medium mb-4">
+              <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
                 Preguntas frecuentes
               </p>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700">
@@ -624,7 +624,7 @@ export default function ReconociendoMiPoderPage() {
                   key={index}
                   className="group card border-arena-200 overflow-hidden"
                 >
-                  <summary className="flex items-center justify-between p-5 cursor-pointer list-none font-medium text-humo-700 hover:text-ciruela-600 transition-colors">
+                  <summary className="flex items-center justify-between p-5 cursor-pointer list-none font-medium text-humo-700 hover:text-malva-600 transition-colors">
                     <span>{item.q}</span>
                     <svg
                       className="w-5 h-5 text-malva-400 shrink-0 ml-4 transition-transform group-open:rotate-180"
@@ -647,8 +647,8 @@ export default function ReconociendoMiPoderPage() {
       </section>
 
       {/* ════════ CTA FINAL ════════ */}
-      <section className="py-20 md:py-28 bg-ciruela-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-ciruela-800/50 to-malva-400/10" />
+      <section className="py-20 md:py-28 bg-malva-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-malva-800/50 to-malva-400/10" />
         <div className="section-container relative text-center">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
             ¿Estás lista para reconocer tu poder?
@@ -669,7 +669,7 @@ export default function ReconociendoMiPoderPage() {
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-ciruela-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
+              className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-malva-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
             >
               Quiero inscribirme
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

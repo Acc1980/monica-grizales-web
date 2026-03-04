@@ -14,23 +14,23 @@
   }
 
   ::selection {
-    @apply bg-malva-400/30 text-ciruela-700;
+    @apply bg-malva-400/30 text-malva-700;
   }
 }
 
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center px-8 py-3 rounded-full
-           bg-ciruela-600 text-white font-medium
-           hover:bg-ciruela-700 active:bg-ciruela-800
+           bg-malva-600 text-white font-medium
+           hover:bg-malva-700 active:bg-malva-800
            transition-all duration-300 ease-out
-           shadow-lg shadow-ciruela-600/20 hover:shadow-xl hover:shadow-ciruela-600/30
+           shadow-lg shadow-malva-600/20 hover:shadow-xl hover:shadow-malva-600/30
            hover:-translate-y-0.5;
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center px-8 py-3 rounded-full
-           border-2 border-malva-400 text-ciruela-600 font-medium
+           border-2 border-malva-400 text-malva-600 font-medium
            hover:bg-malva-400 hover:text-white
            transition-all duration-300 ease-out
            hover:-translate-y-0.5;
@@ -45,15 +45,15 @@
   }
 
   .heading-1 {
-    @apply font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-ciruela-700 leading-tight;
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-malva-700 leading-tight;
   }
 
   .heading-2 {
-    @apply font-serif text-3xl md:text-4xl font-bold text-ciruela-700 leading-tight;
+    @apply font-serif text-3xl md:text-4xl font-bold text-malva-700 leading-tight;
   }
 
   .heading-3 {
-    @apply font-serif text-2xl md:text-3xl font-semibold text-ciruela-600 leading-snug;
+    @apply font-serif text-2xl md:text-3xl font-semibold text-malva-600 leading-snug;
   }
 
   .text-body {
@@ -75,17 +75,17 @@
   }
 
   .gradient-bg {
-    background: linear-gradient(135deg, #f5f0f7 0%, #eae3dc 50%, #f4f0eb 100%);
+    background: linear-gradient(135deg, #f0f4f2 0%, #e8e6e1 50%, #f3f1ee 100%);
   }
 
   .decorative-line {
-    @apply w-16 h-1 bg-gradient-to-r from-malva-400 to-ciruela-600 rounded-full;
+    @apply w-16 h-1 bg-gradient-to-r from-malva-400 to-malva-600 rounded-full;
   }
 
   /* Skip navigation for accessibility */
   .skip-nav {
     @apply absolute -top-full left-4 z-[100] px-6 py-3 rounded-b-xl
-           bg-ciruela-600 text-white font-medium
+           bg-malva-600 text-white font-medium
            focus:top-0 transition-all duration-200;
   }
 

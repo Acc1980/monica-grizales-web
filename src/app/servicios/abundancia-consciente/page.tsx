@@ -44,7 +44,7 @@ export default function AbundanciaConscientePage() {
       {/* ════════ FRASE ANCLA ════════ */}
       <section className="py-16 md:py-20 bg-arena-200/50">
         <div className="section-container text-center">
-          <SparkleIcon className="w-7 h-7 text-ciruela-600 mx-auto mb-6" />
+          <SparkleIcon className="w-7 h-7 text-malva-600 mx-auto mb-6" />
           <blockquote className="font-serif text-2xl md:text-3xl text-humo-600 leading-relaxed max-w-3xl mx-auto">
             &ldquo;La abundancia es una respuesta de agradecimiento del
             Universo a nuestro agradecimiento. La palabra clave de la
@@ -75,7 +75,7 @@ export default function AbundanciaConscientePage() {
                 El dinero, el éxito y la expansión no solo se construyen:
                 también se heredan, se bloquean o se ordenan desde historias
                 que no siempre conocemos.{" "}
-                <em className="text-ciruela-600">
+                <em className="text-malva-600">
                   ¿Y si la escasez no fuera tuya? ¿Y si la abundancia
                   estuviera esperando que mires con amor lo que quedó atrás?
                 </em>
@@ -98,7 +98,7 @@ export default function AbundanciaConscientePage() {
             {/* Card visual */}
             <div className="card border-malva-200 text-center py-12">
               <div className="w-20 h-20 rounded-full bg-malva-100/60 flex items-center justify-center mx-auto mb-6">
-                <SparkleIcon className="w-10 h-10 text-ciruela-600" />
+                <SparkleIcon className="w-10 h-10 text-malva-600" />
               </div>
               <h3 className="font-serif text-2xl font-bold text-humo-700 mb-4">
                 El éxito no es un resultado.
@@ -169,7 +169,7 @@ export default function AbundanciaConscientePage() {
             ].map((orden) => (
               <div key={orden.number} className="card group flex flex-col h-full">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-12 h-12 rounded-2xl bg-malva-100/60 text-malva-400 flex items-center justify-center group-hover:bg-ciruela-600 group-hover:text-white transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-2xl bg-malva-100/60 text-malva-400 flex items-center justify-center group-hover:bg-malva-600 group-hover:text-white transition-colors duration-300">
                     {orden.icon}
                   </div>
                   <span className="text-malva-300 font-serif text-3xl font-bold">
@@ -215,7 +215,7 @@ export default function AbundanciaConscientePage() {
             </div>
 
             {/* Buen Tomar */}
-            <div className="card border-l-4 border-l-ciruela-600">
+            <div className="card border-l-4 border-l-malva-600">
               <h3 className="font-serif text-2xl font-bold text-humo-700 mb-6">
                 Reglas del Buen Tomar
               </h3>
@@ -227,7 +227,7 @@ export default function AbundanciaConscientePage() {
                   "Recibir con apertura y sin juicio",
                 ].map((regla, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-ciruela-100 text-ciruela-600 flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-malva-100 text-malva-600 flex items-center justify-center shrink-0 mt-0.5">
                       <span className="text-xs font-bold">{i + 1}</span>
                     </div>
                     <p className="text-humo-600">{regla}</p>
@@ -240,7 +240,7 @@ export default function AbundanciaConscientePage() {
           <div className="mt-12 text-center">
             <div className="card max-w-2xl mx-auto border-arena-200 py-10">
               <p className="font-serif text-xl text-humo-600 leading-relaxed">
-                <strong className="text-ciruela-600">Prosperidad</strong> es la
+                <strong className="text-malva-600">Prosperidad</strong> es la
                 respuesta al Buen Dar y al Buen Tomar. El dinero es el
                 reconocimiento al valor creado. Es tu capacidad de ser oferta,
                 la fuente principal de tu poder personal.
@@ -288,7 +288,7 @@ export default function AbundanciaConscientePage() {
             </div>
 
             <div className="card">
-              <div className="w-12 h-12 rounded-full bg-ciruela-100/60 text-ciruela-600 flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-full bg-malva-100/60 text-malva-600 flex items-center justify-center mb-5">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                 </svg>
@@ -364,7 +364,7 @@ export default function AbundanciaConscientePage() {
                   key={i}
                   className="flex items-start gap-5 p-5 rounded-xl bg-white border border-arena-200 hover:border-malva-300 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-full bg-malva-100/60 text-ciruela-600 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-malva-100/60 text-malva-600 flex items-center justify-center shrink-0">
                     <span className="font-serif font-bold">{i + 1}</span>
                   </div>
                   <div>
@@ -384,7 +384,7 @@ export default function AbundanciaConscientePage() {
       <section className="section-padding bg-arena-100/60">
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center">
-            <SparkleIcon className="w-8 h-8 text-ciruela-600 mx-auto mb-6" />
+            <SparkleIcon className="w-8 h-8 text-malva-600 mx-auto mb-6" />
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-8">
               Tu linaje y tu abundancia
             </h2>
@@ -398,11 +398,11 @@ export default function AbundanciaConscientePage() {
               </p>
               <p>
                 Cuando honras a tu sistema, la vida fluye.{" "}
-                <strong className="text-ciruela-600">
+                <strong className="text-malva-600">
                   Cuando tomas a tus ancestros, la abundancia te toma a ti.
                 </strong>
               </p>
-              <p className="font-serif italic text-ciruela-600 text-xl text-center pt-4">
+              <p className="font-serif italic text-malva-600 text-xl text-center pt-4">
                 Si sientes el llamado, no es casualidad. Es tu historia
                 pidiendo ser ordenada... para que tu presente y tu prosperidad
                 puedan crecer.
@@ -413,10 +413,10 @@ export default function AbundanciaConscientePage() {
       </section>
 
       {/* ════════ SER OFERTA ════════ */}
-      <section className="py-20 md:py-28 bg-ciruela-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-ciruela-700/80 to-malva-400/20" />
+      <section className="py-20 md:py-28 bg-malva-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-malva-700/80 to-malva-400/20" />
         <div className="section-container relative text-center">
-          <SparkleIcon className="w-8 h-8 text-ciruela-300 mx-auto mb-6" />
+          <SparkleIcon className="w-8 h-8 text-malva-300 mx-auto mb-6" />
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
             Ser Oferta
           </h2>
@@ -431,7 +431,7 @@ export default function AbundanciaConscientePage() {
           </p>
           <Link
             href="/contacto"
-            className="inline-flex items-center justify-center px-10 py-3.5 rounded-full bg-white text-ciruela-700 font-semibold hover:bg-arena-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center px-10 py-3.5 rounded-full bg-white text-malva-700 font-semibold hover:bg-arena-100 transition-all duration-300 shadow-lg hover:-translate-y-0.5"
           >
             Quiero comenzar este proceso
           </Link>

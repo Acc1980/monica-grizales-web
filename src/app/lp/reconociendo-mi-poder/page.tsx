@@ -21,7 +21,7 @@ function CtaButton({ variant = "dark" }: { variant?: "dark" | "light" }) {
         href={WA_LINK}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-ciruela-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
+        className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-malva-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
       >
         Reservar mi cupo
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -35,7 +35,7 @@ function CtaButton({ variant = "dark" }: { variant?: "dark" | "light" }) {
       href={WA_LINK}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-ciruela-600 text-white font-bold text-lg hover:bg-ciruela-700 transition-all duration-300 shadow-xl shadow-ciruela-600/30 hover:-translate-y-0.5 gap-2"
+      className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-malva-600 text-white font-bold text-lg hover:bg-malva-700 transition-all duration-300 shadow-xl shadow-malva-600/30 hover:-translate-y-0.5 gap-2"
     >
       Reservar mi cupo
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -61,30 +61,30 @@ export default function LandingReconociendoPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-arena-50/85 via-arena-50/75 to-arena-50/90" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative text-center">
-          <p className="uppercase tracking-[0.3em] text-xs text-ciruela-600 font-semibold mb-5">
+          <p className="uppercase tracking-[0.3em] text-xs text-malva-600 font-semibold mb-5">
             Entrenamiento virtual &middot; 15 y 16 de abril 2026
           </p>
           <p className="text-humo-600 text-xl md:text-2xl max-w-2xl mx-auto mb-4 leading-relaxed">
             Si eres una mujer <strong className="text-humo-700">fuerte por fuera</strong>…
-            pero <strong className="text-ciruela-600">agotada por dentro</strong>,
+            pero <strong className="text-malva-600">agotada por dentro</strong>,
             este espacio es para ti.
           </p>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-humo-700 mb-4 leading-tight">
             Reconociendo{" "}
-            <span className="text-ciruela-600">mi Poder</span>
+            <span className="text-malva-600">mi Poder</span>
           </h1>
-          <p className="font-serif text-ciruela-600 italic text-lg mb-8 max-w-md mx-auto">
+          <p className="font-serif text-malva-600 italic text-lg mb-8 max-w-md mx-auto">
             &ldquo;Ser buena hija no debería costarte tu voz.&rdquo;
           </p>
           <CtaButton />
           <p className="text-humo-400 text-sm mt-4">
-            Solo <strong className="text-ciruela-600">40 cupos</strong> &middot; Inscripciones hasta el 10 de abril
+            Solo <strong className="text-malva-600">40 cupos</strong> &middot; Inscripciones hasta el 10 de abril
           </p>
         </div>
       </section>
 
       {/* ════════ BARRA DE URGENCIA ════════ */}
-      <div className="bg-ciruela-700 text-white py-3 text-center">
+      <div className="bg-malva-700 text-white py-3 text-center">
         <p className="text-sm font-medium px-4">
           ⏳ <strong>Cupos limitados.</strong> Las inscripciones cierran el 10 de abril o antes si se completan.
         </p>
@@ -108,7 +108,7 @@ export default function LandingReconociendoPage() {
                 key={index}
                 className="flex items-start gap-3 p-4 rounded-xl bg-arena-50 border border-arena-200"
               >
-                <span className="text-ciruela-600 text-xl shrink-0">✦</span>
+                <span className="text-malva-600 text-xl shrink-0">✦</span>
                 <p className="font-serif text-lg text-humo-600 italic leading-relaxed">
                   {pregunta}
                 </p>
@@ -118,7 +118,7 @@ export default function LandingReconociendoPage() {
           <div className="mt-8 text-center">
             <p className="text-humo-500 text-lg mb-6">
               Todo esto lo aprendiste y no lo pudiste cuestionar.{" "}
-              <strong className="text-ciruela-600">
+              <strong className="text-malva-600">
                 ¿Y si te dijera que esto lo puedes sanar?
               </strong>
             </p>
@@ -130,7 +130,7 @@ export default function LandingReconociendoPage() {
       {/* ════════ MÓNICA — AUTORIDAD (antes del contenido y precio) ════════ */}
       <section className="py-14 md:py-20 bg-arena-100/60">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <p className="uppercase tracking-[0.25em] text-xs text-ciruela-600 font-semibold mb-8 text-center">
+          <p className="uppercase tracking-[0.25em] text-xs text-malva-600 font-semibold mb-8 text-center">
             Tu facilitadora
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -152,16 +152,16 @@ export default function LandingReconociendoPage() {
               <h2 className="font-serif text-2xl font-bold text-humo-700 mb-1">
                 Mónica Andrea Grizales Cuartas
               </h2>
-              <p className="text-ciruela-600 font-medium text-sm mb-4">
+              <p className="text-malva-600 font-medium text-sm mb-4">
                 Ingeniera Industrial y Coach Ontológica con mirada sistémica
               </p>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="text-center p-3 bg-white rounded-xl border border-arena-200">
-                  <p className="font-serif text-2xl font-bold text-ciruela-600">+5,000</p>
+                  <p className="font-serif text-2xl font-bold text-malva-600">+5,000</p>
                   <p className="text-humo-400 text-xs">Mujeres acompañadas</p>
                 </div>
                 <div className="text-center p-3 bg-white rounded-xl border border-arena-200">
-                  <p className="font-serif text-2xl font-bold text-ciruela-600">15+</p>
+                  <p className="font-serif text-2xl font-bold text-malva-600">15+</p>
                   <p className="text-humo-400 text-xs">Años de experiencia</p>
                 </div>
               </div>
@@ -193,7 +193,7 @@ export default function LandingReconociendoPage() {
               { title: "Regulación emocional", desc: "Trabajar las emociones que más te gobiernan: culpa, tristeza, rabia y miedo." },
             ].map((item, index) => (
               <div key={index} className="flex gap-3 items-start p-4 rounded-xl bg-arena-50 border border-arena-200">
-                <div className="w-8 h-8 rounded-full bg-ciruela-600 text-white flex items-center justify-center shrink-0 text-sm font-bold">
+                <div className="w-8 h-8 rounded-full bg-malva-600 text-white flex items-center justify-center shrink-0 text-sm font-bold">
                   ✓
                 </div>
                 <div>
@@ -210,7 +210,7 @@ export default function LandingReconociendoPage() {
       </section>
 
       {/* ════════ FRASE ANCLA ════════ */}
-      <section className="py-12 bg-ciruela-700 text-white">
+      <section className="py-12 bg-malva-700 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <blockquote className="font-serif text-xl md:text-2xl leading-relaxed italic">
             &ldquo;Una mujer que no puede regularse, no elige: reacciona.{" "}
@@ -234,7 +234,7 @@ export default function LandingReconociendoPage() {
               "Ocupar tu lugar frente al sistema familiar para recuperar tu fuerza",
             ].map((item, index) => (
               <div key={index} className="flex gap-3 items-center p-3 rounded-lg">
-                <div className="w-6 h-6 rounded-full bg-ciruela-600 text-white flex items-center justify-center shrink-0">
+                <div className="w-6 h-6 rounded-full bg-malva-600 text-white flex items-center justify-center shrink-0">
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
@@ -268,7 +268,7 @@ export default function LandingReconociendoPage() {
               </div>
             ))}
           </div>
-          <p className="mt-8 font-serif text-ciruela-600 text-xl font-semibold">
+          <p className="mt-8 font-serif text-malva-600 text-xl font-semibold">
             Este entrenamiento es tu primer paso para romper ese ciclo.
           </p>
         </div>
@@ -315,7 +315,7 @@ export default function LandingReconociendoPage() {
               "Quieres recuperar tu autonomía y capacidad de decidir",
             ].map((item, index) => (
               <div key={index} className="flex gap-2 items-center p-3">
-                <span className="text-ciruela-600 shrink-0">✦</span>
+                <span className="text-malva-600 shrink-0">✦</span>
                 <span className="text-humo-600 text-sm">{item}</span>
               </div>
             ))}
@@ -324,8 +324,8 @@ export default function LandingReconociendoPage() {
       </section>
 
       {/* ════════ CTA FINAL ════════ */}
-      <section className="py-20 md:py-28 bg-ciruela-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-ciruela-800/50 to-malva-400/10" />
+      <section className="py-20 md:py-28 bg-malva-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-malva-800/50 to-malva-400/10" />
         <div className="max-w-2xl mx-auto px-4 sm:px-6 relative text-center">
           <SparkleIcon className="w-10 h-10 text-malva-300 mx-auto mb-6" />
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
