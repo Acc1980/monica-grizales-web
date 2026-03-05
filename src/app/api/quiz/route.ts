@@ -50,6 +50,34 @@ const RESULT_ACTIONS: Record<string, string> = {
     "Reconociendo mi Poder puede ser el espacio para consolidar tu proceso y descubrir lo que todavía no ves desde donde estás.",
 };
 
+// ─── Contenido de valor para el email del participante ───
+const RESULT_EXERCISES: Record<string, string[]> = {
+  poder_bajo: [
+    "<strong>Ejercicio 1 — El inventario del \"debo\":</strong> Durante los próximos 3 días, cada vez que te descubras diciendo o pensando \"debo\", \"tengo que\" o \"debería\", anótalo. Al final de los 3 días, revisa tu lista y pregúntate: ¿cuántas de estas cosas las elegí yo y cuántas las heredé?",
+    "<strong>Ejercicio 2 — La pregunta de poder:</strong> Antes de decir \"sí\" a algo esta semana, haz una pausa y pregúntate: \"¿Estoy diciendo sí porque quiero, o porque tengo miedo de lo que pasa si digo no?\" No necesitas cambiar tu respuesta — solo observar.",
+    "<strong>Ejercicio 3 — Carta a tu niña interior:</strong> Escríbele una carta breve a la niña que fuiste. Dile qué aprendió sobre ser mujer en su casa. Dile qué de eso ya no necesita cargar. Este ejercicio puede ser muy revelador — hazlo en un momento tranquilo.",
+  ],
+  poder_medio: [
+    "<strong>Ejercicio 1 — El mapa de tus límites:</strong> Haz dos columnas: en una escribe las áreas de tu vida donde ya pones límites claros. En la otra, donde todavía cedes por culpa o por evitar conflicto. Observa el patrón: ¿con quién te cuesta más? ¿Qué te dice eso?",
+    "<strong>Ejercicio 2 — La práctica del \"no\" consciente:</strong> Esta semana, elige UNA situación pequeña donde normalmente dirías sí por compromiso, y di no. Observa qué sientes en el cuerpo. La incomodidad no significa que estés haciendo algo mal — significa que estás rompiendo un patrón.",
+    "<strong>Ejercicio 3 — Diario de reconocimiento:</strong> Cada noche durante una semana, escribe 3 momentos del día donde actuaste desde tu verdad (por pequeños que sean). Esto entrena tu mente a reconocer tu poder en acción, en lugar de solo ver lo que falta.",
+  ],
+  poder_alto: [
+    "<strong>Ejercicio 1 — El siguiente nivel:</strong> Escribe esta pregunta y respóndela con honestidad: \"¿En qué área de mi vida sigo siendo leal a una versión de mí que ya no soy?\" A veces el crecimiento no es aprender algo nuevo, sino soltar lo que ya no te representa.",
+    "<strong>Ejercicio 2 — Mentoría inversa:</strong> Piensa en una mujer de tu entorno que esté donde tú estabas hace unos años. ¿Qué le dirías? Escríbelo. Muchas veces el consejo que damos a otras es el que necesitamos integrar más profundamente.",
+    "<strong>Ejercicio 3 — Visión a 6 meses:</strong> Cierra los ojos y visualiza tu vida dentro de 6 meses si sigues eligiendo desde tu poder. ¿Qué conversaciones has tenido? ¿Qué decisiones has tomado? ¿Qué has soltado? Escríbelo como si ya hubiera pasado.",
+  ],
+};
+
+const RESULT_REFLECTIONS: Record<string, string> = {
+  poder_bajo:
+    "Hay una diferencia entre amar a tu familia y vivir tu vida desde sus mandatos. Puedes honrar de donde vienes sin sacrificar quien realmente eres. Ese es el primer paso para recuperar tu poder.",
+  poder_medio:
+    "El despertar no es cómodo. Es ese momento donde ya no puedes seguir pretendiendo que todo está bien, pero todavía no sabes exactamente hacia dónde ir. Confía: esa incomodidad es señal de que estás creciendo.",
+  poder_alto:
+    "Has recorrido un camino importante. Pero el poder personal no es un destino — es una práctica diaria. Los patrones más profundos son los últimos en revelarse, y a veces necesitamos un espejo para verlos.",
+};
+
 export async function POST(
   request: NextRequest
 ): Promise<NextResponse<ApiResponse>> {
@@ -141,57 +169,115 @@ export async function POST(
       `,
     });
 
-    // Email 2: Resultado al participante
+    // Email 2: Guía de valor personalizada al participante
     const title = RESULT_TITLES[resultado] || resultado;
     const percentage = RESULT_PERCENTAGES[resultado] || "";
     const description = RESULT_DESCRIPTIONS[resultado] || "";
-    const action = RESULT_ACTIONS[resultado] || "";
+    const reflection = RESULT_REFLECTIONS[resultado] || "";
+    const exercises = RESULT_EXERCISES[resultado] || [];
+
+    const exercisesHtml = exercises
+      .map(
+        (ex, i) => `
+        <div style="background: white; border-left: 3px solid #8fa394; border-radius: 0 8px 8px 0; padding: 16px 18px; margin: 0 0 12px 0;">
+          <p style="font-size: 14px; line-height: 1.7; color: #3a3a3a; margin: 0;">${ex}</p>
+        </div>`
+      )
+      .join("");
 
     await transporter.sendMail({
       from: `"Mónica Grizales" <${process.env.SMTP_USER}>`,
       to: safeEmail,
-      subject: `${safeName}, tu resultado: ${title}`,
+      subject: `${safeName}, tu guía personalizada de poder personal`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #2c2c2c;">
+          <!-- Header -->
           <div style="background: #63756a; padding: 30px 20px; border-radius: 12px 12px 0 0; text-align: center;">
             <p style="color: #dce8e3; font-size: 12px; margin: 0 0 8px 0; letter-spacing: 2px;">✦ MÓNICA GRIZALES</p>
-            <h1 style="color: white; margin: 0; font-size: 24px;">Tu resultado del Quiz de Poder Personal</h1>
+            <h1 style="color: white; margin: 0; font-size: 22px;">Tu Guía de Poder Personal</h1>
+            <p style="color: #c8d6cd; font-size: 13px; margin: 8px 0 0 0;">3 ejercicios prácticos basados en tu resultado</p>
           </div>
-          <div style="background: #faf9f7; padding: 30px 24px; border: 1px solid #e8e6e1;">
-            <p style="font-size: 16px; margin: 0 0 8px 0;">Hola <strong>${safeName}</strong>,</p>
-            <p style="font-size: 14px; color: #525252; margin: 0 0 20px 0;">Gracias por completar el quiz. Aquí está tu resultado:</p>
 
+          <div style="background: #faf9f7; padding: 30px 24px; border: 1px solid #e8e6e1;">
+            <!-- Saludo -->
+            <p style="font-size: 16px; margin: 0 0 6px 0;">Hola <strong>${safeName}</strong>,</p>
+            <p style="font-size: 14px; color: #525252; margin: 0 0 24px 0;">
+              Gracias por tomarte el tiempo de hacer el quiz. El solo hecho de detenerte a mirar hacia adentro ya dice mucho de ti.
+            </p>
+
+            <!-- Resultado -->
             <div style="background: white; border: 2px solid #8fa394; border-radius: 12px; padding: 24px; text-align: center; margin: 0 0 24px 0;">
+              <p style="color: #8fa394; font-size: 11px; letter-spacing: 2px; margin: 0 0 8px 0;">TU RESULTADO</p>
               <h2 style="color: #4e5d54; margin: 0 0 8px 0; font-size: 22px;">${title}</h2>
-              <p style="color: #63756a; font-size: 18px; font-weight: bold; margin: 0 0 4px 0;">
-                Estás usando aproximadamente el ${percentage} de tu poder personal
+              <p style="color: #63756a; font-size: 16px; font-weight: bold; margin: 0;">
+                Estás usando aprox. el ${percentage} de tu poder personal
               </p>
-              <p style="color: #a8a8a8; font-size: 13px; margin: 0;">Puntaje: ${score}/30</p>
             </div>
 
-            <p style="font-size: 14px; line-height: 1.6; color: #3a3a3a; margin: 0 0 16px 0;">
+            <!-- Interpretación -->
+            <p style="font-size: 14px; line-height: 1.7; color: #3a3a3a; margin: 0 0 8px 0;">
               ${description}
             </p>
 
-            <div style="background: #f0f4f2; border-radius: 8px; padding: 16px; margin: 0 0 24px 0;">
-              <p style="font-size: 13px; font-weight: bold; color: #63756a; margin: 0 0 8px 0;">Lo que puedes hacer ahora:</p>
-              <p style="font-size: 14px; line-height: 1.6; color: #3a3a3a; margin: 0;">${action}</p>
+            <!-- Reflexión -->
+            <div style="background: #f7f4f0; border-radius: 10px; padding: 20px; margin: 16px 0 28px 0; border: 1px solid #e8e2db;">
+              <p style="font-size: 14px; line-height: 1.7; color: #4a4a4a; margin: 0; font-style: italic;">
+                &ldquo;${reflection}&rdquo;
+              </p>
+              <p style="font-size: 12px; color: #8fa394; margin: 8px 0 0 0; text-align: right;">— Mónica Grizales</p>
             </div>
 
+            <!-- Separador -->
+            <div style="text-align: center; margin: 0 0 24px 0;">
+              <p style="font-size: 11px; letter-spacing: 3px; color: #8fa394; margin: 0;">✦ ✦ ✦</p>
+            </div>
+
+            <!-- Guía de ejercicios -->
+            <h3 style="color: #4e5d54; font-size: 18px; margin: 0 0 6px 0;">Tu guía práctica</h3>
+            <p style="font-size: 13px; color: #6b6b6b; margin: 0 0 18px 0;">
+              Estos 3 ejercicios están diseñados específicamente para donde te encuentras hoy. Puedes hacerlos a tu ritmo durante la próxima semana:
+            </p>
+
+            ${exercisesHtml}
+
+            <!-- Consejo extra -->
+            <div style="background: #eef2ef; border-radius: 10px; padding: 18px; margin: 24px 0; text-align: center;">
+              <p style="font-size: 13px; color: #4e5d54; margin: 0 0 4px 0; font-weight: bold;">Tip: guarda este email</p>
+              <p style="font-size: 13px; color: #6b6b6b; margin: 0;">
+                Márcalo como favorito o muévelo a una carpeta especial. Así podrás volver a estos ejercicios cuando los necesites.
+              </p>
+            </div>
+
+            <!-- Separador -->
+            <div style="border-top: 1px solid #e8e6e1; margin: 28px 0;"></div>
+
+            <!-- Siguiente paso (sutil, no invasivo) -->
+            <p style="font-size: 14px; line-height: 1.6; color: #3a3a3a; margin: 0 0 6px 0;">
+              <strong>¿Quieres ir más profundo?</strong>
+            </p>
+            <p style="font-size: 14px; line-height: 1.6; color: #525252; margin: 0 0 20px 0;">
+              Si estos ejercicios te movieron algo, el entrenamiento <strong>Reconociendo mi Poder</strong> es un espacio de 2 días donde trabajamos las raíces de estos patrones en grupo, con acompañamiento directo. No es obligatorio — es una invitación.
+            </p>
+
             <div style="text-align: center; margin: 0 0 16px 0;">
-              <a href="https://wa.me/573217968856?text=${encodeURIComponent(`Hola Mónica, hice el quiz de poder personal y mi resultado fue "${title}". Quiero saber más sobre el entrenamiento.`)}"
+              <a href="https://wa.me/573217968856?text=${encodeURIComponent(`Hola Mónica, hice el quiz de poder personal y mi resultado fue "${title}". Me interesa saber más sobre el entrenamiento Reconociendo mi Poder.`)}"
                  style="display: inline-block; background: #63756a; color: white; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 15px;">
-                Quiero saber más sobre el entrenamiento
+                Quiero saber más
               </a>
             </div>
 
             <p style="font-size: 12px; color: #a8a8a8; text-align: center; margin: 0;">
-              O visita <a href="https://monicagrizales.com/servicios/reconociendo-mi-poder" style="color: #63756a;">monicagrizales.com</a> para más información
+              O visita <a href="https://monicagrizales.com/servicios/reconociendo-mi-poder" style="color: #63756a;">monicagrizales.com</a> para ver los detalles
             </p>
           </div>
-          <div style="background: #2c2c2c; padding: 16px; border-radius: 0 0 12px 12px; text-align: center;">
+
+          <!-- Footer -->
+          <div style="background: #2c2c2c; padding: 20px 16px; border-radius: 0 0 12px 12px; text-align: center;">
             <p style="color: #8fa394; font-size: 12px; margin: 0 0 4px 0;">✦ Mónica Grizales</p>
-            <p style="color: #a8a8a8; font-size: 11px; margin: 0;">Sanación Emocional y Liderazgo Femenino</p>
+            <p style="color: #a8a8a8; font-size: 11px; margin: 0 0 8px 0;">Coach Ontológica Certificada · Sanación Emocional y Liderazgo Femenino</p>
+            <p style="color: #6b6b6b; font-size: 10px; margin: 0;">
+              Recibiste este email porque completaste el Quiz de Poder Personal en monicagrizales.com
+            </p>
           </div>
         </div>
       `,
