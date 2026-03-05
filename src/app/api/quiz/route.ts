@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { connectDB } from "@/lib/mongodb";
 import { isValidEmail, sanitize } from "@/lib/validations";
 import { rateLimit } from "@/lib/rate-limit";
-import QuizLead from "@/models/QuizLead";
 import type { ApiResponse } from "@/lib/validations";
 
 const transporter = nodemailer.createTransport({
@@ -66,16 +64,8 @@ export async function POST(
       );
     }
 
-    await connectDB();
-
-    await QuizLead.create({
-      nombre: sanitize(nombre),
-      email: email.toLowerCase().trim(),
-      whatsapp: whatsapp ? sanitize(whatsapp) : undefined,
-      score: Number(score),
-      resultado,
-      respuestas,
-    });
+    const safeName = sanitize(nombre);
+    const safeEmail = email.toLowerCase().trim();
 
     const contactEmail =
       process.env.CONTACT_EMAIL || "contacto@monicagrizales.com";
@@ -83,8 +73,8 @@ export async function POST(
     await transporter.sendMail({
       from: `"Sitio Web Mónica Grizales" <${process.env.SMTP_USER}>`,
       to: contactEmail,
-      replyTo: email.toLowerCase().trim(),
-      subject: `Nuevo lead quiz: ${sanitize(nombre)} — ${RESULT_LABELS[resultado] || resultado}`,
+      replyTo: safeEmail,
+      subject: `Nuevo lead quiz: ${safeName} — ${RESULT_LABELS[resultado] || resultado}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: #63756a; padding: 20px; border-radius: 12px 12px 0 0;">
@@ -94,11 +84,11 @@ export async function POST(
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 8px 0; font-weight: bold; width: 140px; vertical-align: top;">Nombre:</td>
-                <td style="padding: 8px 0;">${sanitize(nombre)}</td>
+                <td style="padding: 8px 0;">${safeName}</td>
               </tr>
               <tr>
                 <td style="padding: 8px 0; font-weight: bold; vertical-align: top;">Email:</td>
-                <td style="padding: 8px 0;"><a href="mailto:${email.toLowerCase().trim()}">${email.toLowerCase().trim()}</a></td>
+                <td style="padding: 8px 0;"><a href="mailto:${safeEmail}">${safeEmail}</a></td>
               </tr>
               ${whatsapp ? `<tr><td style="padding: 8px 0; font-weight: bold; vertical-align: top;">WhatsApp:</td><td style="padding: 8px 0;">${sanitize(whatsapp)}</td></tr>` : ""}
               <tr>
