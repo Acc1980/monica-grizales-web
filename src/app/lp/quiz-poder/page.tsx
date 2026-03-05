@@ -40,11 +40,11 @@ export default function QuizPoderPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <p className="text-humo-600 text-lg md:text-xl leading-relaxed mb-6">
             Muchas mujeres viven desde el{" "}
-            <em className="text-ciruela-400">mandato familiar</em>, el deber
+            <em className="text-malva-500">mandato familiar</em>, el deber
             ser y la{" "}
-            <em className="text-ciruela-400">lealtad invisible</em> — sin
+            <em className="text-malva-500">lealtad invisible</em> — sin
             saber que están usando solo una fracción de su{" "}
-            <em className="text-ciruela-400">poder personal</em>.
+            <em className="text-malva-500">poder personal</em>.
           </p>
           <p className="text-humo-500 text-base leading-relaxed">
             Este quiz te ayuda a identificar en qué punto estás y qué áreas
@@ -116,7 +116,7 @@ export default function QuizPoderPage() {
                 transforma su forma de relacionarse, de liderar y de crear
                 abundancia en su vida.
               </p>
-              <p className="font-serif text-ciruela-400 italic text-sm leading-relaxed mb-6">
+              <p className="font-serif text-malva-500 italic text-sm leading-relaxed mb-6">
                 &ldquo;Cuando una mujer se reconoce, todo lo demás comienza a alinearse.&rdquo;
               </p>
               <div className="grid grid-cols-2 gap-4">

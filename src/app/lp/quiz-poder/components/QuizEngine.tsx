@@ -94,7 +94,7 @@ export default function QuizEngine({ onComplete }: QuizEngineProps) {
                   className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-start gap-3 ${
                     isSelected
                       ? "border-malva-500 bg-malva-50 ring-1 ring-malva-500/30"
-                      : "border-arena-200 hover:border-ciruela-300 hover:bg-arena-50"
+                      : "border-arena-200 hover:border-malva-300 hover:bg-arena-50"
                   }`}
                 >
                   <span

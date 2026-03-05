@@ -7,7 +7,7 @@ export default function QuizHero({ onStartQuiz }: { onStartQuiz: () => void }) {
       <div className="absolute inset-0 bg-gradient-to-b from-arena-50/60 to-arena-200/80" />
 
       {/* Decorative circles */}
-      <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-ciruela-400/10 blur-3xl" />
+      <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-malva-400/10 blur-3xl" />
       <div className="absolute bottom-10 left-10 w-48 h-48 rounded-full bg-malva-400/10 blur-3xl" />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 relative text-center">
@@ -16,7 +16,7 @@ export default function QuizHero({ onStartQuiz }: { onStartQuiz: () => void }) {
         </p>
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-humo-700 mb-6 leading-tight">
           ¿Cuánto de tu{" "}
-          <span className="text-ciruela-400 italic">poder personal</span>{" "}
+          <span className="text-malva-500 italic">poder personal</span>{" "}
           estás usando?
         </h1>
         <p className="text-humo-500 text-lg md:text-xl mb-10 max-w-xl mx-auto leading-relaxed">

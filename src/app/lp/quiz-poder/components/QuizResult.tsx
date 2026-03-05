@@ -7,8 +7,8 @@ import type { QuizResultDef } from "../quiz-data";
 const WHATSAPP_NUMBER = "573217968856";
 
 const POWER_INDICATORS: Record<string, { bars: number; color: string }> = {
-  poder_bajo: { bars: 2, color: "bg-ciruela-400" },
-  poder_medio: { bars: 4, color: "bg-ciruela-400" },
+  poder_bajo: { bars: 2, color: "bg-malva-400" },
+  poder_medio: { bars: 4, color: "bg-malva-400" },
   poder_alto: { bars: 6, color: "bg-malva-500" },
 };
 
@@ -61,7 +61,7 @@ export default function QuizResult({
 
           <p className="text-humo-400 text-sm mb-2">{result.subtitle}</p>
 
-          <p className="font-serif text-2xl font-bold text-ciruela-400">
+          <p className="font-serif text-2xl font-bold text-malva-500">
             Estás usando aproximadamente el {result.percentage} de tu poder
             personal
           </p>
