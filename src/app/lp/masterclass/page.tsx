@@ -5,12 +5,12 @@ import SparkleIcon from "@/components/SparkleIcon";
 export const metadata: Metadata = {
   title: "Masterclass Gratuita — Los 3 bloqueos invisibles que te impiden reconocer tu poder",
   description:
-    "Masterclass gratuita con Mónica Grizales. Descubre los 3 bloqueos invisibles que te impiden reconocer tu poder personal. Miércoles 25 de marzo, 7:00 PM (hora Colombia). Vía Zoom.",
+    "Masterclass gratuita con Mónica Grizales. Descubre los 3 bloqueos invisibles que te impiden reconocer tu poder personal. Martes 24 de marzo, 7:00 PM (hora Colombia). Vía Zoom.",
 };
 
 const WHATSAPP_NUMBER = "573217968856";
 const WHATSAPP_MSG = encodeURIComponent(
-  "Hola Mónica, quiero registrarme en la masterclass gratuita del 25 de marzo. 🙌"
+  "Hola Mónica, quiero registrarme en la masterclass gratuita del 24 de marzo. 🙌"
 );
 const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
 
@@ -62,7 +62,7 @@ export default function MasterclassPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-arena-50/85 via-arena-50/75 to-arena-50/90" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative text-center">
           <p className="uppercase tracking-[0.3em] text-xs text-malva-600 font-semibold mb-5">
-            Masterclass gratuita &middot; Miércoles 25 de marzo &middot; 7:00 PM
+            Masterclass gratuita &middot; Martes 24 de marzo &middot; 7:00 PM
           </p>
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-humo-700 mb-4 leading-tight">
             Los 3 bloqueos invisibles que te impiden{" "}
@@ -236,7 +236,7 @@ export default function MasterclassPage() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: "Fecha", value: "Miércoles 25", sub: "de marzo, 2026" },
+              { label: "Fecha", value: "Martes 24", sub: "de marzo, 2026" },
               { label: "Hora", value: "7:00 PM", sub: "Hora Colombia" },
               { label: "Modalidad", value: "Zoom en vivo", sub: "Link por email" },
               { label: "Inversión", value: "GRATIS", sub: "Solo debes registrarte" },
@@ -291,7 +291,7 @@ export default function MasterclassPage() {
             90 minutos que pueden cambiar la forma en que te relacionas contigo misma.
           </p>
           <p className="text-arena-300 text-sm mb-8">
-            Miércoles 25 de marzo &middot; 7:00 PM &middot; <strong className="text-white">100% gratis</strong>
+            Martes 24 de marzo &middot; 7:00 PM &middot; <strong className="text-white">100% gratis</strong>
           </p>
           <CtaButton text="Reservar mi lugar gratis" variant="light" />
           <p className="text-arena-400 text-xs mt-6">
