@@ -97,7 +97,7 @@ export default function LinksPage() {
       <div className="mb-8 text-center">
         <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 ring-2 ring-[#8fa394] ring-offset-2 ring-offset-[#f5f3ef]">
           <Image
-            src="/images/monica.png"
+            src="/images/monica-links.jpeg"
             alt="Monica Grizales"
             width={96}
             height={96}
