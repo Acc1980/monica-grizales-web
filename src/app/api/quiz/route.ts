@@ -4,6 +4,37 @@ import { isValidEmail, sanitize } from "@/lib/validations";
 import { rateLimit } from "@/lib/rate-limit";
 import type { ApiResponse } from "@/lib/validations";
 
+// ─── MailerLite API ───
+const MAILERLITE_API_KEY = process.env.MAILERLITE_API_KEY || "";
+const MAILERLITE_GROUP_IDS: Record<string, string> = {
+  poder_bajo: "181210585062442564",
+  poder_medio: "181210602181494644",
+  poder_alto: "181210616634017591",
+};
+
+async function addToMailerLite(email: string, name: string, resultado: string) {
+  const groupId = MAILERLITE_GROUP_IDS[resultado];
+  if (!MAILERLITE_API_KEY || !groupId) return;
+
+  try {
+    await fetch("https://connect.mailerlite.com/api/subscribers", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${MAILERLITE_API_KEY}`,
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        fields: { name },
+        groups: [groupId],
+      }),
+    });
+  } catch (err) {
+    console.error("MailerLite error (non-blocking):", err);
+  }
+}
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || "smtp.gmail.com",
   port: Number(process.env.SMTP_PORT) || 587,
@@ -282,6 +313,9 @@ export async function POST(
         </div>
       `,
     });
+
+    // Agregar suscriptor a MailerLite (no bloquea la respuesta)
+    addToMailerLite(safeEmail, safeName, resultado);
 
     return NextResponse.json(
       { success: true, data: { resultado } },
