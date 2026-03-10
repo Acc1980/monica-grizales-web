@@ -281,7 +281,8 @@ export default function LandingReconociendoPage() {
               { label: "Fecha", value: "15 y 16 de abril", sub: "2026" },
               { label: "Horario", value: "6:30 - 9:30 pm", sub: "Hora Colombia" },
               { label: "Modalidad", value: "100% Virtual", sub: "Desde cualquier lugar" },
-              { label: "Incluye", value: "Grabación", sub: "Acceso por 1 mes" },
+              { label: "Incluye", value: "Grabación", sub: "Acceso por 30 días" },
+              { label: "Comunidad", value: "Grupo de WhatsApp", sub: "Círculo privado de mujeres" },
             ].map((item, index) => (
               <div key={index} className="p-4 bg-arena-50 rounded-xl border border-arena-200">
                 <p className="text-humo-400 text-xs uppercase tracking-wider font-medium mb-1">
