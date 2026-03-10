@@ -47,9 +47,7 @@ export default function ReconociendoMiPoderPage() {
             lugar como fuente de fuerza.
           </p>
           <a
-            href={PAYMENT_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/inscripcion"
             className="btn-primary text-base px-8 py-3.5 gap-2 inline-flex"
           >
             Quiero inscribirme
@@ -631,7 +629,7 @@ export default function ReconociendoMiPoderPage() {
                 },
                 {
                   q: "¿Cómo realizo el pago?",
-                  a: "Al hacer click en \"Quiero inscribirme\" serás redirigida a Mercado Pago para completar tu inscripción. Pronto pago: $300.000 COP (precio regular: $350.000 COP). Pago único.",
+                  a: "Al hacer click en \"Quiero inscribirme\" irás al formulario de inscripción donde registras tus datos y luego pasas al pago por Mercado Pago. Pronto pago: $300.000 COP (precio regular: $350.000 COP). Pago único.",
                 },
               ].map((item, index) => (
                 <details
@@ -682,7 +680,7 @@ export default function ReconociendoMiPoderPage() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={PAYMENT_LINK}
+              href="/inscripcion"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-malva-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"

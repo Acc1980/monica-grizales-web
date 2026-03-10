@@ -14,9 +14,7 @@ function CtaButton({ variant = "dark" }: { variant?: "dark" | "light" }) {
   if (variant === "light") {
     return (
       <a
-        href={PAYMENT_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/inscripcion"
         className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-malva-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
       >
         Reservar mi cupo
