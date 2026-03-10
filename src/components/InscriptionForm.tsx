@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import SparkleIcon from "@/components/SparkleIcon";
 
+const PAYMENT_LINK = "https://www.mercadopago.com.co/checkout/v1/payment/redirect/f14ea180-4ed7-421c-94d6-043bfca60c00/payment-option-form/?source=link&preference-id=151127219-1906df5e-7eb1-4759-a996-395ccdab7f7b&router-request-id=fa6c025a-eed5-4a00-8741-04c2ccffc659&p=a0a303f7529be5ee8d36d23e61d86324";
+
 export default function InscriptionForm() {
   const [form, setForm] = useState({
     nombre: "",
@@ -41,7 +43,7 @@ export default function InscriptionForm() {
 
       if (data.success) {
         setStatus("success");
-        setMessage("¡Inscripción enviada con éxito! Te contactaremos pronto.");
+        setMessage("Tus datos fueron registrados. Ahora completa tu pago para confirmar tu cupo.");
         setForm({
           nombre: "",
           email: "",
@@ -63,18 +65,26 @@ export default function InscriptionForm() {
   if (status === "success") {
     return (
       <div className="card text-center py-12 border-malva-200">
-        <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <div className="w-16 h-16 rounded-full bg-malva-100 flex items-center justify-center mx-auto mb-6">
+          <svg className="w-8 h-8 text-malva-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
         <h3 className="font-serif text-2xl font-bold text-humo-700 mb-3">
-          ¡Gracias por inscribirte!
+          ¡Ya casi es tuyo!
         </h3>
         <p className="text-humo-500 mb-6">{message}</p>
-        <Link href="/" className="btn-secondary text-sm">
-          Volver al inicio
-        </Link>
+        <a
+          href={PAYMENT_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary inline-block text-base px-8 py-3"
+        >
+          Completar pago y confirmar mi cupo
+        </a>
+        <p className="text-xs text-humo-400 mt-4">
+          Serás redirigida a Mercado Pago para completar tu inscripción.
+        </p>
       </div>
     );
   }
@@ -206,9 +216,9 @@ export default function InscriptionForm() {
             "Enviando..."
           ) : (
             <>
-              Enviar inscripción{" "}
+              Inscribirme y pasar al pago{" "}
               <svg className="w-5 h-5 ml-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </>
           )}
