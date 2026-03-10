@@ -9,10 +9,7 @@ export const metadata: Metadata = {
     "Entrenamiento virtual de sanación emocional y liderazgo femenino. 15 y 16 de abril de 2026. Cupos limitados (40). $350.000 COP.",
 };
 
-const WHATSAPP_NUMBER = "573217968856";
-const WHATSAPP_MSG = encodeURIComponent(
-  "Hola Mónica, quiero inscribirme en el entrenamiento Reconociendo mi Poder del 15 y 16 de abril. 🙌"
-);
+const PAYMENT_LINK = "https://www.mercadopago.com.co/checkout/v1/payment/redirect/f14ea180-4ed7-421c-94d6-043bfca60c00/payment-option-form/?source=link&preference-id=151127219-1906df5e-7eb1-4759-a996-395ccdab7f7b&router-request-id=fa6c025a-eed5-4a00-8741-04c2ccffc659&p=a0a303f7529be5ee8d36d23e61d86324";
 
 export default function ReconociendoMiPoderPage() {
   return (
@@ -50,7 +47,7 @@ export default function ReconociendoMiPoderPage() {
             lugar como fuente de fuerza.
           </p>
           <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
+            href={PAYMENT_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary text-base px-8 py-3.5 gap-2 inline-flex"
@@ -625,7 +622,7 @@ export default function ReconociendoMiPoderPage() {
                 },
                 {
                   q: "¿Cómo realizo el pago?",
-                  a: "Al hacer click en \"Quiero inscribirme\" serás redirigida a WhatsApp donde recibirás las instrucciones de pago directas. Pronto pago: $300.000 COP (precio regular: $350.000 COP). Pago único.",
+                  a: "Al hacer click en \"Quiero inscribirme\" serás redirigida a Mercado Pago para completar tu inscripción. Pronto pago: $300.000 COP (precio regular: $350.000 COP). Pago único.",
                 },
               ].map((item, index) => (
                 <details
@@ -676,7 +673,7 @@ export default function ReconociendoMiPoderPage() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`}
+              href={PAYMENT_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-malva-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"

@@ -8,17 +8,13 @@ export const metadata: Metadata = {
     "Entrenamiento virtual de sanación emocional y liderazgo femenino. 15 y 16 de abril de 2026. Cupos limitados (40). $350.000 COP.",
 };
 
-const WHATSAPP_NUMBER = "573217968856";
-const WHATSAPP_MSG = encodeURIComponent(
-  "Hola Mónica, quiero inscribirme en el entrenamiento Reconociendo mi Poder del 15 y 16 de abril. 🙌"
-);
-const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
+const PAYMENT_LINK = "https://www.mercadopago.com.co/checkout/v1/payment/redirect/f14ea180-4ed7-421c-94d6-043bfca60c00/payment-option-form/?source=link&preference-id=151127219-1906df5e-7eb1-4759-a996-395ccdab7f7b&router-request-id=fa6c025a-eed5-4a00-8741-04c2ccffc659&p=a0a303f7529be5ee8d36d23e61d86324";
 
 function CtaButton({ variant = "dark" }: { variant?: "dark" | "light" }) {
   if (variant === "light") {
     return (
       <a
-        href={WA_LINK}
+        href={PAYMENT_LINK}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-malva-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
@@ -32,7 +28,7 @@ function CtaButton({ variant = "dark" }: { variant?: "dark" | "light" }) {
   }
   return (
     <a
-      href={WA_LINK}
+      href={PAYMENT_LINK}
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-malva-600 text-white font-bold text-lg hover:bg-malva-700 transition-all duration-300 shadow-xl shadow-malva-600/30 hover:-translate-y-0.5 gap-2"
