@@ -101,13 +101,12 @@
     transform: translateY(0);
   }
 
-  /* Landing page: hide header, footer, whatsapp button, skip-nav */
-  body.landing-page > header,
-  body.landing-page > footer,
-  body.landing-page > .skip-nav,
-  body.landing-page > div[class*="whatsapp"],
-  body.landing-page > a[class*="whatsapp"],
-  body.landing-page > div:last-of-type > a[aria-label] {
-    display: none !important;
-  }
+}
+
+/* Landing page: hide header, footer, whatsapp button, skip-nav */
+body.landing-page header.fixed,
+body.landing-page footer.bg-humo-700,
+body.landing-page .skip-nav,
+body.landing-page a[aria-label*="WhatsApp"] {
+  display: none !important;
 }
