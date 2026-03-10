@@ -22,7 +22,7 @@ const links = [
   },
   {
     label: "Masterclass gratuita",
-    sub: "Los 3 bloqueos invisibles — Martes 24 de marzo",
+    sub: "3 bloqueos que te impiden ocupar tu lugar como mujer",
     href: "https://monicagrizales.com/lp/masterclass",
     icon: "play",
     highlight: true,

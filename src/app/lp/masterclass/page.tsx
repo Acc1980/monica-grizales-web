@@ -3,9 +3,9 @@ import Image from "next/image";
 import SparkleIcon from "@/components/SparkleIcon";
 
 export const metadata: Metadata = {
-  title: "Masterclass Gratuita — Los 3 bloqueos invisibles que te impiden reconocer tu poder",
+  title: "Masterclass Gratuita — 3 bloqueos que te impiden ocupar tu lugar como mujer",
   description:
-    "Masterclass gratuita con Mónica Grizales. Descubre los 3 bloqueos invisibles que te impiden reconocer tu poder personal. Martes 24 de marzo, 7:00 PM (hora Colombia). Vía Zoom.",
+    "Masterclass gratuita con Mónica Grizales. Descubre los 3 bloqueos que te impiden ocupar tu lugar como mujer. Vía Zoom.",
 };
 
 const WHATSAPP_NUMBER = "573217968856";
@@ -65,8 +65,8 @@ export default function MasterclassPage() {
             Masterclass gratuita &middot; Martes 24 de marzo &middot; 7:00 PM
           </p>
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-humo-700 mb-4 leading-tight">
-            Los 3 bloqueos invisibles que te impiden{" "}
-            <span className="text-malva-600">reconocer tu poder</span>
+            3 bloqueos que te impiden{" "}
+            <span className="text-malva-600">ocupar tu lugar como mujer</span>
           </h1>
           <p className="text-humo-600 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
             Descubre qué te frena sin que lo notes y sal con herramientas concretas para empezar a cambiar.
