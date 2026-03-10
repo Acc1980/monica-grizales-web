@@ -15,7 +15,7 @@ export default function InscriptionForm() {
     comoNosEncontraste: "",
     motivacion: "",
   });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [message, setMessage] = useState("");
 
   const handleChange = (
@@ -42,16 +42,9 @@ export default function InscriptionForm() {
       const data = await res.json();
 
       if (data.success) {
-        setStatus("success");
-        setMessage("Tus datos fueron registrados. Ahora completa tu pago para confirmar tu cupo.");
-        setForm({
-          nombre: "",
-          email: "",
-          telefono: "",
-          edad: "",
-          comoNosEncontraste: "",
-          motivacion: "",
-        });
+        // Redirigir directamente a Mercado Pago
+        window.location.href = PAYMENT_LINK;
+        return;
       } else {
         setStatus("error");
         setMessage(data.error || "Ocurrió un error. Intenta de nuevo.");
@@ -61,33 +54,6 @@ export default function InscriptionForm() {
       setMessage("Error de conexión. Verifica tu internet e intenta de nuevo.");
     }
   };
-
-  if (status === "success") {
-    return (
-      <div className="card text-center py-12 border-malva-200">
-        <div className="w-16 h-16 rounded-full bg-malva-100 flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-malva-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-          </svg>
-        </div>
-        <h3 className="font-serif text-2xl font-bold text-humo-700 mb-3">
-          ¡Ya casi es tuyo!
-        </h3>
-        <p className="text-humo-500 mb-6">{message}</p>
-        <a
-          href={PAYMENT_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-primary inline-block text-base px-8 py-3"
-        >
-          Completar pago y confirmar mi cupo
-        </a>
-        <p className="text-xs text-humo-400 mt-4">
-          Serás redirigida a Mercado Pago para completar tu inscripción.
-        </p>
-      </div>
-    );
-  }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
