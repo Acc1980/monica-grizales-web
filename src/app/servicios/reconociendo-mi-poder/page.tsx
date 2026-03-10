@@ -509,7 +509,7 @@ export default function ReconociendoMiPoderPage() {
               { icon: "👩‍👩‍👧‍👧", label: "Formato", value: "Proceso grupal", sub: "Solo para mujeres" },
               { icon: "🕡", label: "Horario", value: "6:30 pm a 9:30 pm", sub: "Hora Colombia" },
               { icon: "💻", label: "Modalidad", value: "100% Virtual", sub: "Desde cualquier lugar" },
-              { icon: "💰", label: "Inversión", value: "$350.000 COP", sub: "Pago único" },
+              { icon: "💰", label: "Inversión", value: "$300.000 COP", sub: "Pronto pago hasta 6 de abril" },
             ].map((item, index) => (
               <div key={index} className="card border-arena-200 p-5 text-center">
                 <p className="text-3xl mb-3">{item.icon}</p>
@@ -617,7 +617,7 @@ export default function ReconociendoMiPoderPage() {
                 },
                 {
                   q: "¿Cómo realizo el pago?",
-                  a: "Al hacer click en \"Quiero inscribirme\" serás redirigida a WhatsApp donde recibirás las instrucciones de pago directas. El valor es de $350.000 COP, pago único.",
+                  a: "Al hacer click en \"Quiero inscribirme\" serás redirigida a WhatsApp donde recibirás las instrucciones de pago directas. Pronto pago: $300.000 COP hasta el 6 de abril (después $350.000 COP). Pago único.",
                 },
               ].map((item, index) => (
                 <details
@@ -661,7 +661,9 @@ export default function ReconociendoMiPoderPage() {
             Las inscripciones cierran el <strong className="text-white">10 de abril</strong> o antes si se completan los <strong className="text-white">40 cupos</strong>.
           </p>
           <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-10">
-            <p className="font-serif text-4xl font-bold mb-1">$350.000 COP</p>
+            <p className="text-arena-300 text-sm uppercase tracking-wider mb-2">Pronto pago hasta el 6 de abril</p>
+            <p className="font-serif text-4xl font-bold mb-1">$300.000 COP</p>
+            <p className="text-arena-400 text-sm line-through mb-1">$350.000 COP</p>
             <p className="text-arena-300 text-sm">Pago único &middot; Acceso completo + grabación</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
