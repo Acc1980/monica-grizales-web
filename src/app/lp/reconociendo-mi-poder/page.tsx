@@ -339,7 +339,7 @@ export default function LandingReconociendoPage() {
             Solo <strong className="text-white">40 cupos</strong> &middot; Inscripciones hasta el <strong className="text-white">10 de abril</strong>
           </p>
           <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-8">
-            <p className="text-arena-300 text-sm uppercase tracking-wider mb-2">Pronto pago hasta el 6 de abril</p>
+            <p className="text-arena-300 text-sm uppercase tracking-wider mb-2">Pronto pago</p>
             <p className="font-serif text-4xl font-bold mb-1">$300.000 COP</p>
             <p className="text-arena-400 text-sm line-through mb-1">$350.000 COP</p>
             <p className="text-arena-300 text-sm">Pago único &middot; Acceso completo + grabación</p>
