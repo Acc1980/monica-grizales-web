@@ -133,18 +133,18 @@ export default function MasterclassPage() {
             {[
               {
                 num: "01",
-                title: "La creencia heredada que dirige tus decisiones",
-                desc: "Hay mandatos familiares que interiorizaste como verdades absolutas. \"Las buenas mujeres no incomodan\", \"Primero los demás\", \"No seas egoísta\". En la masterclass vas a identificar cuáles te están dirigiendo sin que lo notes.",
+                title: "Desconexión con la madre",
+                desc: "Esta ruptura bloquea tu autoestima y tu feminidad. Cuando la relación con tu madre no está sanada, se refleja en cómo te percibes, cómo te valoras y cómo te relacionas con lo femenino en ti.",
               },
               {
                 num: "02",
-                title: "El patrón emocional que te hace ceder tu poder",
-                desc: "Culpa, miedo al conflicto, necesidad de aprobación. Estas emociones te llevan a decir sí cuando quieres decir no, a poner a otros primero siempre, a silenciarte. Vamos a hacerlo visible para que puedas elegir diferente.",
+                title: "Lealtad al dolor del linaje femenino",
+                desc: "Cargar con el sufrimiento heredado de las mujeres de tu familia bloquea el amor y la prosperidad. Vamos a hacer visible esa lealtad inconsciente para que puedas soltar lo que no te pertenece.",
               },
               {
                 num: "03",
-                title: "La historia que te cuentas sobre ti misma",
-                desc: "\"Yo soy así\", \"No soy suficiente\", \"No puedo cambiar\". Esa narrativa te mantiene pequeña. Cuando la ves con claridad, pierdes su poder sobre ti y empiezas a escribir una nueva.",
+                title: "Conflicto con la energía masculina/padre",
+                desc: "Cuando hay un conflicto no resuelto con la figura paterna o con la energía masculina, se bloquean tus relaciones y tu avance en la vida. Vamos a trabajar esta raíz para que puedas fluir.",
               },
             ].map((bloqueo) => (
               <div
