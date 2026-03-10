@@ -5,7 +5,7 @@ import SparkleIcon from "@/components/SparkleIcon";
 export const metadata: Metadata = {
   title: "Reconociendo mi Poder — Entrenamiento de Sanación Emocional",
   description:
-    "Entrenamiento virtual de sanación emocional y liderazgo femenino. 15 y 16 de abril de 2026. Cupos limitados (40). $89 USD.",
+    "Entrenamiento virtual de sanación emocional y liderazgo femenino. 15 y 16 de abril de 2026. Cupos limitados (40). $350.000 COP.",
 };
 
 const WHATSAPP_NUMBER = "573217968856";
@@ -339,7 +339,7 @@ export default function LandingReconociendoPage() {
             Solo <strong className="text-white">40 cupos</strong> &middot; Inscripciones hasta el <strong className="text-white">10 de abril</strong>
           </p>
           <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-8">
-            <p className="font-serif text-4xl font-bold mb-1">$89 USD</p>
+            <p className="font-serif text-4xl font-bold mb-1">$350.000 COP</p>
             <p className="text-arena-300 text-sm">Pago único &middot; Acceso completo + grabación</p>
           </div>
           <div>

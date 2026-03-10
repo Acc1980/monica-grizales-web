@@ -6,7 +6,7 @@ import SparkleIcon from "@/components/SparkleIcon";
 export const metadata: Metadata = {
   title: "Reconociendo mi Poder — Entrenamiento de Sanación Emocional",
   description:
-    "Entrenamiento virtual de sanación emocional y liderazgo femenino. 15 y 16 de abril de 2026. Cupos limitados (40). $89 USD.",
+    "Entrenamiento virtual de sanación emocional y liderazgo femenino. 15 y 16 de abril de 2026. Cupos limitados (40). $350.000 COP.",
 };
 
 const WHATSAPP_NUMBER = "573217968856";
@@ -509,7 +509,7 @@ export default function ReconociendoMiPoderPage() {
               { icon: "👩‍👩‍👧‍👧", label: "Formato", value: "Proceso grupal", sub: "Solo para mujeres" },
               { icon: "🕡", label: "Horario", value: "6:30 pm a 9:30 pm", sub: "Hora Colombia" },
               { icon: "💻", label: "Modalidad", value: "100% Virtual", sub: "Desde cualquier lugar" },
-              { icon: "💰", label: "Inversión", value: "$89 USD", sub: "Pago único" },
+              { icon: "💰", label: "Inversión", value: "$350.000 COP", sub: "Pago único" },
             ].map((item, index) => (
               <div key={index} className="card border-arena-200 p-5 text-center">
                 <p className="text-3xl mb-3">{item.icon}</p>
@@ -617,7 +617,7 @@ export default function ReconociendoMiPoderPage() {
                 },
                 {
                   q: "¿Cómo realizo el pago?",
-                  a: "Al hacer click en \"Quiero inscribirme\" serás redirigida a WhatsApp donde recibirás las instrucciones de pago directas. El valor es de $89 USD, pago único.",
+                  a: "Al hacer click en \"Quiero inscribirme\" serás redirigida a WhatsApp donde recibirás las instrucciones de pago directas. El valor es de $350.000 COP, pago único.",
                 },
               ].map((item, index) => (
                 <details
@@ -661,7 +661,7 @@ export default function ReconociendoMiPoderPage() {
             Las inscripciones cierran el <strong className="text-white">10 de abril</strong> o antes si se completan los <strong className="text-white">40 cupos</strong>.
           </p>
           <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-10">
-            <p className="font-serif text-4xl font-bold mb-1">$89 USD</p>
+            <p className="font-serif text-4xl font-bold mb-1">$350.000 COP</p>
             <p className="text-arena-300 text-sm">Pago único &middot; Acceso completo + grabación</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
