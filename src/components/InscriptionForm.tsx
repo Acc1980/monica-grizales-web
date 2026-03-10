@@ -233,7 +233,7 @@ export default function InscriptionForm() {
           <div className="space-y-4 mb-8">
             {[
               { label: "Fecha", value: "15 y 16 de abril 2026" },
-              { label: "Formato", value: "Grupal" },
+              { label: "Horario", value: "6:30 - 9:30 pm (hora Colombia)" },
               { label: "Modalidad", value: "100% Virtual" },
               { label: "Facilitadora", value: "Mónica Grizales" },
             ].map((item, i) => (
@@ -247,6 +247,14 @@ export default function InscriptionForm() {
                 </span>
               </div>
             ))}
+            <div className="flex justify-between py-3">
+              <span className="text-humo-400 text-sm">Inversión</span>
+              <span className="text-right">
+                <span className="text-humo-400 text-xs line-through block">$350.000 COP</span>
+                <span className="text-humo-700 font-bold text-sm">$300.000 COP</span>
+                <span className="text-malva-400 text-xs block">Pronto pago</span>
+              </span>
+            </div>
           </div>
 
           <div className="p-4 rounded-xl bg-malva-50/50 mb-6">
