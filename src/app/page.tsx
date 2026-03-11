@@ -238,7 +238,7 @@ export default function HomePage() {
               Voces del Proceso
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700">
-              Mujeres que tomaron su lugar
+              Quienes tomaron su lugar
             </h2>
           </div>
 

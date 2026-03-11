@@ -51,7 +51,7 @@ export default function MasterclassPage() {
       {/* ════════ HERO ════════ */}
       <section className="relative pt-12 pb-16 md:pt-16 md:pb-20 overflow-hidden">
         <Image
-          src="/images/foto5.jpg"
+          src="/images/mujeres.jpg"
           alt=""
           fill
           className="object-cover"
