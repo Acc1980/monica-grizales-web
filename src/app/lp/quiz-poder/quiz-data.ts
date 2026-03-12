@@ -232,8 +232,8 @@ export const QUIZ_RESULTS: QuizResultDef[] = [
     description:
       "Es probable que estés cargando lealtades familiares, patrones de sacrificio y creencias que no elegiste. No es tu culpa — es lo que aprendiste. Pero hay otro camino.",
     action:
-      "El entrenamiento Reconociendo mi Poder está diseñado exactamente para mujeres en este punto. En 2 días trabajamos las raíces de estos patrones para que dejes de vivir desde el deber y empieces a elegir desde ti.",
-    cta: "Quiero saber más sobre el entrenamiento",
+      "Revisa tu correo — te envié un ejercicio práctico basado en tu resultado. Y si quieres ir más profundo, te espero en la masterclass gratuita.",
+    cta: "Escríbeme por WhatsApp",
   },
   {
     key: "poder_medio",
@@ -243,8 +243,8 @@ export const QUIZ_RESULTS: QuizResultDef[] = [
     description:
       "Ya reconoces que algo necesita cambiar. Tienes momentos de claridad, pero todavía hay áreas donde el mandato familiar y la culpa te frenan. Estás en un punto poderoso: el despertar.",
     action:
-      "El entrenamiento Reconociendo mi Poder te ayudará a ir más profundo — a trabajar esas áreas donde todavía te traicionas para no incomodar a otros.",
-    cta: "Quiero profundizar — ver el entrenamiento",
+      "Revisa tu correo — te envié un ejercicio práctico basado en tu resultado. Y si quieres ir más profundo, te espero en la masterclass gratuita.",
+    cta: "Escríbeme por WhatsApp",
   },
   {
     key: "poder_alto",
@@ -254,8 +254,8 @@ export const QUIZ_RESULTS: QuizResultDef[] = [
     description:
       "Has hecho un trabajo importante contigo misma. Pones límites, te escuchas y eliges desde la conciencia. El siguiente paso es integrar lo que has aprendido y llevarlo a un nivel más profundo.",
     action:
-      "Reconociendo mi Poder puede ser el espacio para consolidar tu proceso y descubrir lo que todavía no ves desde donde estás.",
-    cta: "Quiero llevar mi proceso al siguiente nivel",
+      "Revisa tu correo — te envié un ejercicio práctico basado en tu resultado. Y si quieres ir más profundo, te espero en la masterclass gratuita.",
+    cta: "Escríbeme por WhatsApp",
   },
 ];
 

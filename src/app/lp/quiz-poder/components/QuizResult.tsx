@@ -39,7 +39,7 @@ export default function QuizResult({
     QUIZ_RESULTS.find((r) => r.key === resultKey) || QUIZ_RESULTS[0];
 
   const waMsg = encodeURIComponent(
-    `Hola Mónica, hice el quiz de poder personal y mi resultado fue "${result.title}". Quiero saber más sobre el entrenamiento Reconociendo mi Poder.`
+    `Hola Mónica, hice el quiz de poder personal y mi resultado fue "${result.title}". Quiero saber más sobre la masterclass del 24 de marzo.`
   );
   const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMsg}`;
 
@@ -80,16 +80,6 @@ export default function QuizResult({
                 {result.action}
               </p>
             </div>
-          </div>
-
-          {/* Aviso de email */}
-          <div className="bg-malva-50 border border-malva-200 rounded-xl p-4 mb-6 text-left">
-            <p className="text-humo-700 font-medium text-sm leading-relaxed">
-              Revisa tu correo — te envié ejercicios prácticos que van a apoyar tu trabajo interior.
-            </p>
-            <p className="text-humo-400 text-xs mt-1">
-              (Revisa también la carpeta de spam)
-            </p>
           </div>
 
           {/* Puente Masterclass */}
@@ -160,12 +150,9 @@ export default function QuizResult({
             </svg>
           </a>
 
-          <a
-            href="/servicios/reconociendo-mi-poder"
-            className="block mt-4 text-malva-500 hover:text-malva-700 text-sm font-medium underline transition-colors"
-          >
-            Ver detalles del entrenamiento
-          </a>
+          <p className="mt-4 text-humo-400 text-xs">
+            ¿Tienes preguntas? Escríbeme y te respondo personalmente.
+          </p>
         </div>
       </div>
     </section>
