@@ -82,6 +82,16 @@ export default function QuizResult({
             </div>
           </div>
 
+          {/* Aviso de email antes del CTA */}
+          <div className="bg-malva-50 border border-malva-200 rounded-xl p-4 mb-6 text-left">
+            <p className="text-humo-700 font-medium text-sm leading-relaxed">
+              Revisa tu correo — te envié ejercicios prácticos que van a apoyar tu trabajo interior.
+            </p>
+            <p className="text-humo-400 text-xs mt-1">
+              (Revisa también la carpeta de spam)
+            </p>
+          </div>
+
           <a
             href={waLink}
             target="_blank"
