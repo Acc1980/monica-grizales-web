@@ -82,7 +82,7 @@ export default function QuizResult({
             </div>
           </div>
 
-          {/* Aviso de email antes del CTA */}
+          {/* Aviso de email */}
           <div className="bg-malva-50 border border-malva-200 rounded-xl p-4 mb-6 text-left">
             <p className="text-humo-700 font-medium text-sm leading-relaxed">
               Revisa tu correo — te envié ejercicios prácticos que van a apoyar tu trabajo interior.
@@ -90,6 +90,52 @@ export default function QuizResult({
             <p className="text-humo-400 text-xs mt-1">
               (Revisa también la carpeta de spam)
             </p>
+          </div>
+
+          {/* Puente Masterclass */}
+          <div className="border-2 border-malva-300 rounded-2xl p-6 mb-8 text-center bg-malva-50/50">
+            <p className="text-malva-600 text-xs font-medium tracking-[0.2em] uppercase mb-2">
+              Masterclass gratuita
+            </p>
+            <h3 className="font-serif text-xl md:text-2xl font-bold text-humo-700 mb-2">
+              3 bloqueos que te impiden ocupar tu lugar como mujer
+            </h3>
+            <p className="text-malva-700 font-semibold text-base mb-1">
+              Martes 24 de marzo &middot; 7:00 PM (Colombia)
+            </p>
+            <p className="text-humo-400 text-sm mb-4">
+              Vía Zoom &middot; 45 min + preguntas
+            </p>
+            <p className="text-humo-600 text-sm leading-relaxed mb-5">
+              Si quieres trabajar en vivo lo que descubriste en el quiz, te espero.
+              Vamos a ir más profundo en los patrones que bloquean tu poder personal.
+            </p>
+            <a
+              href="/lp/masterclass"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 rounded-full bg-malva-600 text-white font-bold text-base hover:bg-malva-700 transition-all duration-300 shadow-xl shadow-malva-600/30 hover:-translate-y-0.5 gap-2"
+            >
+              Quiero registrarme a la masterclass
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </a>
+          </div>
+
+          {/* Separador */}
+          <div className="flex items-center gap-3 my-6">
+            <div className="flex-1 h-px bg-arena-200" />
+            <span className="text-malva-400 text-xs tracking-widest">O si prefieres</span>
+            <div className="flex-1 h-px bg-arena-200" />
           </div>
 
           <a

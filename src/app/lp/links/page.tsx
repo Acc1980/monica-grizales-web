@@ -29,7 +29,7 @@ const links = [
   },
   {
     label: "Reconociendo mi Poder",
-    sub: "Entrenamiento 15 y 16 de abril",
+    sub: "Entrenamiento 15 y 16 de abril · 6:30 a 9:30 p.m.",
     href: "https://monicagrizales.com/servicios/reconociendo-mi-poder",
     icon: "flame",
     highlight: false,
