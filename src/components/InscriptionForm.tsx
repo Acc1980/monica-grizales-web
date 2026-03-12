@@ -42,6 +42,15 @@ export default function InscriptionForm() {
       const data = await res.json();
 
       if (data.success) {
+        // Meta Pixel: evento de inscripción a RMP
+        if (typeof window !== "undefined" && typeof window.fbq === "function") {
+          window.fbq("track", "InitiateCheckout", {
+            content_name: "Reconociendo mi Poder",
+            content_category: "entrenamiento",
+            value: 300000,
+            currency: "COP",
+          });
+        }
         // Redirigir directamente a Mercado Pago
         window.location.href = PAYMENT_LINK;
         return;

@@ -26,6 +26,13 @@ export default function MasterclassRegistroPage() {
       const data = await res.json();
 
       if (data.success) {
+        // Meta Pixel: evento de registro a masterclass
+        if (typeof window !== "undefined" && typeof window.fbq === "function") {
+          window.fbq("track", "Lead", {
+            content_name: "Masterclass 3 Bloqueos",
+            content_category: "masterclass",
+          });
+        }
         setStatus("success");
       } else {
         setStatus("error");

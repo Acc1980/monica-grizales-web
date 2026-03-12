@@ -65,6 +65,16 @@ export default function DataCaptureForm({
         return;
       }
 
+      // Meta Pixel: evento de conversión quiz completado
+      if (typeof window !== "undefined" && typeof window.fbq === "function") {
+        window.fbq("track", "CompleteRegistration", {
+          content_name: "Quiz Poder Personal",
+          content_category: result.key,
+          value: score,
+          currency: "COP",
+        });
+      }
+
       onComplete(result.key);
     } catch {
       setErrorMsg("Error de conexión. Intenta de nuevo.");
