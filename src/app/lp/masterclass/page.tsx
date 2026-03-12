@@ -8,19 +8,13 @@ export const metadata: Metadata = {
     "Masterclass gratuita con Mónica Grizales. Descubre los 3 bloqueos que te impiden ocupar tu lugar como mujer. Vía Zoom.",
 };
 
-const WHATSAPP_NUMBER = "573217968856";
-const WHATSAPP_MSG = encodeURIComponent(
-  "Hola Mónica, quiero registrarme en la masterclass gratuita del 24 de marzo. 🙌"
-);
-const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
+const REGISTRO_LINK = "/lp/masterclass/registro";
 
 function CtaButton({ text = "Quiero mi lugar", variant = "dark" }: { text?: string; variant?: "dark" | "light" }) {
   if (variant === "light") {
     return (
       <a
-        href={WA_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={REGISTRO_LINK}
         className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-malva-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
       >
         {text}
@@ -32,9 +26,7 @@ function CtaButton({ text = "Quiero mi lugar", variant = "dark" }: { text?: stri
   }
   return (
     <a
-      href={WA_LINK}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={REGISTRO_LINK}
       className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-malva-600 text-white font-bold text-lg hover:bg-malva-700 transition-all duration-300 shadow-xl shadow-malva-600/30 hover:-translate-y-0.5 gap-2"
     >
       {text}

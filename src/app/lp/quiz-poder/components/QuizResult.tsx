@@ -111,10 +111,10 @@ export default function QuizResult({
               Vamos a ir más profundo en los patrones que bloquean tu poder personal.
             </p>
             <a
-              href="/lp/masterclass"
+              href="/lp/masterclass/registro"
               className="inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 rounded-full bg-malva-600 text-white font-bold text-base hover:bg-malva-700 transition-all duration-300 shadow-xl shadow-malva-600/30 hover:-translate-y-0.5 gap-2"
             >
-              Quiero registrarme a la masterclass
+              Registrarme a la masterclass
               <svg
                 className="w-5 h-5"
                 fill="none"
