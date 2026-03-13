@@ -27,7 +27,7 @@ export default function SobreMonicaPage() {
                 </p>
               </div>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-humo-700 leading-tight mb-6">
-                Mónica Grizales
+                Monica A. Grizales Cuartas
               </h1>
               <p className="text-humo-600 text-lg md:text-xl leading-relaxed mb-4">
                 Mónica es{" "}

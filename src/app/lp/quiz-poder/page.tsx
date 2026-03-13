@@ -107,7 +107,7 @@ export default function QuizPoderPage() {
             </div>
             <div>
               <h2 className="font-serif text-2xl font-bold text-humo-700 mb-4">
-                Mónica Grizales
+                Monica A. Grizales Cuartas
               </h2>
               <p className="text-humo-500 leading-relaxed mb-4">
                 Coach Ontológica Certificada y acompañante de procesos de
