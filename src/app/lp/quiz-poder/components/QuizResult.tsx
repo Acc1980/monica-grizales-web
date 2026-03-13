@@ -1,10 +1,6 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { QUIZ_RESULTS } from "../quiz-data";
-import type { QuizResultDef } from "../quiz-data";
-
-const WHATSAPP_NUMBER = "573217968856";
 
 const POWER_INDICATORS: Record<string, { bars: number; color: string }> = {
   poder_bajo: { bars: 2, color: "bg-malva-400" },
@@ -35,13 +31,6 @@ export default function QuizResult({
   resultKey: string;
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const result: QuizResultDef =
-    QUIZ_RESULTS.find((r) => r.key === resultKey) || QUIZ_RESULTS[0];
-
-  const waMsg = encodeURIComponent(
-    `Hola Mónica, hice el quiz de poder personal y mi resultado fue "${result.title}". Quiero saber más sobre la masterclass del 24 de marzo.`
-  );
-  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMsg}`;
 
   useEffect(() => {
     sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -51,38 +40,74 @@ export default function QuizResult({
     <section ref={sectionRef} className="py-14 md:py-20" id="result">
       <div className="max-w-2xl mx-auto px-4 sm:px-6">
         <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10 border border-arena-200 text-center">
-          <p className="text-malva-600 text-sm font-medium tracking-wider uppercase mb-2">
+          <p className="text-malva-600 text-sm font-medium tracking-wider uppercase mb-4">
             Tu resultado
-          </p>
-
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-1">
-            {result.title}
-          </h2>
-
-          <p className="text-humo-400 text-sm mb-2">{result.subtitle}</p>
-
-          <p className="font-serif text-2xl font-bold text-malva-500">
-            Estás usando aproximadamente el {result.percentage} de tu poder
-            personal
           </p>
 
           <PowerMeter resultKey={resultKey} />
 
-          <div className="text-left space-y-4 mt-8 mb-8">
-            <p className="text-humo-600 leading-relaxed">
-              {result.description}
-            </p>
-            <div className="bg-arena-50 border border-arena-200 rounded-xl p-5">
-              <p className="text-sm font-medium text-malva-600 mb-2">
-                Lo que puedes hacer ahora:
-              </p>
-              <p className="text-humo-600 text-sm leading-relaxed">
-                {result.action}
-              </p>
-            </div>
+          <div className="text-left space-y-4 mt-6 mb-8">
+            {resultKey === "poder_bajo" && (
+              <>
+                <p className="text-humo-700 text-lg leading-relaxed">
+                  <strong className="font-serif text-2xl md:text-3xl block mb-3 text-humo-800">Estás viviendo desde el mandato</strong>
+                  Estás usando aproximadamente entre el <strong>20% y 30% de tu poder personal.</strong>
+                </p>
+                <p className="text-humo-600 leading-relaxed">
+                  Es posible que estés cargando <strong>lealtades familiares, patrones de sacrificio o creencias que nunca elegiste conscientemente.</strong>
+                </p>
+                <p className="text-humo-600 leading-relaxed">
+                  Tal vez aprendiste que primero están los demás, que debes ser fuerte todo el tiempo o que ocupar tu lugar puede generar culpa.
+                </p>
+                <p className="text-humo-600 leading-relaxed">
+                  Nada de esto significa que haya algo mal contigo.<br />
+                  Es simplemente lo que aprendiste para pertenecer.
+                </p>
+                <p className="text-humo-600 leading-relaxed">
+                  <strong>La buena noticia:</strong> cuando empiezas a verlo, ya estás dando el primer paso para salir de ese mandato.
+                </p>
+              </>
+            )}
+            {resultKey === "poder_medio" && (
+              <>
+                <p className="text-humo-700 text-lg leading-relaxed">
+                  <strong className="font-serif text-2xl md:text-3xl block mb-3 text-humo-800">Estás despertando</strong>
+                  Estás usando entre <strong>40% y 60% de tu poder personal.</strong> Esto significa que ya tienes momentos de claridad, pero <strong>todavía hay mandatos familiares y culpa que te hacen dudar de ocupar tu lugar.</strong>
+                </p>
+                <p className="text-humo-600 leading-relaxed">
+                  Muchas mujeres se quedan años en este punto. Pero cuando entienden <strong>qué patrón las frena</strong>, todo cambia.
+                </p>
+              </>
+            )}
+            {resultKey === "poder_alto" && (
+              <>
+                <p className="text-humo-700 text-lg leading-relaxed">
+                  <strong className="font-serif text-2xl md:text-3xl block mb-3 text-humo-800">Tu poder está activo</strong>
+                  <strong>Estás usando más del 70% de tu poder personal.</strong>
+                </p>
+                <p className="text-humo-600 leading-relaxed">
+                  Has hecho un trabajo importante contigo misma.
+                  Seguramente ya has aprendido a <strong>escucharte, poner límites y tomar decisiones más conscientes.</strong>
+                </p>
+                <p className="text-humo-600 leading-relaxed">
+                  <strong>El siguiente paso no es empezar de cero, sino integrar lo que ya sabes y llevarlo a un nivel más profundo.</strong>
+                </p>
+                <p className="text-humo-600 leading-relaxed">
+                  Muchas mujeres descubren en este punto que todavía hay <strong>capas más profundas de su poder esperando ser liberadas.</strong>
+                </p>
+              </>
+            )}
           </div>
 
-          {/* Puente Masterclass */}
+          {/* CTA Masterclass */}
+          <a
+            href="/lp/masterclass/registro"
+            className="inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 rounded-full bg-malva-600 text-white font-bold text-lg hover:bg-malva-700 transition-all duration-300 shadow-xl shadow-malva-600/30 hover:-translate-y-0.5 gap-2 mb-8"
+          >
+            👉 Quiero trabajar esto en la masterclass gratuita
+          </a>
+
+          {/* Info Masterclass */}
           <div className="border-2 border-malva-300 rounded-2xl p-6 mb-8 text-center bg-malva-50/50">
             <p className="text-malva-600 text-xs font-medium tracking-[0.2em] uppercase mb-2">
               Masterclass gratuita
@@ -104,55 +129,9 @@ export default function QuizResult({
               href="/lp/masterclass/registro"
               className="inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 rounded-full bg-malva-600 text-white font-bold text-base hover:bg-malva-700 transition-all duration-300 shadow-xl shadow-malva-600/30 hover:-translate-y-0.5 gap-2"
             >
-              Registrarme a la masterclass
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
+              👉 Quiero trabajar esto en la masterclass gratuita
             </a>
           </div>
-
-          {/* Separador */}
-          <div className="flex items-center gap-3 my-6">
-            <div className="flex-1 h-px bg-arena-200" />
-            <span className="text-malva-400 text-xs tracking-widest">O si prefieres</span>
-            <div className="flex-1 h-px bg-arena-200" />
-          </div>
-
-          <a
-            href={waLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 rounded-full bg-malva-600 text-white font-bold text-base hover:bg-malva-700 transition-all duration-300 shadow-xl shadow-malva-600/30 hover:-translate-y-0.5 gap-2"
-          >
-            {result.cta}
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-              />
-            </svg>
-          </a>
-
-          <p className="mt-4 text-humo-400 text-xs">
-            ¿Tienes preguntas? Escríbeme y te respondo personalmente.
-          </p>
         </div>
       </div>
     </section>
