@@ -93,7 +93,7 @@ export default function MasterclassRegistroPage() {
               Martes 24 de marzo · 7:00 PM (Colombia)
             </p>
             <p className="text-humo-400 text-sm">
-              Vía Zoom · 45 min + preguntas · Gratis
+              Vía Zoom · 75 minutos · Gratis
             </p>
           </div>
 

@@ -61,11 +61,17 @@ export default function MasterclassPage() {
             <span className="text-malva-600">ocupar tu lugar como mujer</span>
           </h1>
           <p className="text-humo-600 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-            Descubre qué te frena sin que lo notes y sal con herramientas concretas para empezar a cambiar.
+            Descubre los patrones invisibles que hacen que te pongas de última, cargues con demasiado y sientas culpa cuando intentas elegirte.
+          </p>
+          <p className="text-humo-600 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
+            En esta masterclass vas a entender por qué te pasa y cómo empezar a cambiarlo.
           </p>
           <CtaButton text="Reservar mi lugar gratis" />
           <p className="text-humo-400 text-sm mt-4">
             Vía Zoom &middot; <strong className="text-malva-600">Cupos limitados</strong> &middot; 100% en vivo
+          </p>
+          <p className="text-humo-400 text-sm">
+            Incluye espacio para preguntas
           </p>
         </div>
       </section>
@@ -112,6 +118,35 @@ export default function MasterclassPage() {
         </div>
       </section>
 
+      {/* ════════ PARA QUIÉN ES ════════ */}
+      <section className="py-14 md:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 text-center mb-10">
+            Esta masterclass es para ti si:
+          </h2>
+          <div className="space-y-4">
+            {[
+              "Sientes que siempre terminas cargando más que los demás",
+              "Te cuesta poner límites sin sentir culpa",
+              "Sabes que tienes más poder del que estás usando",
+              "Quieres entender los patrones que se repiten en tu vida",
+            ].map((item, index) => (
+              <div key={index} className="flex gap-3 items-center p-4 rounded-xl bg-arena-50 border border-arena-200">
+                <div className="w-6 h-6 rounded-full bg-malva-600 text-white flex items-center justify-center shrink-0">
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </div>
+                <span className="text-humo-700 font-medium">{item}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <CtaButton text="Reservar mi lugar gratis" />
+          </div>
+        </div>
+      </section>
+
       {/* ════════ LOS 3 BLOQUEOS ════════ */}
       <section className="py-14 md:py-20 bg-arena-100/60">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -119,7 +154,7 @@ export default function MasterclassPage() {
             ¿Qué vas a descubrir en esta masterclass?
           </h2>
           <p className="text-humo-500 text-center mb-12 max-w-xl mx-auto">
-            En 90 minutos vamos a trabajar juntas los 3 bloqueos que operan en silencio y te impiden vivir desde tu poder:
+            En 75 minutos vamos a trabajar juntas los 3 bloqueos que operan en silencio y te impiden vivir desde tu poder:
           </p>
           <div className="space-y-5">
             {[
@@ -280,7 +315,7 @@ export default function MasterclassPage() {
             ¿Lista para ver lo que no has podido ver?
           </h2>
           <p className="text-arena-200 text-lg mb-3">
-            90 minutos que pueden cambiar la forma en que te relacionas contigo misma.
+            75 minutos que pueden cambiar la forma en que te relacionas contigo misma.
           </p>
           <p className="text-arena-300 text-sm mb-8">
             Martes 24 de marzo &middot; 7:00 PM &middot; <strong className="text-white">100% gratis</strong>

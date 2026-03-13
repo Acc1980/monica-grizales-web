@@ -119,7 +119,7 @@ export default function QuizResult({
               Martes 24 de marzo &middot; 7:00 PM (Colombia)
             </p>
             <p className="text-humo-400 text-sm mb-4">
-              Vía Zoom &middot; 45 min + preguntas
+              Vía Zoom &middot; 75 minutos
             </p>
             <p className="text-humo-600 text-sm leading-relaxed mb-5">
               Si quieres trabajar en vivo lo que descubriste en el quiz, te espero.
