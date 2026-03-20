@@ -151,6 +151,28 @@ export default function ServiciosPage() {
         </div>
       </section>
 
+      {/* Comunidad WhatsApp */}
+      <section className="section-padding bg-white">
+        <div className="max-w-xl mx-auto px-4 sm:px-6 text-center">
+          <p className="text-3xl mb-3">💬</p>
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 mb-3">
+            Únete a nuestra comunidad de WhatsApp
+          </h2>
+          <p className="text-humo-500 text-base leading-relaxed mb-6">
+            Un espacio exclusivo para mujeres que están en este camino de reconocerse y transformarse juntas.
+          </p>
+          <a
+            href="https://chat.whatsapp.com/DRc2j575hcVDE9Ts7CPQfe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-lg text-white transition-all duration-300 shadow-xl hover:-translate-y-0.5"
+            style={{ backgroundColor: "#c88d74" }}
+          >
+            Unirme ahora
+          </a>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-padding bg-arena-50">
         <div className="section-container text-center">
