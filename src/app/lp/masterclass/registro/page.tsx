@@ -68,6 +68,21 @@ export default function MasterclassRegistroPage() {
               </p>
               <p className="text-sm text-humo-400 mt-1">Martes 24 marzo · 7:00 PM · Zoom</p>
             </div>
+            <div className="border border-arena-200 rounded-xl p-4 mb-4 text-center bg-arena-50/60">
+              <p className="text-sm font-semibold text-humo-700 mb-1">💬 Únete a nuestra comunidad de WhatsApp</p>
+              <p className="text-xs text-humo-500 leading-relaxed mb-3">
+                Un espacio exclusivo para mujeres en este camino de reconocerse y transformarse juntas.
+              </p>
+              <a
+                href="https://chat.whatsapp.com/DRc2j575hcVDE9Ts7CPQfe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-2.5 rounded-full font-bold text-sm text-white transition-all duration-300 hover:-translate-y-0.5"
+                style={{ backgroundColor: "#c88d74" }}
+              >
+                Unirme ahora
+              </a>
+            </div>
             <p className="text-xs text-humo-400">
               ✦ Mónica Grizales
             </p>
