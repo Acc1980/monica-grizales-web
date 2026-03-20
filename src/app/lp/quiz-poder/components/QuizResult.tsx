@@ -132,6 +132,27 @@ export default function QuizResult({
               👉 Quiero trabajar esto en la masterclass gratuita
             </a>
           </div>
+
+          {/* Comunidad WhatsApp */}
+          <div className="border border-arena-200 rounded-2xl p-6 text-center bg-arena-50/60">
+            <p className="text-2xl mb-2">💬</p>
+            <h3 className="font-serif text-lg font-bold text-humo-700 mb-2">
+              Únete a nuestra comunidad de WhatsApp
+            </h3>
+            <p className="text-humo-500 text-sm leading-relaxed mb-4">
+              Un espacio exclusivo para mujeres que están en este camino de reconocerse y transformarse juntas.
+            </p>
+            <a
+              href="https://chat.whatsapp.com/DRc2j575hcVDE9Ts7CPQfe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 rounded-full font-bold text-base text-white transition-all duration-300 hover:-translate-y-0.5"
+              style={{ backgroundColor: "#c88d74" }}
+            >
+              Unirme ahora
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
