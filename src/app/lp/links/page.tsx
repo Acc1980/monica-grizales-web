@@ -136,22 +136,25 @@ export default function LinksPage() {
             className={`flex items-center gap-4 w-full rounded-2xl px-5 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg ${
               link.highlight
                 ? "bg-[#63756a] text-white shadow-md"
+                : link.icon === "community"
+                ? "text-white shadow-md"
                 : "bg-white text-[#2c2c2c] border border-[#e8e6e1] shadow-sm"
             }`}
+            style={link.icon === "community" ? { backgroundColor: "#c88d74" } : {}}
           >
-            <span className={link.highlight ? "text-[#c8d6cd]" : "text-[#8fa394]"}>
+            <span className={link.highlight || link.icon === "community" ? "text-white/80" : "text-[#8fa394]"}>
               <LinkIcon type={link.icon} />
             </span>
             <span className="flex-1 min-w-0">
-              <span className={`block text-sm font-semibold leading-tight ${link.highlight ? "text-white" : "text-[#2c2c2c]"}`}>
+              <span className={`block text-sm font-semibold leading-tight ${link.highlight || link.icon === "community" ? "text-white" : "text-[#2c2c2c]"}`}>
                 {link.label}
               </span>
-              <span className={`block text-xs mt-0.5 ${link.highlight ? "text-[#c8d6cd]" : "text-[#6b6b6b]"}`}>
+              <span className={`block text-xs mt-0.5 ${link.highlight || link.icon === "community" ? "text-white/70" : "text-[#6b6b6b]"}`}>
                 {link.sub}
               </span>
             </span>
             <svg
-              className={`w-4 h-4 flex-shrink-0 ${link.highlight ? "text-[#c8d6cd]" : "text-[#b8b8b8]"}`}
+              className={`w-4 h-4 flex-shrink-0 ${link.highlight || link.icon === "community" ? "text-white/70" : "text-[#b8b8b8]"}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
