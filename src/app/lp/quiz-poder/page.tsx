@@ -138,6 +138,28 @@ export default function QuizPoderPage() {
         </div>
       </section>
 
+      {/* ════════ COMUNIDAD WHATSAPP ════════ */}
+      <section className="py-14 md:py-16 bg-white">
+        <div className="max-w-xl mx-auto px-4 sm:px-6 text-center">
+          <p className="text-2xl mb-3">💬</p>
+          <h2 className="font-serif text-xl md:text-2xl font-bold text-humo-700 mb-3">
+            Únete a nuestra comunidad de WhatsApp
+          </h2>
+          <p className="text-humo-500 text-base leading-relaxed mb-6">
+            Un espacio exclusivo para mujeres que están en este camino de reconocerse y transformarse juntas.
+          </p>
+          <a
+            href="https://chat.whatsapp.com/DRc2j575hcVDE9Ts7CPQfe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-base text-white transition-all duration-300 hover:-translate-y-0.5 gap-2"
+            style={{ backgroundColor: "#c88d74" }}
+          >
+            Unirme ahora
+          </a>
+        </div>
+      </section>
+
       {/* ════════ FOOTER ════════ */}
       <div className="bg-humo-700 text-arena-400 py-8 text-center text-sm">
         <p className="text-malva-400 font-medium mb-2">✦ Mónica Grizales</p>
