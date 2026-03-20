@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import QuizHero from "./components/QuizHero";
 import QuizEngine from "./components/QuizEngine";
@@ -10,6 +10,15 @@ import QuizResult from "./components/QuizResult";
 const WHATSAPP_NUMBER = "573217968856";
 
 export default function QuizPoderPage() {
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+      (window as any).fbq("track", "ViewContent", {
+        content_name: "Quiz Poder Personal",
+        content_category: "quiz",
+      });
+    }
+  }, []);
+
   const [phase, setPhase] = useState<"intro" | "quiz" | "capture" | "result">(
     "intro"
   );
