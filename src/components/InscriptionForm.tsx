@@ -217,7 +217,7 @@ export default function InscriptionForm() {
 
           <div className="space-y-4 mb-8">
             {[
-              { label: "Fecha", value: "15 y 16 de abril 2026" },
+              { label: "Fecha", value: "7 y 8 de abril 2026" },
               { label: "Horario", value: "6:30 - 9:30 pm (hora Colombia)" },
               { label: "Modalidad", value: "100% Virtual" },
               { label: "Facilitadora", value: "Mónica Grizales" },

@@ -5,7 +5,7 @@ import SparkleIcon from "@/components/SparkleIcon";
 export const metadata: Metadata = {
   title: "Reconociendo mi Poder — Entrenamiento de Sanación Emocional",
   description:
-    "Entrenamiento virtual de sanación emocional y liderazgo femenino. 15 y 16 de abril de 2026. Cupos limitados (40). $350.000 COP.",
+    "Entrenamiento virtual de sanación emocional y liderazgo femenino. 7 y 8 de abril de 2026. Cupos limitados (40). $350.000 COP.",
 };
 
 
@@ -53,7 +53,7 @@ export default function LandingReconociendoPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-arena-50/85 via-arena-50/75 to-arena-50/90" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative text-center">
           <p className="uppercase tracking-[0.3em] text-xs text-malva-600 font-semibold mb-5">
-            Entrenamiento virtual &middot; 15 y 16 de abril 2026
+            Entrenamiento virtual &middot; 7 y 8 de abril 2026
           </p>
           <p className="text-humo-600 text-xl md:text-2xl max-w-2xl mx-auto mb-4 leading-relaxed">
             Si eres una mujer <strong className="text-humo-700">fuerte por fuera</strong>…
@@ -69,7 +69,7 @@ export default function LandingReconociendoPage() {
           </p>
           <CtaButton />
           <p className="text-humo-400 text-sm mt-4">
-            Solo <strong className="text-malva-600">40 cupos</strong> &middot; Inscripciones hasta el 10 de abril
+            Solo <strong className="text-malva-600">40 cupos</strong> &middot; Inscripciones hasta el 1 de abril
           </p>
         </div>
       </section>
@@ -77,7 +77,7 @@ export default function LandingReconociendoPage() {
       {/* ════════ BARRA DE URGENCIA ════════ */}
       <div className="bg-malva-700 text-white py-3 text-center">
         <p className="text-sm font-medium px-4">
-          ⏳ <strong>Cupos limitados.</strong> Las inscripciones cierran el 10 de abril o antes si se completan.
+          ⏳ <strong>Cupos limitados.</strong> Las inscripciones cierran el 1 de abril o antes si se completan.
         </p>
       </div>
 
@@ -273,7 +273,7 @@ export default function LandingReconociendoPage() {
           </h2>
           <div className="grid grid-cols-3 gap-4 mb-4">
             {[
-              { label: "Fecha", value: "15 y 16 de abril", sub: "2026" },
+              { label: "Fecha", value: "7 y 8 de abril", sub: "2026" },
               { label: "Horario", value: "6:30 - 9:30 pm", sub: "Hora Colombia" },
               { label: "Modalidad", value: "100% Virtual", sub: "Desde cualquier lugar" },
             ].map((item, index) => (
@@ -340,7 +340,7 @@ export default function LandingReconociendoPage() {
             versión donde te sientas suficiente.
           </p>
           <p className="text-arena-300 text-sm mb-8">
-            Solo <strong className="text-white">40 cupos</strong> &middot; Inscripciones hasta el <strong className="text-white">10 de abril</strong>
+            Solo <strong className="text-white">40 cupos</strong> &middot; Inscripciones hasta el <strong className="text-white">1 de abril</strong>
           </p>
           <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-8">
             <p className="text-arena-300 text-sm uppercase tracking-wider mb-2">Pronto pago</p>

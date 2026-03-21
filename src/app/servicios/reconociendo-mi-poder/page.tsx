@@ -6,7 +6,7 @@ import SparkleIcon from "@/components/SparkleIcon";
 export const metadata: Metadata = {
   title: "Reconociendo mi Poder — Entrenamiento de Sanación Emocional",
   description:
-    "Entrenamiento virtual de sanación emocional y liderazgo femenino. 15 y 16 de abril de 2026. Cupos limitados (40). $350.000 COP.",
+    "Entrenamiento virtual de sanación emocional y liderazgo femenino. 7 y 8 de abril de 2026. Cupos limitados (40). $350.000 COP.",
 };
 
 const PAYMENT_LINK = "https://www.mercadopago.com.co/checkout/v1/payment/redirect/f14ea180-4ed7-421c-94d6-043bfca60c00/payment-option-form/?source=link&preference-id=151127219-1906df5e-7eb1-4759-a996-395ccdab7f7b&router-request-id=fa6c025a-eed5-4a00-8741-04c2ccffc659&p=a0a303f7529be5ee8d36d23e61d86324";
@@ -31,7 +31,7 @@ export default function ReconociendoMiPoderPage() {
             <svg className="w-4 h-4 text-malva-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
             </svg>
-            <span className="text-sm font-medium text-malva-600">15 y 16 de abril 2026 &middot; 100% Virtual</span>
+            <span className="text-sm font-medium text-malva-600">7 y 8 de abril 2026 &middot; 100% Virtual</span>
           </div>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-humo-700 mb-6">
             Reconociendo{" "}
@@ -65,7 +65,7 @@ export default function ReconociendoMiPoderPage() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <p className="text-sm md:text-base font-medium">
-            <strong>Cupos limitados: solo 40 lugares.</strong> Las inscripciones cierran el 10 de abril o antes si se completan los cupos.
+            <strong>Cupos limitados: solo 40 lugares.</strong> Las inscripciones cierran el 1 de abril o antes si se completan los cupos.
           </p>
         </div>
       </section>
@@ -509,7 +509,7 @@ export default function ReconociendoMiPoderPage() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
             {[
-              { icon: "📅", label: "Fecha", value: "15 y 16 de abril", sub: "2026" },
+              { icon: "📅", label: "Fecha", value: "7 y 8 de abril", sub: "2026" },
               { icon: "👩‍👩‍👧‍👧", label: "Formato", value: "Proceso grupal", sub: "Solo para mujeres" },
               { icon: "🕡", label: "Horario", value: "6:30 pm a 9:30 pm", sub: "Hora Colombia" },
               { icon: "💻", label: "Modalidad", value: "100% Virtual", sub: "Desde cualquier lugar" },
@@ -625,7 +625,7 @@ export default function ReconociendoMiPoderPage() {
                 },
                 {
                   q: "¿Cómo es el formato del entrenamiento?",
-                  a: "Son 2 sesiones en vivo por Zoom (15 y 16 de abril), de 6:30 pm a 9:30 pm hora Colombia. Es un proceso grupal íntimo con máximo 40 mujeres.",
+                  a: "Son 2 sesiones en vivo por Zoom (7 y 8 de abril), de 6:30 pm a 9:30 pm hora Colombia. Es un proceso grupal íntimo con máximo 40 mujeres.",
                 },
                 {
                   q: "¿Cómo realizo el pago?",
@@ -670,7 +670,7 @@ export default function ReconociendoMiPoderPage() {
             desde el deber y empezar a elegir con conciencia.
           </p>
           <p className="text-arena-300 text-sm mb-10 max-w-md mx-auto">
-            Las inscripciones cierran el <strong className="text-white">10 de abril</strong> o antes si se completan los <strong className="text-white">40 cupos</strong>.
+            Las inscripciones cierran el <strong className="text-white">1 de abril</strong> o antes si se completan los <strong className="text-white">40 cupos</strong>.
           </p>
           <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 mb-10">
             <p className="text-arena-300 text-sm uppercase tracking-wider mb-2">Pronto pago</p>

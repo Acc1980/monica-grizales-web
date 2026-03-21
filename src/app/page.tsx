@@ -213,7 +213,7 @@ export default function HomePage() {
             el deber y empezar a elegir con conciencia.
           </p>
           <p className="font-serif text-malva-400 italic text-lg mb-6">
-            15 y 16 de abril &middot; 100% Virtual
+            7 y 8 de abril &middot; 100% Virtual
           </p>
           <p className="text-humo-600 font-medium mb-10 max-w-xl mx-auto">
             No es un espacio para aprender a ser mejor. Es un espacio para

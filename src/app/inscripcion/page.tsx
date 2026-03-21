@@ -4,7 +4,7 @@ import InscriptionForm from "@/components/InscriptionForm";
 export const metadata: Metadata = {
   title: "Inscripción — Reconociendo mi Poder",
   description:
-    "Inscríbete al programa Reconociendo mi Poder. 15 y 16 de abril de 2026. 100% Virtual. Las plazas son limitadas.",
+    "Inscríbete al programa Reconociendo mi Poder. 7 y 8 de abril de 2026. 100% Virtual. Las plazas son limitadas.",
 };
 
 export default function InscripcionPage() {

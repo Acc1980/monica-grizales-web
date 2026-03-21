@@ -192,7 +192,7 @@ export default function QuizPoderPage() {
           </a>
         </div>
         <p className="text-arena-500 text-xs">
-          Reconociendo mi Poder — 15 y 16 de abril &middot; 100% virtual
+          Reconociendo mi Poder — 7 y 8 de abril &middot; 100% virtual
         </p>
         <p className="text-arena-500 text-xs mt-2">
           &copy; {new Date().getFullYear()} Mónica Grizales &middot; Sanación

@@ -21,7 +21,7 @@ const servicios = [
     subtitle: "Poder Personal",
     description:
       "Reconoce tu valor, toma tu lugar y fortalece tu liderazgo personal desde la conciencia. Para mujeres con bloqueos emocionales y desconexión de su poder.",
-    detail: "15 y 16 de abril 2026 · 100% Virtual",
+    detail: "7 y 8 de abril 2026 · 100% Virtual",
     available: true,
   },
   {
