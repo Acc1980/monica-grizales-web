@@ -28,13 +28,6 @@ const links = [
     highlight: true,
   },
   {
-    label: "Reconociendo mi Poder",
-    sub: "Entrenamiento 7 y 8 de abril · 6:30 a 9:30 p.m.",
-    href: "https://monicagrizales.com/servicios/reconociendo-mi-poder",
-    icon: "flame",
-    highlight: false,
-  },
-  {
     label: "Escríbeme por WhatsApp",
     sub: "Hablemos de tu proceso",
     href: WA_LINK,
