@@ -158,22 +158,6 @@ export default function InscriptionForm() {
           </select>
         </div>
 
-        {/* Motivación */}
-        <div>
-          <label htmlFor="motivacion" className="block text-sm font-medium text-humo-700 mb-2">
-            ¿Qué te motiva a tomar este proceso?
-          </label>
-          <textarea
-            id="motivacion"
-            name="motivacion"
-            rows={4}
-            value={form.motivacion}
-            onChange={handleChange}
-            placeholder="Cuéntanos brevemente qué te trae aquí..."
-            className="input-field resize-none"
-          />
-        </div>
-
         {/* Error */}
         {status === "error" && (
           <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
