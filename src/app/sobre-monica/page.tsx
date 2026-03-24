@@ -226,7 +226,7 @@ export default function SobreMonicaPage() {
             decisiones desde la elección consciente.
           </p>
           <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-sm text-arena-200 text-sm mb-8">
-            <span>15 y 16 de abril</span>
+            <span>7 y 8 de abril</span>
             <span>&middot;</span>
             <span className="font-semibold">100% Virtual</span>
           </div>

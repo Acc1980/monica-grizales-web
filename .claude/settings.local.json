@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -n '276,300p' /d/automatizaciones/monica-grizales-web/stories-masterclass-22marzo.html)",
+      "Bash(sed -n '366,405p' /d/automatizaciones/monica-grizales-web/stories-masterclass-22marzo.html)",
+      "Bash(sed -n '100,115p' /d/automatizaciones/monica-grizales-web/stories-masterclass-22marzo.html)",
+      "Bash(sed -n '148,175p' /d/automatizaciones/monica-grizales-web/stories-masterclass-22marzo.html)",
+      "Bash(sed -n '183,215p' /d/automatizaciones/monica-grizales-web/stories-masterclass-22marzo.html)",
+      "Bash(sed -n '233,258p' /d/automatizaciones/monica-grizales-web/stories-masterclass-22marzo.html)",
+      "Bash(sed -n '265,305p' /d/automatizaciones/monica-grizales-web/stories-masterclass-22marzo.html)"
+    ],
+    "additionalDirectories": [
+      "d:\\automatizaciones\\monica-grizales-web\\src\\app\\lp\\reconociendo-mi-poder"
+    ]
+  }
+}
