@@ -504,9 +504,18 @@ export default function ReconociendoMiPoderPage() {
           <p className="uppercase tracking-[0.25em] text-sm text-malva-600 font-medium mb-4">
             Información del proceso
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-12">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-humo-700 mb-10">
             Detalles del entrenamiento
           </h2>
+          <div className="flex justify-center mb-10">
+            <Image
+              src="/images/mockup.png"
+              alt="Mockup del entrenamiento Reconociendo mi Poder"
+              width={600}
+              height={450}
+              className="w-full max-w-lg rounded-2xl object-contain"
+            />
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
             {[
               { icon: "📅", label: "Fecha", value: "7 y 8 de abril", sub: "2026" },
