@@ -14,13 +14,6 @@ const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
 
 const links = [
   {
-    label: "Descubre tu nivel de poder personal",
-    sub: "Quiz gratuito — 2 minutos",
-    href: "https://monicagrizales.com/lp/quiz-poder",
-    icon: "sparkle",
-    highlight: true,
-  },
-  {
     label: "Reconociendo mi Poder",
     sub: "Entrenamiento de sanación emocional — 7 y 8 de abril",
     href: "https://monicagrizales.com/lp/reconociendo-mi-poder",
