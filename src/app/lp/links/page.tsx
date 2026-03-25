@@ -28,6 +28,13 @@ const links = [
     highlight: true,
   },
   {
+    label: "Reconociendo mi Poder",
+    sub: "Entrenamiento de sanación emocional — 7 y 8 de abril",
+    href: "https://monicagrizales.com/lp/reconociendo-mi-poder",
+    icon: "sparkle",
+    highlight: true,
+  },
+  {
     label: "Escríbeme por WhatsApp",
     sub: "Hablemos de tu proceso",
     href: WA_LINK,
