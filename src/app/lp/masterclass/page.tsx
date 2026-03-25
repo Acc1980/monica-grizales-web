@@ -3,18 +3,18 @@ import Image from "next/image";
 import SparkleIcon from "@/components/SparkleIcon";
 
 export const metadata: Metadata = {
-  title: "Masterclass Gratuita — 3 bloqueos que te impiden ocupar tu lugar como mujer",
+  title: "Masterclass — 3 bloqueos que te impiden ocupar tu lugar como mujer",
   description:
-    "Masterclass gratuita con Mónica Grizales. Descubre los 3 bloqueos que te impiden ocupar tu lugar como mujer. Vía Zoom.",
+    "Mira la grabación de la masterclass gratuita con Mónica Grizales. Descubre los 3 bloqueos que te impiden ocupar tu lugar como mujer.",
 };
 
-const REGISTRO_LINK = "/lp/masterclass/registro";
+const ENTRENAMIENTO_LINK = "/lp/reconociendo-mi-poder";
 
-function CtaButton({ text = "Quiero mi lugar", variant = "dark" }: { text?: string; variant?: "dark" | "light" }) {
+function CtaButton({ text = "Quiero saber más", variant = "dark" }: { text?: string; variant?: "dark" | "light" }) {
   if (variant === "light") {
     return (
       <a
-        href={REGISTRO_LINK}
+        href={ENTRENAMIENTO_LINK}
         className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-malva-700 font-bold text-lg hover:bg-arena-100 transition-all duration-300 shadow-xl hover:-translate-y-0.5 gap-2"
       >
         {text}
@@ -26,7 +26,7 @@ function CtaButton({ text = "Quiero mi lugar", variant = "dark" }: { text?: stri
   }
   return (
     <a
-      href={REGISTRO_LINK}
+      href={ENTRENAMIENTO_LINK}
       className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-malva-600 text-white font-bold text-lg hover:bg-malva-700 transition-all duration-300 shadow-xl shadow-malva-600/30 hover:-translate-y-0.5 gap-2"
     >
       {text}
@@ -54,37 +54,42 @@ export default function MasterclassPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-arena-50/85 via-arena-50/75 to-arena-50/90" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative text-center">
           <p className="uppercase tracking-[0.3em] text-xs text-malva-600 font-semibold mb-5">
-            Masterclass gratuita &middot; Martes 24 de marzo &middot; 7:00 PM
+            Grabación disponible &middot; Masterclass gratuita
           </p>
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-humo-700 mb-4 leading-tight">
             3 bloqueos que te impiden{" "}
             <span className="text-malva-600">ocupar tu lugar como mujer</span>
           </h1>
           <p className="text-humo-600 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-            Descubre los patrones invisibles que hacen que te pongas de última, cargues con demasiado y sientas culpa cuando intentas elegirte.
-          </p>
-          <p className="text-humo-600 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-            En esta masterclass vas a entender por qué te pasa y cómo empezar a cambiarlo.
-          </p>
-          <CtaButton text="Reservar mi lugar gratis" />
-          <p className="text-humo-400 text-sm mt-4">
-            Vía Zoom &middot; <strong className="text-malva-600">Cupos limitados</strong> &middot; 100% en vivo
-          </p>
-          <p className="text-humo-400 text-sm">
-            Incluye espacio para preguntas
+            Más de 50 mujeres estuvieron conectadas en vivo. Ahora puedes verla cuando quieras.
           </p>
         </div>
       </section>
 
-      {/* ════════ BARRA ════════ */}
-      <div className="bg-malva-700 text-white py-3 text-center">
-        <p className="text-sm font-medium px-4">
-          🎯 <strong>Masterclass gratuita y en vivo.</strong> Solo necesitas registrarte para recibir el link de Zoom.
-        </p>
-      </div>
+      {/* ════════ VIDEO ════════ */}
+      <section className="py-10 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: "56.25%" }}>
+            <iframe
+              src="https://www.youtube.com/embed/epvgBtUpSfQ"
+              title="Masterclass: 3 bloqueos que te impiden ocupar tu lugar como mujer — Mónica Grizales"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+          <div className="mt-8 text-center">
+            <p className="text-humo-500 text-base mb-6">
+              ¿Algo resonó en ti? El siguiente paso es el entrenamiento{" "}
+              <strong className="text-malva-600">Reconociendo mi Poder</strong>.
+            </p>
+            <CtaButton text="Ver el entrenamiento" />
+          </div>
+        </div>
+      </section>
 
       {/* ════════ ¿TE SUENA FAMILIAR? ════════ */}
-      <section className="py-14 md:py-20 bg-white">
+      <section className="py-14 md:py-20 bg-arena-100/60">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 text-center mb-10">
             ¿Te suena familiar?
@@ -99,7 +104,7 @@ export default function MasterclassPage() {
             ].map((frase, index) => (
               <div
                 key={index}
-                className="flex items-start gap-3 p-4 rounded-xl bg-arena-50 border border-arena-200"
+                className="flex items-start gap-3 p-4 rounded-xl bg-white border border-arena-200"
               >
                 <span className="text-malva-600 text-xl shrink-0">✦</span>
                 <p className="font-serif text-lg text-humo-600 italic leading-relaxed">
@@ -111,85 +116,9 @@ export default function MasterclassPage() {
           <div className="mt-8 text-center">
             <p className="text-humo-500 text-lg mb-6">
               Estos no son defectos. Son <strong className="text-malva-600">patrones aprendidos</strong>.
-              Y en esta masterclass vamos a hacer visibles los que te mantienen estancada.
+              Y en el entrenamiento vamos a sanarlos juntas.
             </p>
-            <CtaButton text="Sí, quiero entender qué me frena" />
-          </div>
-        </div>
-      </section>
-
-      {/* ════════ PARA QUIÉN ES ════════ */}
-      <section className="py-14 md:py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 text-center mb-10">
-            Esta masterclass es para ti si:
-          </h2>
-          <div className="space-y-4">
-            {[
-              "Sientes que siempre terminas cargando más que los demás",
-              "Te cuesta poner límites sin sentir culpa",
-              "Sabes que tienes más poder del que estás usando",
-              "Quieres entender los patrones que se repiten en tu vida",
-            ].map((item, index) => (
-              <div key={index} className="flex gap-3 items-center p-4 rounded-xl bg-arena-50 border border-arena-200">
-                <div className="w-6 h-6 rounded-full bg-malva-600 text-white flex items-center justify-center shrink-0">
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                  </svg>
-                </div>
-                <span className="text-humo-700 font-medium">{item}</span>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <CtaButton text="Reservar mi lugar gratis" />
-          </div>
-        </div>
-      </section>
-
-      {/* ════════ LOS 3 BLOQUEOS ════════ */}
-      <section className="py-14 md:py-20 bg-arena-100/60">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 text-center mb-4">
-            ¿Qué vas a descubrir en esta masterclass?
-          </h2>
-          <p className="text-humo-500 text-center mb-12 max-w-xl mx-auto">
-            En 75 minutos vamos a trabajar juntas los 3 bloqueos que operan en silencio y te impiden vivir desde tu poder:
-          </p>
-          <div className="space-y-5">
-            {[
-              {
-                num: "01",
-                title: "Desconexión con la madre",
-                desc: "Esta ruptura bloquea tu autoestima y tu feminidad. Cuando la relación con tu madre no está sanada, se refleja en cómo te percibes, cómo te valoras y cómo te relacionas con lo femenino en ti.",
-              },
-              {
-                num: "02",
-                title: "Lealtad al dolor del linaje femenino",
-                desc: "Cargar con el sufrimiento heredado de las mujeres de tu familia bloquea el amor y la prosperidad. Vamos a hacer visible esa lealtad inconsciente para que puedas soltar lo que no te pertenece.",
-              },
-              {
-                num: "03",
-                title: "Conflicto con la energía masculina/padre",
-                desc: "Cuando hay un conflicto no resuelto con la figura paterna o con la energía masculina, se bloquean tus relaciones y tu avance en la vida. Vamos a trabajar esta raíz para que puedas fluir.",
-              },
-            ].map((bloqueo) => (
-              <div
-                key={bloqueo.num}
-                className="flex gap-5 items-start p-6 rounded-2xl bg-white border border-arena-200"
-              >
-                <div className="w-12 h-12 rounded-full bg-malva-600 text-white flex items-center justify-center shrink-0 font-serif font-bold text-lg">
-                  {bloqueo.num}
-                </div>
-                <div>
-                  <h3 className="font-serif font-bold text-humo-700 text-lg mb-2">{bloqueo.title}</h3>
-                  <p className="text-humo-500 text-sm leading-relaxed">{bloqueo.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <CtaButton text="Quiero descubrir mis bloqueos" />
+            <CtaButton text="Quiero dar el siguiente paso" />
           </div>
         </div>
       </section>
@@ -255,97 +184,19 @@ export default function MasterclassPage() {
         </div>
       </section>
 
-      {/* ════════ DETALLES ════════ */}
-      <section className="py-14 md:py-20 bg-arena-100/60">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 mb-10">
-            Detalles de la masterclass
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { label: "Fecha", value: "Martes 24", sub: "de marzo, 2026" },
-              { label: "Hora", value: "7:00 PM", sub: "Hora Colombia" },
-              { label: "Modalidad", value: "Zoom en vivo", sub: "Link por email" },
-              { label: "Inversión", value: "GRATIS", sub: "Solo debes registrarte" },
-            ].map((item, index) => (
-              <div key={index} className="p-4 bg-white rounded-xl border border-arena-200">
-                <p className="text-humo-400 text-xs uppercase tracking-wider font-medium mb-1">
-                  {item.label}
-                </p>
-                <p className="font-serif text-humo-700 font-bold text-sm">{item.value}</p>
-                <p className="text-humo-400 text-xs mt-0.5">{item.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════ QUÉ TE LLEVAS ════════ */}
-      <section className="py-14 md:py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 text-center mb-10">
-            Al terminar la masterclass vas a tener:
-          </h2>
-          <div className="space-y-3">
-            {[
-              "Claridad sobre los patrones inconscientes que te frenan",
-              "Herramientas concretas para empezar a cambiarlos",
-              "Una nueva mirada sobre tu historia y tus decisiones",
-              "Un primer paso real hacia tu transformación personal",
-            ].map((item, index) => (
-              <div key={index} className="flex gap-3 items-center p-3 rounded-lg">
-                <div className="w-6 h-6 rounded-full bg-malva-600 text-white flex items-center justify-center shrink-0">
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                  </svg>
-                </div>
-                <span className="text-humo-700 font-medium">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ════════ CTA FINAL ════════ */}
       <section className="py-20 md:py-28 bg-malva-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-malva-800/50 to-malva-400/10" />
         <div className="max-w-2xl mx-auto px-4 sm:px-6 relative text-center">
           <SparkleIcon className="w-10 h-10 text-malva-300 mx-auto mb-6" />
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
-            ¿Lista para ver lo que no has podido ver?
+            ¿Lista para ir más profundo?
           </h2>
-          <p className="text-arena-200 text-lg mb-3">
-            75 minutos que pueden cambiar la forma en que te relacionas contigo misma.
+          <p className="text-arena-200 text-lg mb-8">
+            El entrenamiento <strong>Reconociendo mi Poder</strong> es el siguiente paso.
+            Un espacio íntimo, solo para mujeres, donde vamos a trabajar estas raíces juntas.
           </p>
-          <p className="text-arena-300 text-sm mb-8">
-            Martes 24 de marzo &middot; 7:00 PM &middot; <strong className="text-white">100% gratis</strong>
-          </p>
-          <CtaButton text="Reservar mi lugar gratis" variant="light" />
-          <p className="text-arena-400 text-xs mt-6">
-            Al registrarte recibirás un email de confirmación con los detalles y el link de Zoom el día del evento.
-          </p>
-        </div>
-      </section>
-
-      {/* ════════ COMUNIDAD WHATSAPP ════════ */}
-      <section className="py-14 md:py-16 bg-white">
-        <div className="max-w-xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-2xl mb-3">💬</p>
-          <h2 className="font-serif text-xl md:text-2xl font-bold text-humo-700 mb-3">
-            Únete a nuestra comunidad de WhatsApp
-          </h2>
-          <p className="text-humo-500 text-base leading-relaxed mb-6">
-            Un espacio exclusivo para mujeres que están en este camino de reconocerse y transformarse juntas.
-          </p>
-          <a
-            href="https://chat.whatsapp.com/DRc2j575hcVDE9Ts7CPQfe"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-3 rounded-full font-bold text-base text-white transition-all duration-300 hover:-translate-y-0.5 gap-2"
-            style={{ backgroundColor: "#c88d74" }}
-          >
-            Unirme ahora
-          </a>
+          <CtaButton text="Ver el entrenamiento" variant="light" />
         </div>
       </section>
 
