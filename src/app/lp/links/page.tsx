@@ -21,13 +21,6 @@ const links = [
     highlight: true,
   },
   {
-    label: "Masterclass gratuita",
-    sub: "3 bloqueos que te impiden ocupar tu lugar como mujer",
-    href: "https://monicagrizales.com/lp/masterclass",
-    icon: "play",
-    highlight: true,
-  },
-  {
     label: "Reconociendo mi Poder",
     sub: "Entrenamiento de sanación emocional — 7 y 8 de abril",
     href: "https://monicagrizales.com/lp/reconociendo-mi-poder",
