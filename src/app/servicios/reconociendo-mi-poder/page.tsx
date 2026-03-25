@@ -516,33 +516,27 @@ export default function ReconociendoMiPoderPage() {
               className="w-full max-w-lg rounded-2xl object-contain"
             />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
-            {[
-              { icon: "📅", label: "Fecha", value: "7 y 8 de abril", sub: "2026" },
-              { icon: "👩‍👩‍👧‍👧", label: "Formato", value: "Proceso grupal", sub: "Solo para mujeres" },
-              { icon: "🕡", label: "Horario", value: "6:30 pm a 9:30 pm", sub: "Hora Colombia" },
-              { icon: "💻", label: "Modalidad", value: "100% Virtual", sub: "Desde cualquier lugar" },
-            ].map((item, index) => (
-              <div key={index} className="card border-arena-200 p-5 text-center">
-                <p className="text-3xl mb-3">{item.icon}</p>
-                <p className="text-humo-400 text-xs uppercase tracking-wider font-medium mb-1">
-                  {item.label}
-                </p>
-                <p className="font-serif text-humo-700 font-bold text-sm">
-                  {item.value}
-                </p>
-                <p className="text-humo-400 text-xs mt-0.5">{item.sub}</p>
-              </div>
-            ))}
-            <div className="card border-arena-200 p-5 text-center">
-              <p className="text-3xl mb-3">💰</p>
-              <p className="text-humo-400 text-xs uppercase tracking-wider font-medium mb-1">
-                Inversión
-              </p>
-              <p className="text-humo-400 text-xs line-through">$350.000 COP</p>
-              <p className="font-serif text-humo-700 font-bold text-sm">$300.000 COP</p>
-              <p className="text-humo-400 text-xs mt-0.5">Pronto pago</p>
-            </div>
+          <div className="bg-white rounded-2xl border border-arena-200 p-8 max-w-2xl mx-auto text-left">
+            <h3 className="font-serif text-xl md:text-2xl font-bold text-humo-700 text-center mb-6">
+              Esto es todo lo que te llevas con tu inscripción 👇
+            </h3>
+            <ul className="space-y-3 mb-6">
+              {[
+                "2 sesiones en vivo por Zoom",
+                "Comunidad de WhatsApp — un espacio solo para mujeres que están en este camino",
+                "Guía práctica: Libérate de la culpa y vuelve a tu lugar",
+                "Calendario Mi mes consciente",
+                "Grabación por 30 días",
+              ].map((item, index) => (
+                <li key={index} className="flex gap-3 items-start">
+                  <span className="text-malva-600 shrink-0 mt-0.5">✦</span>
+                  <span className="text-humo-600">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-center font-serif text-xl font-bold text-malva-700">
+              Todo por $300.000 COP 🌿
+            </p>
           </div>
         </div>
       </section>
