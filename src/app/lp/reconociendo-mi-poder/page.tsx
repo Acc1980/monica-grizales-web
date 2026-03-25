@@ -271,6 +271,15 @@ export default function LandingReconociendoPage() {
           <h2 className="font-serif text-2xl md:text-3xl font-bold text-humo-700 mb-10">
             Detalles del entrenamiento
           </h2>
+          <div className="flex justify-center mb-10">
+            <Image
+              src="/images/mockup.png"
+              alt="Mockup del entrenamiento Reconociendo mi Poder"
+              width={500}
+              height={400}
+              className="w-full max-w-md rounded-2xl object-contain"
+            />
+          </div>
           <div className="grid grid-cols-3 gap-4 mb-4">
             {[
               { label: "Fecha", value: "7 y 8 de abril", sub: "2026" },
