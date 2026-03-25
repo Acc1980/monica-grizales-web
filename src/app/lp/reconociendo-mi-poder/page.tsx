@@ -309,6 +309,30 @@ export default function LandingReconociendoPage() {
               </div>
             ))}
           </div>
+
+          {/* Lo que te llevas */}
+          <div className="mt-12 bg-arena-50 rounded-2xl border border-arena-200 p-8 text-left">
+            <h3 className="font-serif text-xl md:text-2xl font-bold text-humo-700 text-center mb-6">
+              Esto es todo lo que te llevas con tu inscripción 👇
+            </h3>
+            <ul className="space-y-3 mb-6">
+              {[
+                "2 sesiones en vivo por Zoom",
+                "Comunidad de WhatsApp — un espacio solo para mujeres que están en este camino",
+                "Guía práctica: Libérate de la culpa y vuelve a tu lugar",
+                "Calendario Mi mes consciente",
+                "Grabación por 30 días",
+              ].map((item, index) => (
+                <li key={index} className="flex gap-3 items-start">
+                  <span className="text-malva-600 shrink-0 mt-0.5">✦</span>
+                  <span className="text-humo-600 text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-center font-serif text-xl font-bold text-malva-700">
+              Todo por $300.000 COP 🌿
+            </p>
+          </div>
         </div>
       </section>
 
