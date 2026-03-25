@@ -7,10 +7,7 @@ export const metadata: Metadata = {
     "Todos los enlaces de Monica Grizales: quiz, masterclass, entrenamiento, coaching y mas.",
 };
 
-const WHATSAPP_NUMBER = "573217968856";
-const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Hola Monica, quiero saber mas sobre tus servicios."
-)}`;
+const WA_LINK = "https://wa.link/ixvd3p";
 
 const links = [
   {
