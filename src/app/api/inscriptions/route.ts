@@ -57,6 +57,27 @@ export async function POST(
 
     const contactEmail = process.env.CONTACT_EMAIL || "contacto@monicagrizales.com";
 
+    // Agregar a MailerLite — grupo Participantes RMP
+    const mailerLiteKey = process.env.MAILERLITE_API_KEY;
+    if (mailerLiteKey) {
+      try {
+        await fetch("https://connect.mailerlite.com/api/subscribers", {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${mailerLiteKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: safeEmail,
+            fields: { name: safeName, phone: safePhone },
+            groups: ["181243257525634066"],
+          }),
+        });
+      } catch (mlError) {
+        console.error("Error al agregar a MailerLite:", mlError);
+      }
+    }
+
     await transporter.sendMail({
       from: `"Sitio Web Mónica Grizales" <${process.env.SMTP_USER}>`,
       to: contactEmail,
