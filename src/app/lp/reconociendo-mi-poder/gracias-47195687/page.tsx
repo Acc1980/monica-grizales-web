@@ -46,17 +46,37 @@ export default function GraciasRMPPage() {
       </section>
 
       {/* ════════ BONO PRIMERAS 10 ════════ */}
-      <section className="py-10 bg-malva-700 text-white">
+      <section className="py-12 bg-malva-700 text-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-2xl mb-3">🎁</p>
-          <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-3">
+          <p className="text-3xl mb-4">🎁</p>
+          <p className="uppercase tracking-[0.25em] text-xs text-malva-200 font-semibold mb-3">
+            Bono exclusivo · Primeras 10 inscritas
+          </p>
+          <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-4">
             ¡Estás entre las primeras 10 mujeres!
           </h2>
-          <p className="text-arena-200 text-base leading-relaxed">
-            Como una de las primeras en inscribirte, tienes acceso a una{" "}
-            <strong className="text-white">actividad especial el 13 de abril</strong> exclusiva
-            para quienes llegaron primero. Recibirás todos los detalles en la comunidad.
+          <p className="text-arena-200 text-base leading-relaxed mb-8">
+            Por llegar primero, tienes acceso a una sesión grupal en vivo el{" "}
+            <strong className="text-white">13 de abril</strong> que no tendrán las demás participantes.
           </p>
+          <div className="bg-malva-800/50 rounded-2xl border border-malva-500/40 p-6 text-left">
+            <h3 className="font-playfair text-xl font-bold text-white text-center mb-5">
+              Activa tu poder: de la duda a la acción
+            </h3>
+            <ul className="space-y-3">
+              {[
+                "Sesión grupal en vivo por Zoom",
+                "Espacio para aclarar dudas sobre lo trabajado en el entrenamiento",
+                "Revisamos qué has podido implementar y qué no te ha funcionado",
+                "Trabajo en grupo para fortalecernos todas juntas",
+              ].map((item, index) => (
+                <li key={index} className="flex gap-3 items-start">
+                  <span className="text-malva-300 shrink-0 mt-0.5">✦</span>
+                  <span className="text-arena-100 text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -66,6 +86,15 @@ export default function GraciasRMPPage() {
           <h2 className="font-playfair text-2xl md:text-3xl font-bold text-humo-800 text-center mb-8">
             Esto es todo lo que recibes con tu inscripción
           </h2>
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/images/mockup.png"
+              alt="Contenido del entrenamiento Reconociendo mi Poder"
+              width={600}
+              height={500}
+              className="w-full max-w-lg rounded-2xl object-contain"
+            />
+          </div>
           <div className="bg-arena-50 rounded-2xl border border-arena-200 p-8">
             <ul className="space-y-4">
               {[
@@ -74,7 +103,7 @@ export default function GraciasRMPPage() {
                 "Guía práctica: Libérate de la culpa y vuelve a tu lugar",
                 "Calendario Mi mes consciente",
                 "Grabación por 30 días",
-                "Actividad especial el 13 de abril (bono primeras 10 inscritas) 🎁",
+                "Activa tu poder: de la duda a la acción — sesión grupal en vivo (bono primeras 10) 🎁",
               ].map((item, index) => (
                 <li key={index} className="flex gap-3 items-start">
                   <span className="text-malva-600 shrink-0 mt-0.5 text-lg">✦</span>
