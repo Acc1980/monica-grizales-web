@@ -33,7 +33,7 @@ export default function GraciasRMPPage() {
             </div>
           </div>
           <p className="uppercase tracking-[0.3em] text-xs text-malva-600 font-semibold mb-4">
-            Pago confirmado &middot; Reconociendo mi Poder
+            Pago confirmado
           </p>
           <h1 className="font-playfair text-3xl md:text-5xl text-humo-800 mb-4 leading-tight">
             ¡Bienvenida! Tu cupo está confirmado 🌿
