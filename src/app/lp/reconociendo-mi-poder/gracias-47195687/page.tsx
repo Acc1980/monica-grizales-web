@@ -57,7 +57,7 @@ export default function GraciasRMPPage() {
           </h2>
           <p className="text-arena-200 text-base leading-relaxed mb-8">
             Por llegar primero, tienes acceso a una sesión grupal en vivo el{" "}
-            <strong className="text-white">13 de abril</strong> que no tendrán las demás participantes.
+            <strong className="text-white">13 de abril — exclusivo</strong> para quienes llegaron primero.
           </p>
           <div className="bg-malva-800/50 rounded-2xl border border-malva-500/40 p-6 text-left">
             <h3 className="font-playfair text-xl font-bold text-white text-center mb-5">
