@@ -8,9 +8,9 @@ export const metadata: Metadata = {
     "Mira la grabación de la masterclass gratuita con Mónica Grizales. Descubre los 3 bloqueos que te impiden ocupar tu lugar como mujer.",
 };
 
-const ENTRENAMIENTO_LINK = "/lp/reconociendo-mi-poder";
+const ENTRENAMIENTO_LINK = "https://wa.link/ixvd3p";
 
-function CtaButton({ text = "Quiero saber más", variant = "dark" }: { text?: string; variant?: "dark" | "light" }) {
+function CtaButton({ text = "Quiero inscribirme", variant = "dark" }: { text?: string; variant?: "dark" | "light" }) {
   if (variant === "light") {
     return (
       <a
@@ -83,7 +83,7 @@ export default function MasterclassPage() {
               ¿Algo resonó en ti? El siguiente paso es el entrenamiento{" "}
               <strong className="text-malva-600">Reconociendo mi Poder</strong>.
             </p>
-            <CtaButton text="Ver el entrenamiento" />
+            <CtaButton text="Quiero inscribirme al entrenamiento" />
           </div>
         </div>
       </section>
@@ -118,7 +118,7 @@ export default function MasterclassPage() {
               Estos no son defectos. Son <strong className="text-malva-600">patrones aprendidos</strong>.
               Y en el entrenamiento vamos a sanarlos juntas.
             </p>
-            <CtaButton text="Quiero dar el siguiente paso" />
+            <CtaButton text="Quiero inscribirme al entrenamiento" />
           </div>
         </div>
       </section>
@@ -196,7 +196,7 @@ export default function MasterclassPage() {
             El entrenamiento <strong>Reconociendo mi Poder</strong> es el siguiente paso.
             Un espacio íntimo, solo para mujeres, donde vamos a trabajar estas raíces juntas.
           </p>
-          <CtaButton text="Ver el entrenamiento" variant="light" />
+          <CtaButton text="Quiero inscribirme al entrenamiento" variant="light" />
         </div>
       </section>
 
