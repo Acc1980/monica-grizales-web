@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mi Mes Consciente — Reconociendo mi Poder</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --verde-oscuro: #2d3832;
+    --verde-medio:  #63756a;
+    --verde-claro:  #8fa394;
+    --terracota:    #c88d74;
+    --terracota-osc:#b77360;
+    --crema:        #f5f3ef;
+    --crema-osc:    #ede9e3;
+    --texto:        #2c2c2c;
+  }
+
+  body {
+    background: #d6d1c8;
+    font-family: 'Inter', sans-serif;
+    color: var(--texto);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page { size: A4 portrait; margin: 0; }
+
+  @media print {
+    body { background: white; }
+    .btn-print { display: none !important; }
+    .page { box-shadow: none; margin: 0; }
+  }
+
+  /* ─── PAGE ─── */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto 16mm;
+    background: var(--crema);
+    box-shadow: 0 6px 40px rgba(0,0,0,.18);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ─── HEADER BAR ─── */
+  .top-bar {
+    background: var(--verde-oscuro);
+    color: rgba(255,255,255,.5);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+  }
+
+  /* ─── TITLE AREA ─── */
+  .title-area {
+    text-align: center;
+    padding: 22px 30px 16px;
+    background: var(--crema);
+  }
+  .title-area h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+  .title-area .sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--verde-medio);
+    margin-bottom: 9px;
+  }
+  .tag-pill {
+    display: inline-block;
+    background: rgba(199,141,116,.15);
+    color: var(--terracota-osc);
+    font-size: 8.5px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 7px;
+  }
+  .fecha-rango {
+    font-size: 11px;
+    color: rgba(45,56,50,.5);
+    letter-spacing: 1.5px;
+  }
+
+  /* ─── CALENDAR ─── */
+  .cal-wrap {
+    padding: 0 18px;
+    flex: 1;
+  }
+
+  table.cal {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+  }
+
+  table.cal thead tr th {
+    background: var(--verde-oscuro);
+    color: rgba(255,255,255,.75);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-align: center;
+    padding: 6px 2px;
+  }
+  table.cal thead tr th:first-child {
+    background: var(--verde-oscuro);
+    width: 28px;
+  }
+
+  table.cal tbody tr { border-bottom: 1px solid rgba(99,117,106,.08); }
+
+  table.cal tbody tr.semana-row td {
+    padding: 10px 3px 14px;
+    vertical-align: top;
+    text-align: center;
+  }
+  table.cal tbody tr.semana-row td:first-child {
+    background: rgba(45,56,50,.06);
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--verde-medio);
+    letter-spacing: 1px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 4px 2px;
+  }
+
+  .cal-day { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .cal-day .num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--verde-oscuro);
+    line-height: 1;
+  }
+  .cal-day .mes-mini {
+    font-size: 7px;
+    color: rgba(45,56,50,.4);
+    letter-spacing: .5px;
+    line-height: 1;
+  }
+  .cal-day .check-circle {
+    width: 28px; height: 28px;
+    border: 1.5px solid var(--terracota);
+    border-radius: 50%;
+    margin-top: 4px;
+    opacity: .55;
+  }
+  .cal-day .practique {
+    font-size: 6.5px;
+    color: rgba(45,56,50,.35);
+    letter-spacing: .3px;
+  }
+
+  /* weekend cells slightly tinted */
+  .cal td.weekend { background: rgba(143,163,148,.06); }
+
+  /* ─── SEPARADOR ─── */
+  .sep-line {
+    width: calc(100% - 36px);
+    height: 1px;
+    background: rgba(99,117,106,.15);
+    margin: 14px auto 10px;
+  }
+
+  /* ─── PRACTICES SECTION ─── */
+  .practices-wrap {
+    padding: 0 18px;
+  }
+  .practices-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .practices-header .p-title {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--verde-medio);
+  }
+  .practices-header .p-question {
+    font-size: 8.5px;
+    color: rgba(45,56,50,.4);
+    font-style: italic;
+  }
+
+  .practice-row {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .p-accent {
+    width: 4px;
+    flex-shrink: 0;
+    background: var(--verde-claro);
+  }
+  .p-accent.terra { background: var(--terracota); }
+
+  .p-body {
+    background: rgba(45,56,50,.04);
+    flex: 1;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .p-semana {
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--verde-medio);
+    letter-spacing: 1px;
+    min-width: 20px;
+  }
+  .p-semana.terra { color: var(--terracota-osc); }
+
+  .p-content { flex: 1; }
+  .p-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--verde-oscuro);
+    margin-bottom: 1px;
+  }
+  .p-desc {
+    font-size: 8px;
+    color: rgba(45,56,50,.55);
+    line-height: 1.4;
+  }
+  .p-line {
+    width: 110px;
+    border-bottom: 1px solid rgba(99,117,106,.25);
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  /* ─── BOTTOM BOXES ─── */
+  .bottom-boxes {
+    display: flex;
+    gap: 10px;
+    padding: 12px 18px 18px;
+  }
+  .b-box {
+    flex: 1;
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .b-box.verde { background: rgba(45,56,50,.06); }
+  .b-box.terra { background: rgba(199,141,116,.1); }
+  .b-box .b-title {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--verde-medio);
+    margin-bottom: 3px;
+  }
+  .b-box.terra .b-title { color: var(--terracota-osc); }
+  .b-box .b-prompt {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 9.5px;
+    color: rgba(45,56,50,.45);
+    margin-bottom: 8px;
+  }
+  .b-box .b-line {
+    border-bottom: 1px solid rgba(99,117,106,.2);
+    height: 18px;
+    margin-bottom: 3px;
+  }
+  .b-box.terra .b-line { border-color: rgba(183,115,96,.2); }
+
+  /* ─── FOOTER BAR ─── */
+  .footer-bar {
+    background: var(--verde-oscuro);
+    padding: 9px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+  }
+  .footer-bar span {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    color: rgba(255,255,255,.4);
+    text-transform: uppercase;
+  }
+
+  /* ─── PRINT BUTTON ─── */
+  .btn-print {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    z-index: 9999;
+    background: var(--terracota);
+    color: white; border: none;
+    border-radius: 50px;
+    padding: 13px 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(199,141,116,.45);
+  }
+  .btn-print:hover { background: var(--terracota-osc); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">✦ &nbsp; Mónica Grizales &nbsp; ✦</div>
+
+  <!-- TITLE -->
+  <div class="title-area">
+    <h1>Mi Mes Consciente</h1>
+    <p class="sub">Reconociendo mi Poder · Guía Práctica</p>
+    <span class="tag-pill">Libérate de la culpa · Vuelve a tu lugar</span>
+    <p class="fecha-rango">13 de abril — 10 de mayo · 2026</p>
+  </div>
+
+  <!-- CALENDAR -->
+  <div class="cal-wrap">
+    <table class="cal">
+      <thead>
+        <tr>
+          <th></th>
+          <th>LUN</th>
+          <th>MAR</th>
+          <th>MIÉ</th>
+          <th>JUE</th>
+          <th>VIE</th>
+          <th class="weekend">SÁB</th>
+          <th class="weekend">DOM</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- SEMANA 1 -->
+        <tr class="semana-row">
+          <td>S1</td>
+          <td><div class="cal-day"><span class="num">13</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">14</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">15</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">16</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">17</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td class="weekend"><div class="cal-day"><span class="num">18</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td class="weekend"><div class="cal-day"><span class="num">19</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+        </tr>
+
+        <!-- SEMANA 2 -->
+        <tr class="semana-row">
+          <td>S2</td>
+          <td><div class="cal-day"><span class="num">20</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">21</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">22</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">23</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">24</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td class="weekend"><div class="cal-day"><span class="num">25</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td class="weekend"><div class="cal-day"><span class="num">26</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+        </tr>
+
+        <!-- SEMANA 3 -->
+        <tr class="semana-row">
+          <td>S3</td>
+          <td><div class="cal-day"><span class="num">27</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">28</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">29</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">30</span><span class="mes-mini">abr</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">1</span><span class="mes-mini">may</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td class="weekend"><div class="cal-day"><span class="num">2</span><span class="mes-mini">may</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td class="weekend"><div class="cal-day"><span class="num">3</span><span class="mes-mini">may</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+        </tr>
+
+        <!-- SEMANA 4 -->
+        <tr class="semana-row">
+          <td>S4</td>
+          <td><div class="cal-day"><span class="num">4</span><span class="mes-mini">may</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">5</span><span class="mes-mini">may</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">6</span><span class="mes-mini">may</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">7</span><span class="mes-mini">may</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td><div class="cal-day"><span class="num">8</span><span class="mes-mini">may</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td class="weekend"><div class="cal-day"><span class="num">9</span><span class="mes-mini">may</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+          <td class="weekend"><div class="cal-day"><span class="num">10</span><span class="mes-mini">may</span><div class="check-circle"></div><span class="practique">practiqué</span></div></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sep-line"></div>
+
+  <!-- PRACTICES -->
+  <div class="practices-wrap">
+    <div class="practices-header">
+      <span class="p-title">Mi práctica diaria</span>
+      <span class="p-question">¿Qué practiqué hoy?</span>
+    </div>
+
+    <div class="practice-row">
+      <div class="p-accent"></div>
+      <div class="p-body">
+        <span class="p-semana">S1</span>
+        <div class="p-content">
+          <p class="p-name">Autora de mi historia</p>
+          <p class="p-desc">¿En qué momento de hoy me puse en último lugar? · ¿Qué habría elegido desde mi poder?</p>
+        </div>
+        <div class="p-line"></div>
+      </div>
+    </div>
+
+    <div class="practice-row">
+      <div class="p-accent"></div>
+      <div class="p-body">
+        <span class="p-semana">S2</span>
+        <div class="p-content">
+          <p class="p-name">Mi cuerpo habla</p>
+          <p class="p-desc">Escaneo de 2 min: ¿Dónde siento tensión hoy? · ¿Qué emoción hay en ese lugar?</p>
+        </div>
+        <div class="p-line"></div>
+      </div>
+    </div>
+
+    <div class="practice-row">
+      <div class="p-accent terra"></div>
+      <div class="p-body">
+        <span class="p-semana terra">S3</span>
+        <div class="p-content">
+          <p class="p-name">La voz que me habita</p>
+          <p class="p-desc">¿Qué me dije hoy que me generó culpa? · ¿Era mi voz o una voz heredada?</p>
+        </div>
+        <div class="p-line"></div>
+      </div>
+    </div>
+
+    <div class="practice-row">
+      <div class="p-accent terra"></div>
+      <div class="p-body">
+        <span class="p-semana terra">S4</span>
+        <div class="p-content">
+          <p class="p-name">Volver a mi lugar</p>
+          <p class="p-desc">¿En qué momento elegí desde la calma? · ¿Qué emoción solté para lograrlo?</p>
+        </div>
+        <div class="p-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sep-line"></div>
+
+  <!-- BOTTOM BOXES -->
+  <div class="bottom-boxes">
+    <div class="b-box verde">
+      <p class="b-title">Mi intención para este mes</p>
+      <p class="b-prompt">Este mes quiero...</p>
+      <div class="b-line"></div>
+      <div class="b-line"></div>
+      <div class="b-line"></div>
+    </div>
+    <div class="b-box terra">
+      <p class="b-title">Al terminar quiero sentirme</p>
+      <p class="b-prompt">Me llevaré...</p>
+      <div class="b-line"></div>
+      <div class="b-line"></div>
+      <div class="b-line"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-bar">
+    <span>✦ &nbsp; Comunidad Reconociendo mi Poder · monicagrizales.com &nbsp; ✦</span>
+  </div>
+
+</div>
+
+<button class="btn-print" onclick="window.print()">Imprimir / Guardar PDF</button>
+
+</body>
+</html>
