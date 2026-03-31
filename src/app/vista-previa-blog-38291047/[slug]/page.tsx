@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getPostBySlug } from "@/lib/blog-posts";
@@ -101,6 +102,21 @@ export default async function BlogPostPage({
           <p className="text-humo-500 text-lg max-w-2xl mx-auto">{post.excerpt}</p>
           <p className="text-humo-400 text-sm mt-4">Por Mónica Grizales</p>
         </div>
+        {post.image && (
+          <div className="section-container max-w-3xl mx-auto mt-10">
+            <div className="relative w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-md">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+                quality={80}
+              />
+            </div>
+          </div>
+        )}
       </section>
 
       {/* Contenido */}

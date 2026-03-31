@@ -5,6 +5,7 @@ export interface BlogPost {
   date: string;
   readTime: string;
   category: string;
+  image?: string;
   content: string;
 }
 
@@ -17,6 +18,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-31",
     readTime: "8 min",
     category: "Sanación emocional",
+    image: "/images/blog-3-bloqueos.jpg",
     content: `
 ¿Te has preguntado alguna vez por qué, aunque lo intentas tanto, algo en tu vida no termina de fluir?
 
@@ -103,6 +105,7 @@ Si algo de lo que leíste hoy te resonó, es porque algo en ti ya sabe que es ti
     date: "2026-03-28",
     readTime: "6 min",
     category: "Sanación emocional",
+    image: "/images/blog-madre.jpg",
     content: `
 Cuando les digo a las mujeres que sus conflictos de pareja, de dinero y de autoestima tienen el mismo origen, me miran con escepticismo. Tiene sentido. No es lo que nos enseñaron.
 
@@ -184,6 +187,7 @@ Y si en algún punto sientes que quieres ir más profundo, eso es exactamente lo
     date: "2026-03-25",
     readTime: "7 min",
     category: "Liderazgo femenino",
+    image: "/images/blog-heridas.jpg",
     content: `
 ¿Alguna vez te has encontrado repitiendo algo que juraste que nunca harías?
 
