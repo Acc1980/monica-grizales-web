@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SparkleIcon from "@/components/SparkleIcon";
 import Link from "next/link";
 
@@ -51,8 +52,18 @@ export default function TestimoniosPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-arena-50">
-        <div className="section-container text-center">
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+        <Image
+          src="/images/foto-testimonios.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          priority
+          quality={80}
+        />
+        <div className="absolute inset-0 bg-arena-50/80 backdrop-blur-[2px]" />
+        <div className="section-container text-center relative">
           <div className="inline-flex items-center gap-2 bg-malva-600/10 border border-malva-600/20 rounded-full px-5 py-2 mb-6">
             <SparkleIcon className="w-4 h-4 text-malva-600" />
             <span className="text-sm font-medium text-malva-600">Resultados reales</span>
