@@ -8,6 +8,7 @@ import JsonLd from "@/components/JsonLd";
 import "./globals.css";
 
 const META_PIXEL_ID = "1263507602328681";
+const GA_ID = "G-XJ70WQNLN8";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -79,6 +80,15 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className="font-sans antialiased">
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
