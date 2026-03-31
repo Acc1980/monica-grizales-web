@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const WA_COMMUNITY = "https://chat.whatsapp.com/EsbCm6Pg2S6ImQ87exC8lV";
+const WA_COMMUNITY = "https://chat.whatsapp.com/DRc2j575hcVDE9Ts7CPQfe";
 const STORAGE_KEY = "rmp_exit_popup_shown";
 
 export default function ExitPopup() {
