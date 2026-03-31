@@ -52,36 +52,29 @@ export default function TestimoniosPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-arena-50">
-        <div className="section-container">
-          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-            {/* Texto */}
-            <div className="flex-1 text-center md:text-left">
-              <div className="inline-flex items-center gap-2 bg-malva-600/10 border border-malva-600/20 rounded-full px-5 py-2 mb-6">
-                <SparkleIcon className="w-4 h-4 text-malva-600" />
-                <span className="text-sm font-medium text-malva-600">Resultados reales</span>
-              </div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold text-humo-700 mb-6">
-                Lo que dicen quienes ya{" "}
-                <span className="text-malva-600">vivieron el proceso</span>
-              </h1>
-              <p className="text-humo-500 text-lg max-w-xl">
-                Estas son las palabras de personas que decidieron mostrarse, trabajar desde adentro y transformar su vida.
-              </p>
-            </div>
-            {/* Foto */}
-            <div className="relative w-56 h-72 md:w-64 md:h-80 flex-shrink-0 rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src="/images/foto-testimonios.jpg"
-                alt="Participantes de los entrenamientos de Mónica Grizales"
-                fill
-                className="object-cover object-top"
-                sizes="256px"
-                priority
-                quality={80}
-              />
-            </div>
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+        <Image
+          src="/images/foto-testimonios.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          priority
+          quality={80}
+        />
+        <div className="absolute inset-0 bg-arena-50/80 backdrop-blur-[2px]" />
+        <div className="section-container text-center relative">
+          <div className="inline-flex items-center gap-2 bg-malva-600/10 border border-malva-600/20 rounded-full px-5 py-2 mb-6">
+            <SparkleIcon className="w-4 h-4 text-malva-600" />
+            <span className="text-sm font-medium text-malva-600">Resultados reales</span>
           </div>
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-humo-700 mb-6">
+            Lo que dicen quienes ya{" "}
+            <span className="text-malva-600">vivieron el proceso</span>
+          </h1>
+          <p className="text-humo-500 text-lg max-w-2xl mx-auto">
+            Estas son las palabras de personas que decidieron mostrarse, trabajar desde adentro y transformar su vida.
+          </p>
         </div>
       </section>
 
