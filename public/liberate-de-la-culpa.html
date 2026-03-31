@@ -655,6 +655,31 @@ sections.forEach(id => {
   const el = document.getElementById(id);
   if (el) observer.observe(el);
 });
+
+// ─── GUARDAR RESPUESTAS EN EL NAVEGADOR ───
+const STORAGE_KEY = 'rmp-guia-liberate';
+
+function guardar() {
+  const datos = {};
+  document.querySelectorAll('textarea, input.carta-nombre').forEach((el, i) => {
+    datos[i] = el.value;
+  });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(datos));
+}
+
+function restaurar() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return;
+  const datos = JSON.parse(raw);
+  document.querySelectorAll('textarea, input.carta-nombre').forEach((el, i) => {
+    if (datos[i] !== undefined) el.value = datos[i];
+  });
+}
+
+restaurar();
+document.querySelectorAll('textarea, input.carta-nombre').forEach(el => {
+  el.addEventListener('input', guardar);
+});
 </script>
 </body>
 </html>
