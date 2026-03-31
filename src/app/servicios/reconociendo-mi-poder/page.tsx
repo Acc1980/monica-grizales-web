@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SparkleIcon from "@/components/SparkleIcon";
+import ExitPopup from "@/components/ExitPopup";
 
 export const metadata: Metadata = {
   title: "Reconociendo mi Poder — Entrenamiento de Sanación Emocional",
@@ -14,6 +15,7 @@ const PAYMENT_LINK = "https://www.monicagrizales.com/inscripcion";
 export default function ReconociendoMiPoderPage() {
   return (
     <>
+      <ExitPopup />
       {/* ════════ HERO ════════ */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
         <Image
