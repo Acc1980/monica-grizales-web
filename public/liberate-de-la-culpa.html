@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libérate de la culpa — Guía Práctica · Reconociendo mi Poder</title>
+<meta name="description" content="Guía práctica del entrenamiento Reconociendo mi Poder con Mónica Grizales.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+/* ─── VARIABLES ─── */
+:root {
+  --v900: #2d3832;
+  --v800: #3c4941;
+  --v700: #4e5d54;
+  --v600: #63756a;
+  --v400: #8fa394;
+  --v200: #bed4cc;
+  --v100: #dce8e3;
+  --v50:  #f0f4f2;
+  --t400: #c88d74;
+  --t500: #b77360;
+  --t600: #9d5d4d;
+  --a50:  #faf9f7;
+  --a100: #f3f1ee;
+  --a200: #e8e6e1;
+}
+
+/* ─── BASE ─── */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--a50);
+  color: var(--v900);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── PORTADA ─── */
+.portada {
+  min-height: 100svh;
+  background: linear-gradient(155deg, #1a2420 0%, var(--v900) 60%, #1e2e28 100%);
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center; padding: 60px 32px;
+  position: relative; overflow: hidden;
+}
+.portada::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 30%, rgba(99,117,106,.28) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 50% at 15% 90%, rgba(183,115,96,.18) 0%, transparent 55%);
+}
+.portada-inner { position: relative; z-index: 1; max-width: 540px; }
+.portada-tag {
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: rgba(157,186,175,.6); margin-bottom: 28px; font-weight: 500;
+}
+.portada h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 12vw, 88px);
+  font-weight: 700; color: #fff; line-height: 1;
+  margin-bottom: 16px;
+}
+.portada .y-vuelve {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(22px, 5vw, 34px);
+  color: var(--t400); margin-bottom: 32px;
+}
+.portada-sep {
+  width: 48px; height: 2px;
+  background: var(--t400); border-radius: 2px;
+  margin: 0 auto 32px;
+}
+.portada-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(14px, 3.5vw, 18px);
+  color: rgba(255,255,255,.55);
+  line-height: 1.6; margin-bottom: 48px;
+}
+.portada-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(157,186,175,.25);
+  border-radius: 50px; padding: 14px 32px;
+  font-size: 13px; letter-spacing: 2px;
+  color: rgba(157,186,175,.8);
+  text-transform: uppercase; font-weight: 500;
+  margin-bottom: 16px;
+}
+.portada-autor {
+  font-size: 12px; letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.2); margin-top: 48px;
+}
+
+/* ─── NAV DOTS ─── */
+.nav-dots {
+  position: fixed; right: 16px; top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 10px; z-index: 100;
+}
+.nav-dots a {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(45,56,50,.2);
+  border: 1.5px solid rgba(45,56,50,.3);
+  display: block; transition: all .3s;
+  text-decoration: none;
+}
+.nav-dots a.active,
+.nav-dots a:hover {
+  background: var(--t400);
+  border-color: var(--t400);
+  transform: scale(1.3);
+}
+@media (max-width: 480px) { .nav-dots { right: 8px; } }
+
+/* ─── INTRO SECTION ─── */
+.intro-section {
+  padding: 64px 24px;
+  max-width: 680px; margin: 0 auto;
+}
+.intro-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 6vw, 38px);
+  font-weight: 700; color: var(--v900);
+  margin-bottom: 20px;
+}
+.intro-text {
+  font-size: 16px; line-height: 1.75;
+  color: var(--v700); margin-bottom: 20px;
+}
+.feature-box {
+  background: var(--v900);
+  border-radius: 14px; padding: 24px 28px;
+  margin: 28px 0;
+}
+.feature-box p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 20px;
+  color: #fff; line-height: 1.4; text-align: center;
+}
+.needs-list {
+  list-style: none; margin: 20px 0 28px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.needs-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 15px; color: var(--v700); line-height: 1.5;
+}
+.needs-list li::before {
+  content: '✦'; color: var(--t400);
+  flex-shrink: 0; margin-top: 2px; font-size: 10px;
+}
+.blocks-grid {
+  display: flex; flex-direction: column; gap: 10px; margin-top: 20px;
+}
+.block-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 16px;
+  background: #fff;
+  border-radius: 12px;
+  border-left: 3px solid var(--v400);
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+.block-item.terra { border-left-color: var(--t400); }
+.block-num-badge {
+  font-size: 11px; font-weight: 700;
+  color: var(--v600); letter-spacing: 1px;
+  min-width: 28px; margin-top: 2px;
+}
+.block-item.terra .block-num-badge { color: var(--t500); }
+.block-name { font-size: 15px; font-weight: 600; color: var(--v900); }
+.block-desc { font-size: 13px; color: var(--v600); margin-top: 2px; }
+
+/* ─── BLOCK SECTIONS ─── */
+.bloque {
+  padding: 0 0 64px;
+  max-width: 680px; margin: 0 auto;
+}
+
+.bloque-header {
+  padding: 48px 24px 36px;
+  position: relative; overflow: hidden;
+  margin-bottom: 0;
+}
+.bloque-header.verde { background: var(--v900); }
+.bloque-header.terra { background: var(--t600); }
+
+.bloque-header .bh-watermark {
+  position: absolute; right: -10px; top: -20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 140px; font-weight: 700;
+  color: rgba(255,255,255,.06); line-height: 1;
+  pointer-events: none; user-select: none;
+}
+.bloque-header .bh-num {
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: rgba(255,255,255,.45); margin-bottom: 10px; position: relative;
+}
+.bloque-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 7vw, 44px);
+  font-weight: 700; color: #fff;
+  line-height: 1.1; margin-bottom: 8px; position: relative;
+}
+.bloque-header .bh-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(15px, 3.5vw, 19px);
+  color: rgba(255,255,255,.6); position: relative;
+}
+
+/* ─── EJERCICIO CARD ─── */
+.ejercicio-card {
+  background: #fff;
+  margin: 0 16px;
+  border-radius: 0 0 16px 16px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.07);
+}
+.ejercicio-titulo {
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--v600); font-weight: 600;
+  margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--a200);
+}
+.pasos { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
+.paso {
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.paso-num {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--v900); color: #fff;
+  font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.paso-num.terra { background: var(--t500); }
+.paso-texto { font-size: 15px; line-height: 1.6; color: var(--v700); }
+.paso-texto em { color: var(--v900); font-style: italic; }
+
+/* ─── TEXTAREA (para escribir en celular) ─── */
+.escribir-label {
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--v600);
+  margin-bottom: 8px; margin-top: 16px; display: block;
+}
+.escribir-area {
+  width: 100%;
+  background: var(--a50);
+  border: 1.5px solid var(--a200);
+  border-radius: 10px; padding: 14px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px; line-height: 1.6;
+  color: var(--v900); resize: vertical;
+  min-height: 100px;
+  transition: border-color .2s;
+  outline: none;
+}
+.escribir-area:focus { border-color: var(--v400); }
+.frase-completar {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 17px;
+  color: var(--v900); margin: 16px 0 8px;
+}
+
+/* ─── DECLARATION BOX ─── */
+.declaration {
+  background: var(--v50);
+  border-left: 3px solid var(--v600);
+  border-radius: 0 10px 10px 0;
+  padding: 18px 20px; margin-top: 24px;
+}
+.declaration.terra {
+  background: rgba(199,141,116,.08);
+  border-left-color: var(--t500);
+}
+.declaration p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 16px;
+  color: var(--v900); line-height: 1.5;
+}
+
+/* ─── JOURNALING ─── */
+.journaling-card {
+  background: var(--a100);
+  margin: 16px 16px 0;
+  border-radius: 16px; padding: 28px 24px;
+}
+.journaling-titulo {
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--v600); font-weight: 600; margin-bottom: 24px;
+}
+.pregunta-label {
+  font-size: 15px; font-weight: 600;
+  color: var(--v900); line-height: 1.5;
+  margin-bottom: 10px; margin-top: 24px;
+  display: block;
+}
+.pregunta-label:first-of-type { margin-top: 0; }
+
+/* ─── CARTA ─── */
+.carta-section {
+  max-width: 680px; margin: 0 auto; padding: 0 16px 64px;
+}
+.carta-header {
+  background: linear-gradient(135deg, var(--v900), var(--v800));
+  border-radius: 16px 16px 0 0;
+  padding: 36px 28px; text-align: center; margin-bottom: 0;
+}
+.carta-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 10px;
+}
+.carta-header p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 16px;
+  color: rgba(255,255,255,.6); line-height: 1.6;
+}
+.carta-body {
+  background: #fff;
+  border-radius: 0 0 16px 16px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.07);
+}
+.carta-saludo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 18px;
+  color: var(--v900); margin-bottom: 16px;
+}
+.carta-nombre {
+  border: none; border-bottom: 1.5px solid var(--v400);
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 18px;
+  color: var(--v900); background: transparent;
+  outline: none; width: 120px; padding: 2px 4px;
+}
+.carta-area {
+  width: 100%; background: transparent;
+  border: none; border-bottom: 1.5px solid var(--a200);
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; line-height: 2;
+  color: var(--v900); resize: none;
+  outline: none; padding: 4px 0;
+  min-height: 360px;
+}
+
+/* ─── CIERRE ─── */
+.cierre {
+  background: var(--v900);
+  padding: 64px 24px; text-align: center;
+}
+.cierre h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 6vw, 36px);
+  font-weight: 700; color: #fff;
+  margin-bottom: 16px;
+}
+.cierre p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 18px;
+  color: rgba(255,255,255,.6); line-height: 1.7;
+  max-width: 480px; margin: 0 auto 32px;
+}
+.cierre-firma {
+  font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(157,186,175,.5);
+}
+
+/* ─── PRINT ─── */
+@media print {
+  @page { size: A4; margin: 0; }
+  .nav-dots, .print-btn { display: none !important; }
+  .portada { min-height: 297mm; page-break-after: always; }
+  .intro-section { page-break-after: always; padding: 40px 30px; }
+  .bloque { page-break-after: always; }
+  .ejercicio-card, .journaling-card { box-shadow: none; }
+  .escribir-area, .carta-area, .carta-nombre {
+    background: transparent !important;
+    border: none !important;
+    resize: none;
+  }
+  .escribir-area { border-bottom: 1px solid #ccc !important; min-height: 80px; }
+}
+
+/* ─── PRINT BUTTON ─── */
+.print-btn {
+  position: fixed; bottom: 24px; left: 24px; z-index: 100;
+  background: var(--v600); color: #fff;
+  border: none; border-radius: 50px;
+  padding: 12px 24px; font-size: 13px; font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer; letter-spacing: .5px;
+  box-shadow: 0 4px 16px rgba(45,56,50,.3);
+  transition: background .2s;
+}
+.print-btn:hover { background: var(--v700); }
+</style>
+</head>
+<body>
+
+<!-- NAV DOTS -->
+<nav class="nav-dots" aria-label="Navegación">
+  <a href="#portada" title="Inicio"></a>
+  <a href="#intro" title="Introducción"></a>
+  <a href="#bloque1" title="Bloque 1"></a>
+  <a href="#bloque2" title="Bloque 2"></a>
+  <a href="#bloque3" title="Bloque 3"></a>
+  <a href="#bloque4" title="Bloque 4"></a>
+  <a href="#carta" title="Carta"></a>
+</nav>
+
+<!-- PORTADA -->
+<section class="portada" id="portada">
+  <div class="portada-inner">
+    <p class="portada-tag">✦ &nbsp; Mónica Grizales · Coach Ontológica &nbsp; ✦</p>
+    <h1>Libérate<br>de la culpa</h1>
+    <p class="y-vuelve">y vuelve a tu lugar</p>
+    <div class="portada-sep"></div>
+    <p class="portada-quote">"Ser buena hija no debería costarte tu voz."</p>
+    <div class="portada-badge">Guía Práctica · Reconociendo mi Poder · 2026</div>
+    <p class="portada-autor">monicagrizales.com</p>
+  </div>
+</section>
+
+<!-- INTRODUCCIÓN -->
+<section class="intro-section" id="intro">
+  <h2>Antes de empezar</h2>
+  <p class="intro-text">
+    Esta guía es un entregable del entrenamiento <strong>Reconociendo mi Poder</strong>. No está hecha para leerla — está hecha para vivirla. Cada ejercicio está diseñado para que puedas ver lo que normalmente no ves, y desde ahí, empezar a elegir diferente.
+  </p>
+  <div class="feature-box">
+    <p>"No te falta fuerza. Te sobra mandato."</p>
+  </div>
+  <p class="intro-text">
+    Aquí no se trata de entender tu historia. Se trata de <strong>tomar tu lugar en ella</strong>.
+  </p>
+
+  <p style="font-size:12px;font-weight:700;color:var(--v900);margin:28px 0 12px;text-transform:uppercase;letter-spacing:.1em;">Para este trabajo necesitas:</p>
+  <ul class="needs-list">
+    <li>Un lugar tranquilo donde nadie te interrumpa</li>
+    <li>Esfero o lápiz — escrito tiene más peso que pensado</li>
+    <li>Honestidad contigo misma, sin filtros ni censura</li>
+    <li>Tiempo para ti. Te lo mereces.</li>
+  </ul>
+
+  <p style="font-size:12px;font-weight:700;color:var(--v900);margin:4px 0 14px;text-transform:uppercase;letter-spacing:.1em;">Los 6 bloques que vamos a trabajar:</p>
+  <div class="blocks-grid">
+    <div class="block-item"><span class="block-num-badge">01</span><div><p class="block-name">Reconócete como autora</p><p class="block-desc">De espectadora a escritora de tu historia</p></div></div>
+    <div class="block-item terra"><span class="block-num-badge">02</span><div><p class="block-name">Habita tu cuerpo</p><p class="block-desc">El cuerpo como territorio de poder, no campo de batalla</p></div></div>
+    <div class="block-item"><span class="block-num-badge">03</span><div><p class="block-name">Las voces que te habitan</p><p class="block-desc">Identificar los mandatos que dirigen tu vida</p></div></div>
+    <div class="block-item terra"><span class="block-num-badge">04</span><div><p class="block-name">Lealtades invisibles</p><p class="block-desc">Descubrir a quién eres leal cuando te apagas</p></div></div>
+    <div class="block-item"><span class="block-num-badge">05</span><div><p class="block-name">Honra tu historia</p><p class="block-desc">Reconocer sin quedar atrapada</p></div></div>
+    <div class="block-item terra"><span class="block-num-badge">06</span><div><p class="block-name">Regulación emocional</p><p class="block-desc">Trabajar la culpa, la tristeza, la rabia y el miedo</p></div></div>
+  </div>
+</section>
+
+<!-- BLOQUE 1 -->
+<section id="bloque1">
+<div class="bloque">
+  <div class="bloque-header verde">
+    <span class="bh-watermark">01</span>
+    <p class="bh-num">BLOQUE 01</p>
+    <h2>Reconócete como autora</h2>
+    <p class="bh-sub">De espectadora a escritora de tu historia</p>
+  </div>
+  <div class="ejercicio-card">
+    <p class="intro-text" style="margin-bottom:20px;">Durante años has estado narrando tu vida desde afuera. Describiendo lo que te pasó, lo que te hicieron, lo que no pudiste. Hoy vamos a cambiar el lente.</p>
+    <p class="ejercicio-titulo">— Ejercicio —</p>
+    <div class="pasos">
+      <div class="paso"><span class="paso-num">1</span><p class="paso-texto">Escribe una situación que sientas que <em>te pasó</em> y sobre la que no tuviste control.</p></div>
+    </div>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <div class="pasos" style="margin-top:20px;">
+      <div class="paso"><span class="paso-num">2</span><p class="paso-texto">Ahora responde: <em>¿Qué decidí yo en esa situación, aunque fuera no decidir?</em></p></div>
+    </div>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <div class="pasos" style="margin-top:20px;">
+      <div class="paso"><span class="paso-num">3</span><p class="paso-texto"><em>¿Qué me dice esa decisión sobre lo que creía que merecía?</em></p></div>
+    </div>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <div class="declaration" style="margin-top:24px;">
+      <p>"Soy la autora de mi historia. No la víctima de ella."</p>
+    </div>
+  </div>
+  <div class="journaling-card">
+    <p class="journaling-titulo">Mi reflexión — Bloque 1</p>
+    <label class="pregunta-label">¿En qué áreas de mi vida me comporto como espectadora?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <label class="pregunta-label">¿Qué historia me cuento sobre mí misma que ya es hora de reescribir?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <label class="pregunta-label">¿Quién sería yo si me convirtiera en la autora de mi vida?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+  </div>
+</div>
+</section>
+
+<!-- BLOQUE 2 -->
+<section id="bloque2">
+<div class="bloque">
+  <div class="bloque-header terra">
+    <span class="bh-watermark">02</span>
+    <p class="bh-num">BLOQUE 02</p>
+    <h2>Habita tu cuerpo</h2>
+    <p class="bh-sub">Tu cuerpo es territorio de poder, no campo de batalla</p>
+  </div>
+  <div class="ejercicio-card">
+    <p class="intro-text" style="margin-bottom:20px;">Hemos aprendido a ignorar el cuerpo, a silenciarlo, a exigirle más de lo que puede dar. Pero el cuerpo sabe primero. Siempre.</p>
+    <p class="ejercicio-titulo">— Ejercicio: escaneo corporal —</p>
+    <div class="pasos">
+      <div class="paso"><span class="paso-num terra">1</span><p class="paso-texto">Cierra los ojos. Toma 3 respiraciones profundas. Siente tu cuerpo antes de continuar.</p></div>
+      <div class="paso"><span class="paso-num terra">2</span><p class="paso-texto">Recorre tu cuerpo de los pies a la cabeza. <em>¿Dónde hay tensión?</em></p></div>
+      <div class="paso"><span class="paso-num terra">3</span><p class="paso-texto">Ponle nombre a esa tensión. <em>¿Qué emoción vive ahí?</em></p></div>
+      <div class="paso"><span class="paso-num terra">4</span><p class="paso-texto">Escríbela sin juzgarla. Sin editarla. Solo obsérvala.</p></div>
+    </div>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <div class="declaration terra">
+      <p>"Mi cuerpo no es mi enemigo. Es el lugar desde donde habito el mundo."</p>
+    </div>
+  </div>
+  <div class="journaling-card">
+    <p class="journaling-titulo">Mi reflexión — Bloque 2</p>
+    <label class="pregunta-label">¿Qué le pido a mi cuerpo que haga sin escucharlo?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <label class="pregunta-label">¿Qué sensación física aparece cuando digo que sí sin querer?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <label class="pregunta-label">¿Qué necesita mi cuerpo que yo no le estoy dando?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+  </div>
+</div>
+</section>
+
+<!-- BLOQUE 3 -->
+<section id="bloque3">
+<div class="bloque">
+  <div class="bloque-header verde">
+    <span class="bh-watermark">03</span>
+    <p class="bh-num">BLOQUE 03</p>
+    <h2>Las voces que te habitan</h2>
+    <p class="bh-sub">Identifica los mandatos que dirigen tu vida</p>
+  </div>
+  <div class="ejercicio-card">
+    <p class="intro-text" style="margin-bottom:20px;">Hay voces que aprendimos de niñas y nunca cuestionamos. <em>"Una buena mujer no..."</em>, <em>"Para ser amada debo..."</em>. Hoy vamos a sacarlas a la luz.</p>
+    <p class="ejercicio-titulo">— Ejercicio: completa estas frases sin pensar —</p>
+    <p style="font-size:13px;color:#888;font-style:italic;margin-bottom:16px;">Escribe lo primero que aparezca. No lo corrijas.</p>
+    <p class="frase-completar">"Para ser amada debo..."</p>
+    <textarea class="escribir-area" placeholder="Escribe aquí..." style="min-height:72px;"></textarea>
+    <p class="frase-completar">"Una buena mujer no..."</p>
+    <textarea class="escribir-area" placeholder="Escribe aquí..." style="min-height:72px;"></textarea>
+    <p class="frase-completar">"Si me elijo a mí misma, entonces..."</p>
+    <textarea class="escribir-area" placeholder="Escribe aquí..." style="min-height:72px;"></textarea>
+    <p class="frase-completar">"Me siento culpable cuando..."</p>
+    <textarea class="escribir-area" placeholder="Escribe aquí..." style="min-height:72px;"></textarea>
+    <label class="pregunta-label" style="margin-top:20px;">¿De quién aprendí cada una de estas creencias?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <div class="declaration">
+      <p>"Los mandatos que no cuestionas, te gobiernan."</p>
+    </div>
+  </div>
+  <div class="journaling-card">
+    <p class="journaling-titulo">Mi reflexión — Bloque 3</p>
+    <label class="pregunta-label">¿Cuál de estas voces ha tomado más decisiones en mi vida?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <label class="pregunta-label">¿Qué pasaría si ya no le obedeciera?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <label class="pregunta-label">¿Qué voz quiero cultivar en su lugar?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+  </div>
+</div>
+</section>
+
+<!-- BLOQUE 4 -->
+<section id="bloque4">
+<div class="bloque">
+  <div class="bloque-header terra">
+    <span class="bh-watermark">04</span>
+    <p class="bh-num">BLOQUE 04</p>
+    <h2>Lealtades invisibles</h2>
+    <p class="bh-sub">¿A quién eres leal cuando te apagas?</p>
+  </div>
+  <div class="ejercicio-card">
+    <p class="intro-text" style="margin-bottom:20px;">A veces nos apagamos, nos silenciamos o nos achicamos para seguir perteneciendo. No es debilidad — es lealtad. Pero <em>¿a quién le eres leal cuando te apagas?</em></p>
+    <p class="ejercicio-titulo">— Ejercicio —</p>
+    <div class="pasos">
+      <div class="paso"><span class="paso-num terra">1</span><p class="paso-texto">Piensa en una persona de tu familia con quien tengas un patrón que se repite. Escríbela.</p></div>
+    </div>
+    <textarea class="escribir-area" placeholder="Escribe aquí..." style="min-height:72px;"></textarea>
+    <div class="pasos" style="margin-top:16px;">
+      <div class="paso"><span class="paso-num terra">2</span><p class="paso-texto"><em>¿Qué estás cargando de ella que no te pertenece?</em></p></div>
+    </div>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <div class="pasos" style="margin-top:16px;">
+      <div class="paso"><span class="paso-num terra">3</span><p class="paso-texto"><em>¿Qué pasaría si dejaras de cargarlo?</em></p></div>
+    </div>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <div class="declaration terra">
+      <p>"Sanarme no es traicionar a las mujeres de mi linaje. Es honrarlas."</p>
+    </div>
+  </div>
+  <div class="journaling-card">
+    <p class="journaling-titulo">Mi reflexión — Bloque 4</p>
+    <label class="pregunta-label">¿A quién le soy leal cuando me silencio?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <label class="pregunta-label">¿Qué me doy permiso de sentir hoy que antes no me permitía?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+    <label class="pregunta-label">¿Qué quiero dejar de cargar que no me pertenece?</label>
+    <textarea class="escribir-area" placeholder="Escribe aquí..."></textarea>
+  </div>
+</div>
+</section>
+
+<!-- CARTA -->
+<section id="carta" class="carta-section">
+  <div class="carta-header">
+    <h2>Una carta para ti</h2>
+    <p>Escríbele una carta a la mujer que quieres ser.<br>Sin filtros. Sin el deber ser. Solo tú y tu verdad.</p>
+  </div>
+  <div class="carta-body">
+    <p class="carta-saludo">Querida <input class="carta-nombre" type="text" placeholder="tu nombre">,</p>
+    <textarea class="carta-area" placeholder="Escribe tu carta aquí..."></textarea>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<footer class="cierre">
+  <h2>Ya empezaste a volver a ti.</h2>
+  <p>"Este no es el final del camino — es el primer paso consciente hacia tu lugar."</p>
+  <p class="cierre-firma">✦ &nbsp; Mónica Grizales · monicagrizales.com &nbsp; ✦</p>
+</footer>
+
+<button class="print-btn" onclick="window.print()">↓ Guardar como PDF</button>
+
+<!-- NAV DOTS SCRIPT -->
+<script>
+const sections = ['portada','intro','bloque1','bloque2','bloque3','bloque4','carta'];
+const dots = document.querySelectorAll('.nav-dots a');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      dots.forEach(d => d.classList.remove('active'));
+      const dot = document.querySelector(`.nav-dots a[href="#${id}"]`);
+      if (dot) dot.classList.add('active');
+    }
+  });
+}, { threshold: 0.4 });
+
+sections.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) observer.observe(el);
+});
+</script>
+</body>
+</html>
