@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import SparkleIcon from "@/components/SparkleIcon";
 
-const PAYMENT_LINK = "https://www.mercadopago.com.co/checkout/v1/payment/redirect/f14ea180-4ed7-421c-94d6-043bfca60c00/payment-option-form/?source=link&preference-id=151127219-1906df5e-7eb1-4759-a996-395ccdab7f7b&router-request-id=fa6c025a-eed5-4a00-8741-04c2ccffc659&p=a0a303f7529be5ee8d36d23e61d86324";
+const PAYMENT_LINK = "https://mpago.li/1RVsFzX";
 
 export default function InscriptionForm() {
   const [form, setForm] = useState({

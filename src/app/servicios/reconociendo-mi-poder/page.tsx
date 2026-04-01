@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     "Entrenamiento virtual de sanación emocional y liderazgo femenino. 7 y 8 de abril de 2026. Cupos limitados (40). $350.000 COP.",
 };
 
-const PAYMENT_LINK = "https://www.monicagrizales.com/inscripcion";
 
 export default function ReconociendoMiPoderPage() {
   return (
