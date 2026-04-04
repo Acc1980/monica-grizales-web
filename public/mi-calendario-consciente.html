@@ -491,6 +491,192 @@
 
 </div>
 
+<style>
+  /* ─── GUÍA (página 2) ─── */
+  .intro-box {
+    margin: 14px 18px 0;
+    background: rgba(45,56,50,.05);
+    border-left: 4px solid var(--verde-claro);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+  }
+  .intro-box p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 10.5px;
+    color: rgba(45,56,50,.7);
+    line-height: 1.6;
+  }
+  .sec-title {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--verde-medio);
+    padding: 14px 18px 8px;
+  }
+  .steps-wrap { padding: 0 18px; display: flex; flex-direction: column; gap: 8px; }
+  .step-row {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: white; border-radius: 8px; padding: 12px 14px;
+    border: 1px solid rgba(99,117,106,.1);
+  }
+  .step-num {
+    width: 22px; height: 22px; background: var(--verde-oscuro); color: white;
+    border-radius: 50%; font-size: 9px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .step-num.terra { background: var(--terracota); }
+  .step-body { flex: 1; }
+  .step-title { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 700; color: var(--verde-oscuro); margin-bottom: 3px; }
+  .step-desc { font-size: 8.5px; color: rgba(45,56,50,.6); line-height: 1.55; }
+  .step-desc strong { color: var(--verde-oscuro); font-weight: 600; }
+
+  .semanas-wrap { padding: 0 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .semana-card { border-radius: 8px; overflow: hidden; border: 1px solid rgba(99,117,106,.12); }
+  .semana-header { background: var(--verde-oscuro); padding: 7px 12px; display: flex; align-items: center; gap: 8px; }
+  .semana-header.terra { background: var(--terracota-osc); }
+  .semana-num-g { font-size: 8px; font-weight: 700; letter-spacing: 1.5px; color: rgba(255,255,255,.55); text-transform: uppercase; }
+  .semana-name { font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 600; color: white; }
+  .semana-body { background: white; padding: 10px 12px; }
+  .semana-pregunta { font-size: 8px; color: rgba(45,56,50,.5); font-style: italic; margin-bottom: 5px; line-height: 1.5; }
+  .semana-tip { font-size: 8px; color: var(--verde-medio); font-weight: 600; line-height: 1.4; }
+
+  .cierre-wrap { padding: 12px 18px; display: flex; gap: 10px; }
+  .cierre-box { flex: 1; border-radius: 8px; padding: 12px 14px; }
+  .cierre-box.verde { background: rgba(45,56,50,.05); border: 1px solid rgba(99,117,106,.15); }
+  .cierre-box.terra { background: rgba(199,141,116,.08); border: 1px solid rgba(199,141,116,.2); }
+  .cierre-title { font-size: 8px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde-medio); margin-bottom: 5px; }
+  .cierre-box.terra .cierre-title { color: var(--terracota-osc); }
+  .cierre-items { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .cierre-items li { font-size: 8.5px; color: rgba(45,56,50,.65); line-height: 1.4; padding-left: 10px; position: relative; }
+  .cierre-items li::before { content: '·'; position: absolute; left: 0; color: var(--verde-claro); font-weight: 700; }
+  .cierre-box.terra .cierre-items li::before { color: var(--terracota); }
+</style>
+
+<!-- ═══════════════ PÁGINA 2: GUÍA ═══════════════ -->
+<div class="page">
+
+  <div class="top-bar">✦ &nbsp; Mónica Grizales &nbsp; ✦</div>
+
+  <div class="title-area">
+    <h1>Guía de uso</h1>
+    <p class="sub">Mi Mes Consciente · Reconociendo mi Poder</p>
+    <span class="tag-pill">Cómo diligenciar tu calendario</span>
+  </div>
+
+  <div class="intro-box">
+    <p>Este calendario es tu espacio personal de práctica durante el mes posterior al entrenamiento. No es una tarea. Es una invitación a observarte, a pausar y a elegir conscientemente — un día a la vez.</p>
+  </div>
+
+  <p class="sec-title">Cómo usar tu calendario</p>
+
+  <div class="steps-wrap">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <p class="step-title">Elige un momento del día</p>
+        <p class="step-desc">Puede ser en la mañana antes de empezar el día, o en la noche antes de dormir. Lo importante es que sea el mismo momento cada día. <strong>5 minutos son suficientes.</strong></p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <p class="step-title">Lee la práctica de la semana</p>
+        <p class="step-desc">Cada semana tiene un enfoque diferente (S1 a S4). <strong>Lee las dos preguntas de tu semana</strong> y tómate un momento para llevarlas adentro — cierra los ojos si puedes.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num terra">3</div>
+      <div class="step-body">
+        <p class="step-title">Responde en tu diario o en el espacio de la semana</p>
+        <p class="step-desc">No hay respuestas correctas. Escribe lo primero que aparezca, sin editarlo. <strong>No tienes que lucir bien aquí.</strong> La honestidad contigo misma es la herramienta más poderosa.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num terra">4</div>
+      <div class="step-body">
+        <p class="step-title">Marca el círculo del día</p>
+        <p class="step-desc">Cuando hayas hecho tu práctica, <strong>colorea o marca el círculo de ese día</strong>. Ver el registro visual de tus días practicados es un recordatorio de tu compromiso contigo misma.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="sec-title">Las 4 prácticas semanales</p>
+
+  <div class="semanas-wrap">
+    <div class="semana-card">
+      <div class="semana-header">
+        <span class="semana-num-g">Semana 1</span>
+        <span class="semana-name">Autora de mi historia</span>
+      </div>
+      <div class="semana-body">
+        <p class="semana-pregunta">¿En qué momento de hoy me puse en último lugar? · ¿Qué habría elegido desde mi poder?</p>
+        <p class="semana-tip">Observa sin juzgarte. El objetivo es ver, no corregir.</p>
+      </div>
+    </div>
+    <div class="semana-card">
+      <div class="semana-header">
+        <span class="semana-num-g">Semana 2</span>
+        <span class="semana-name">Mi cuerpo habla</span>
+      </div>
+      <div class="semana-body">
+        <p class="semana-pregunta">¿Dónde siento tensión hoy? · ¿Qué emoción hay en ese lugar?</p>
+        <p class="semana-tip">Pon una mano en el lugar de tensión mientras respondes.</p>
+      </div>
+    </div>
+    <div class="semana-card">
+      <div class="semana-header terra">
+        <span class="semana-num-g">Semana 3</span>
+        <span class="semana-name">La voz que me habita</span>
+      </div>
+      <div class="semana-body">
+        <p class="semana-pregunta">¿Qué me dije hoy que me generó culpa? · ¿Era mi voz o una voz heredada?</p>
+        <p class="semana-tip">Si la voz suena a tu mamá o tu abuela, es heredada. Nómbrala.</p>
+      </div>
+    </div>
+    <div class="semana-card">
+      <div class="semana-header terra">
+        <span class="semana-num-g">Semana 4</span>
+        <span class="semana-name">Volver a mi lugar</span>
+      </div>
+      <div class="semana-body">
+        <p class="semana-pregunta">¿En qué momento elegí desde la calma? · ¿Qué emoción solté para lograrlo?</p>
+        <p class="semana-tip">Celebra cada momento en que elegiste diferente, por pequeño que sea.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sep-line"></div>
+
+  <div class="cierre-wrap">
+    <div class="cierre-box verde">
+      <p class="cierre-title">Mi intención para este mes</p>
+      <ul class="cierre-items">
+        <li>Escríbela el primer día (13 de abril)</li>
+        <li>Que sea simple y personal — una oración</li>
+        <li>Empieza con: "Este mes quiero sentirme..."</li>
+        <li>Vuelve a leerla cada domingo</li>
+      </ul>
+    </div>
+    <div class="cierre-box terra">
+      <p class="cierre-title">Al terminar el mes</p>
+      <ul class="cierre-items">
+        <li>Completa "Me llevaré..." el 10 de mayo</li>
+        <li>Compara con tu intención inicial</li>
+        <li>¿Qué se movió en ti este mes?</li>
+        <li>Compártelo en la comunidad si quieres</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span>✦ &nbsp; Comunidad Reconociendo mi Poder · monicagrizales.com &nbsp; ✦</span>
+  </div>
+
+</div>
+
 <button class="btn-print" onclick="window.print()">Imprimir / Guardar PDF</button>
 
 </body>
