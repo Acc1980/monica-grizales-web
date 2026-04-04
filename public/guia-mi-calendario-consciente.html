@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Guía — Mi Mes Consciente</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --verde-oscuro: #2d3832;
+    --verde-medio:  #63756a;
+    --verde-claro:  #8fa394;
+    --terracota:    #c88d74;
+    --terracota-osc:#b77360;
+    --crema:        #f5f3ef;
+    --crema-osc:    #ede9e3;
+    --texto:        #2c2c2c;
+  }
+
+  body {
+    background: #d6d1c8;
+    font-family: 'Inter', sans-serif;
+    color: var(--texto);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page { size: A4 portrait; margin: 0; }
+
+  @media print {
+    body { background: white; }
+    .btn-print { display: none !important; }
+    .page { box-shadow: none; margin: 0; }
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 16mm;
+    background: var(--crema);
+    box-shadow: 0 6px 40px rgba(0,0,0,.18);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* TOP BAR */
+  .top-bar {
+    background: var(--verde-oscuro);
+    color: rgba(255,255,255,.5);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 500;
+  }
+
+  /* TITLE */
+  .title-area {
+    text-align: center;
+    padding: 22px 30px 14px;
+    background: var(--crema);
+  }
+  .title-area h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+  .title-area .sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--verde-medio);
+    margin-bottom: 8px;
+  }
+  .tag-pill {
+    display: inline-block;
+    background: rgba(199,141,116,.15);
+    color: var(--terracota-osc);
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+  }
+
+  /* INTRO */
+  .intro-box {
+    margin: 14px 18px 0;
+    background: rgba(45,56,50,.05);
+    border-left: 4px solid var(--verde-claro);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+  }
+  .intro-box p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 10.5px;
+    color: rgba(45,56,50,.7);
+    line-height: 1.6;
+  }
+
+  /* SECTION TITLE */
+  .sec-title {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--verde-medio);
+    padding: 14px 18px 8px;
+  }
+
+  /* STEPS */
+  .steps-wrap {
+    padding: 0 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .step-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: white;
+    border-radius: 8px;
+    padding: 12px 14px;
+    border: 1px solid rgba(99,117,106,.1);
+  }
+
+  .step-num {
+    width: 22px;
+    height: 22px;
+    background: var(--verde-oscuro);
+    color: white;
+    border-radius: 50%;
+    font-size: 9px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .step-num.terra { background: var(--terracota); }
+
+  .step-body { flex: 1; }
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    margin-bottom: 3px;
+  }
+  .step-desc {
+    font-size: 8.5px;
+    color: rgba(45,56,50,.6);
+    line-height: 1.55;
+  }
+  .step-desc strong {
+    color: var(--verde-oscuro);
+    font-weight: 600;
+  }
+
+  /* SEMANAS */
+  .semanas-wrap {
+    padding: 0 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .semana-card {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(99,117,106,.12);
+  }
+  .semana-header {
+    background: var(--verde-oscuro);
+    padding: 7px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .semana-header.terra { background: var(--terracota-osc); }
+  .semana-num {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,.55);
+    text-transform: uppercase;
+  }
+  .semana-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+  }
+  .semana-body {
+    background: white;
+    padding: 10px 12px;
+  }
+  .semana-pregunta {
+    font-size: 8px;
+    color: rgba(45,56,50,.5);
+    font-style: italic;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+  .semana-tip {
+    font-size: 8px;
+    color: var(--verde-medio);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  /* SEP */
+  .sep-line {
+    width: calc(100% - 36px);
+    height: 1px;
+    background: rgba(99,117,106,.15);
+    margin: 14px auto 0;
+  }
+
+  /* CIERRE */
+  .cierre-wrap {
+    padding: 12px 18px;
+    display: flex;
+    gap: 10px;
+  }
+  .cierre-box {
+    flex: 1;
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .cierre-box.verde { background: rgba(45,56,50,.05); border: 1px solid rgba(99,117,106,.15); }
+  .cierre-box.terra { background: rgba(199,141,116,.08); border: 1px solid rgba(199,141,116,.2); }
+  .cierre-title {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--verde-medio);
+    margin-bottom: 5px;
+  }
+  .cierre-box.terra .cierre-title { color: var(--terracota-osc); }
+  .cierre-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .cierre-items li {
+    font-size: 8.5px;
+    color: rgba(45,56,50,.65);
+    line-height: 1.4;
+    padding-left: 10px;
+    position: relative;
+  }
+  .cierre-items li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--verde-claro);
+    font-weight: 700;
+  }
+  .cierre-box.terra .cierre-items li::before { color: var(--terracota); }
+
+  /* FOOTER */
+  .footer-bar {
+    background: var(--verde-oscuro);
+    padding: 9px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+  }
+  .footer-bar span {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    color: rgba(255,255,255,.4);
+    text-transform: uppercase;
+  }
+
+  /* PRINT BUTTON */
+  .btn-print {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    z-index: 9999;
+    background: var(--terracota);
+    color: white; border: none;
+    border-radius: 50px;
+    padding: 13px 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(199,141,116,.45);
+  }
+  .btn-print:hover { background: var(--terracota-osc); }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">✦ &nbsp; Mónica Grizales &nbsp; ✦</div>
+
+  <!-- TITLE -->
+  <div class="title-area">
+    <h1>Guía de uso</h1>
+    <p class="sub">Mi Mes Consciente · Reconociendo mi Poder</p>
+    <span class="tag-pill">Cómo diligenciar tu calendario</span>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro-box">
+    <p>Este calendario es tu espacio personal de práctica durante el mes posterior al entrenamiento. No es una tarea. Es una invitación a observarte, a pausar y a elegir conscientemente — un día a la vez.</p>
+  </div>
+
+  <!-- PASOS -->
+  <p class="sec-title">Cómo usar tu calendario</p>
+
+  <div class="steps-wrap">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <p class="step-title">Elige un momento del día</p>
+        <p class="step-desc">Puede ser en la mañana antes de empezar el día, o en la noche antes de dormir. Lo importante es que sea el mismo momento cada día para crear el hábito. <strong>5 minutos son suficientes.</strong></p>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <p class="step-title">Lee la práctica de la semana</p>
+        <p class="step-desc">Cada semana tiene un enfoque diferente (S1 a S4). Antes de responder, <strong>lee las dos preguntas de tu semana</strong> y tómate un momento para llevarlas adentro — cierra los ojos si puedes.</p>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num terra">3</div>
+      <div class="step-body">
+        <p class="step-title">Responde en tu diario o en el espacio de la semana</p>
+        <p class="step-desc">No hay respuestas correctas. Escribe lo primero que aparezca, sin editarlo. La honestidad contigo misma es la herramienta más poderosa que tienes. <strong>No tienes que lucir bien aquí.</strong></p>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num terra">4</div>
+      <div class="step-body">
+        <p class="step-title">Marca el círculo del día</p>
+        <p class="step-desc">Cuando hayas hecho tu práctica, <strong>colorea o marca el círculo de ese día</strong> en el calendario. Ver el registro visual de tus días practicados es un recordatorio de tu compromiso contigo misma.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEMANAS -->
+  <p class="sec-title">Las 4 prácticas semanales</p>
+
+  <div class="semanas-wrap">
+    <div class="semana-card">
+      <div class="semana-header">
+        <span class="semana-num">Semana 1</span>
+        <span class="semana-name">Autora de mi historia</span>
+      </div>
+      <div class="semana-body">
+        <p class="semana-pregunta">¿En qué momento de hoy me puse en último lugar? · ¿Qué habría elegido desde mi poder?</p>
+        <p class="semana-tip">Observa sin juzgarte. El objetivo es ver, no corregir.</p>
+      </div>
+    </div>
+
+    <div class="semana-card">
+      <div class="semana-header">
+        <span class="semana-num">Semana 2</span>
+        <span class="semana-name">Mi cuerpo habla</span>
+      </div>
+      <div class="semana-body">
+        <p class="semana-pregunta">¿Dónde siento tensión hoy? · ¿Qué emoción hay en ese lugar?</p>
+        <p class="semana-tip">Pon una mano en el lugar de tensión mientras respondes.</p>
+      </div>
+    </div>
+
+    <div class="semana-card">
+      <div class="semana-header terra">
+        <span class="semana-num">Semana 3</span>
+        <span class="semana-name">La voz que me habita</span>
+      </div>
+      <div class="semana-body">
+        <p class="semana-pregunta">¿Qué me dije hoy que me generó culpa? · ¿Era mi voz o una voz heredada?</p>
+        <p class="semana-tip">Si la voz suena a tu mamá o tu abuela, es heredada. Nómbrala.</p>
+      </div>
+    </div>
+
+    <div class="semana-card">
+      <div class="semana-header terra">
+        <span class="semana-num">Semana 4</span>
+        <span class="semana-name">Volver a mi lugar</span>
+      </div>
+      <div class="semana-body">
+        <p class="semana-pregunta">¿En qué momento elegí desde la calma? · ¿Qué emoción solté para lograrlo?</p>
+        <p class="semana-tip">Celebra cada momento en que elegiste diferente, por pequeño que sea.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sep-line"></div>
+
+  <!-- CIERRE MES -->
+  <div class="cierre-wrap">
+    <div class="cierre-box verde">
+      <p class="cierre-title">Mi intención para este mes</p>
+      <ul class="cierre-items">
+        <li>Escríbela el primer día (13 de abril)</li>
+        <li>Que sea simple y personal — una oración</li>
+        <li>Empieza con: "Este mes quiero sentirme..."</li>
+        <li>Vuelve a leerla cada domingo</li>
+      </ul>
+    </div>
+    <div class="cierre-box terra">
+      <p class="cierre-title">Al terminar el mes</p>
+      <ul class="cierre-items">
+        <li>Completa la sección "Me llevaré..." el 10 de mayo</li>
+        <li>Compara con tu intención inicial</li>
+        <li>¿Qué se movió en ti este mes?</li>
+        <li>Compártelo en la comunidad si quieres</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-bar">
+    <span>✦ &nbsp; Comunidad Reconociendo mi Poder · monicagrizales.com &nbsp; ✦</span>
+  </div>
+
+</div>
+
+<button class="btn-print" onclick="window.print()">Imprimir / Guardar PDF</button>
+
+</body>
+</html>
