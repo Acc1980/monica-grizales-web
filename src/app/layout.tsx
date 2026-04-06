@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     "bienestar emocional",
   ],
   authors: [{ name: "Mónica Grizales" }],
+  alternates: {
+    canonical: "https://monicagrizales.com",
+  },
   openGraph: {
     type: "website",
     locale: "es_CO",
