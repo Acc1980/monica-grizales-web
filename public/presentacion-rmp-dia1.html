@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reconociendo mi Poder · Día 1</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f5f3ef;
+    font-family: 'Inter', sans-serif;
+    color: #2c2c2c;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    cursor: pointer;
+  }
+
+  /* ── SLIDES ── */
+  .slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  /* fondo con gradiente suave */
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 900px 700px at 80% 10%, rgba(99,117,106,0.07) 0%, transparent 65%),
+      radial-gradient(ellipse 600px 500px at 10% 90%, rgba(183,115,96,0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 100px;
+    text-align: center;
+  }
+
+  /* ── TIPOS DE SLIDE ── */
+
+  /* PORTADA */
+  .slide-portada { background: #f5f3ef; }
+  .slide-portada .tag {
+    font-size: 13px; letter-spacing: 5px; text-transform: uppercase;
+    color: #63756a; margin-bottom: 40px;
+  }
+  .slide-portada h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(60px, 8vw, 110px);
+    font-weight: 700; line-height: 1;
+    color: #2c2c2c;
+  }
+  .slide-portada h1 em { color: #b77360; font-style: italic; display: block; }
+  .slide-portada .autor {
+    margin-top: 48px; font-size: 14px; letter-spacing: 5px;
+    text-transform: uppercase; color: rgba(78,93,84,0.55);
+  }
+  .slide-portada .dia-badge {
+    margin-top: 24px;
+    border: 1px solid rgba(99,117,106,0.35);
+    padding: 10px 36px; border-radius: 2px;
+    font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+    color: #63756a;
+  }
+
+  /* SECCIÓN (divisor) */
+  .slide-seccion { background: #eae7e1; }
+  .slide-seccion .numero {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(120px, 18vw, 220px);
+    font-weight: 700; color: rgba(183,115,96,0.12);
+    line-height: 1; position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
+  .slide-seccion .seccion-content {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .slide-seccion .hora {
+    font-size: 12px; letter-spacing: 5px; text-transform: uppercase;
+    color: #63756a; margin-bottom: 20px;
+  }
+  .slide-seccion h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 80px);
+    font-weight: 700; color: #2c2c2c; line-height: 1.1;
+  }
+  .slide-seccion h2 em { color: #b77360; font-style: italic; }
+  .slide-seccion .sub {
+    margin-top: 24px; font-size: 16px; color: #63756a;
+    letter-spacing: 2px; text-transform: uppercase;
+  }
+
+  /* FRASE grande */
+  .slide-frase { background: #f5f3ef; }
+  .slide-frase blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4.5vw, 62px);
+    font-style: italic; line-height: 1.35;
+    color: #2c2c2c; max-width: 900px;
+  }
+  .slide-frase blockquote em { color: #b77360; font-style: italic; }
+  .slide-frase .linea {
+    width: 60px; height: 2px;
+    background: rgba(99,117,106,0.3); margin: 40px auto;
+  }
+  .slide-frase .atribucion {
+    font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+    color: #63756a;
+  }
+
+  /* CONFRONTACIÓN */
+  .slide-confrontacion { background: #f0ece5; }
+  .slide-confrontacion .eyebrow {
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: #b77360; margin-bottom: 32px; opacity: 0.8;
+  }
+  .slide-confrontacion blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 56px);
+    font-style: italic; line-height: 1.35;
+    color: #2c2c2c; max-width: 860px;
+  }
+  .slide-confrontacion blockquote strong { color: #b77360; font-style: normal; }
+
+  /* PREGUNTAS */
+  .slide-preguntas { background: #eef2ef; }
+  .slide-preguntas .titulo-bloque {
+    font-size: 12px; letter-spacing: 5px; text-transform: uppercase;
+    color: #63756a; margin-bottom: 48px;
+  }
+  .slide-preguntas ul {
+    list-style: none; display: flex; flex-direction: column; gap: 28px;
+    max-width: 800px; text-align: left;
+  }
+  .slide-preguntas ul li {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3vw, 36px);
+    font-style: italic; color: #2c2c2c; line-height: 1.3;
+    padding-left: 28px; position: relative;
+  }
+  .slide-preguntas ul li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: #b77360; font-style: normal;
+    font-family: 'Inter', sans-serif; font-size: 18px;
+    top: 4px;
+  }
+
+  /* TEXTO LARGO (frases sanadoras) */
+  .slide-texto { background: #f5f3ef; }
+  .slide-texto .titulo-texto {
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: #63756a; margin-bottom: 36px;
+  }
+  .slide-texto .cuerpo {
+    font-size: clamp(13px, 1.4vw, 17px);
+    line-height: 1.9; color: #3a3a3a;
+    max-width: 860px; text-align: left;
+  }
+  .slide-texto .cuerpo p { margin-bottom: 12px; }
+  .slide-texto .cuerpo em { color: #63756a; font-style: italic; }
+
+  /* DECRETO / ritual */
+  .slide-decreto { background: #eef2ef; }
+  .slide-decreto .decreto-lines {
+    display: flex; flex-direction: column; gap: 18px;
+    max-width: 820px;
+  }
+  .slide-decreto .linea-decreto {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 2.8vw, 36px);
+    font-style: italic; color: #2c2c2c; line-height: 1.3;
+  }
+  .slide-decreto .linea-decreto em { color: #4e5d54; }
+  .slide-decreto .linea-decreto strong { color: #b77360; font-style: normal; }
+  .slide-decreto .pausa {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(99,117,106,0.45); margin: 8px 0;
+  }
+
+  /* CIERRE */
+  .slide-cierre { background: #f5f3ef; }
+  .slide-cierre h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 72px);
+    font-weight: 700; color: #2c2c2c; line-height: 1.1;
+  }
+  .slide-cierre h2 em { color: #b77360; font-style: italic; }
+  .slide-cierre .sub {
+    margin-top: 32px; font-size: 16px; letter-spacing: 3px;
+    text-transform: uppercase; color: #63756a;
+  }
+
+  /* ── NAVEGACIÓN ── */
+  #nav {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 16px; z-index: 100;
+  }
+  #nav button {
+    background: rgba(99,117,106,0.12); border: 1px solid rgba(99,117,106,0.25);
+    color: #4e5d54; width: 44px; height: 44px; border-radius: 2px;
+    font-size: 18px; cursor: pointer; transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #nav button:hover { background: rgba(99,117,106,0.22); }
+  #contador {
+    font-size: 12px; letter-spacing: 3px; color: rgba(78,93,84,0.5);
+    min-width: 60px; text-align: center;
+  }
+
+  /* progreso */
+  #barra {
+    position: fixed; top: 0; left: 0; height: 3px;
+    background: #b77360; transition: width 0.3s; z-index: 100;
+  }
+
+  /* ── SLIDE: dos columnas ── */
+  .dos-col { flex-direction: row !important; gap: 60px; align-items: center; }
+  .col { flex: 1; text-align: left; }
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 1 · PORTADA
+══════════════════════════════════════════════ -->
+<div class="slide slide-portada active">
+  <div class="inner">
+    <div class="tag">&#10022; Mónica Grizales</div>
+    <h1>Reconociendo<br><em>mi Poder</em></h1>
+    <div class="autor">@monigrizales</div>
+    <div class="dia-badge">Día 1 · Sesión en vivo</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 2 · SECCIÓN: APERTURA
+══════════════════════════════════════════════ -->
+<div class="slide slide-seccion">
+  <div class="inner">
+    <div class="numero">01</div>
+    <div class="seccion-content">
+      <h2>Apertura de<br><em>alto impacto</em></h2>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 3 · FRASES APERTURA
+══════════════════════════════════════════════ -->
+<div class="slide slide-frase">
+  <div class="inner">
+    <blockquote>
+      "No eliges mal…<br>eliges <em>familiar"</em>
+    </blockquote>
+    <div class="linea"></div>
+    <blockquote style="font-size: clamp(20px, 3vw, 42px); color: #4e5d54;">
+      "No repites porque quieres…<br>repites porque aún no lo has visto"
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 4 · FRASES ANCLA
+══════════════════════════════════════════════ -->
+<div class="slide slide-frase">
+  <div class="inner">
+    <blockquote>
+      "No es que no puedas…<br>es que aún <em>no te eliges"</em>
+    </blockquote>
+    <div class="linea"></div>
+    <blockquote style="font-size: clamp(20px, 3vw, 42px); color: #4e5d54;">
+      "El problema no es lo que te hicieron…<br>es lo que sigues <em>permitiendo"</em>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 5 · SECCIÓN: EL PERSONAJE
+══════════════════════════════════════════════ -->
+<div class="slide slide-seccion">
+  <div class="inner">
+    <div class="numero">02</div>
+    <div class="seccion-content">
+      <h2>El personaje<br><em>que he creado</em></h2>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 6 · PREGUNTAS PERSONAJE
+══════════════════════════════════════════════ -->
+<div class="slide slide-preguntas">
+  <div class="inner">
+    <div class="titulo-bloque">Escritura profunda</div>
+    <ul>
+      <li>¿Quién estoy siendo?</li>
+      <li>¿Qué sostengo por miedo?</li>
+      <li>¿Qué imagen quiero mostrar?</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 7 · CONFRONTACIÓN PERSONAJE
+══════════════════════════════════════════════ -->
+<div class="slide slide-confrontacion">
+  <div class="inner">
+    <div class="eyebrow">Confrontación</div>
+    <blockquote>
+      "No es que no puedas…<br>es que estás sosteniendo<br><strong>un personaje"</strong>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 8 · SECCIÓN: MAMÁ
+══════════════════════════════════════════════ -->
+<div class="slide slide-seccion">
+  <div class="inner">
+    <div class="numero">03</div>
+    <div class="seccion-content">
+      <h2><em>Mamá</em></h2>
+      <div class="sub">El linaje femenino</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 9 · FRASES MAMÁ
+══════════════════════════════════════════════ -->
+<div class="slide slide-frase">
+  <div class="inner">
+    <blockquote>
+      "Mientras sigas en guerra con tu mamá…<br>
+      estarás en guerra con la vida,<br>
+      el dinero, la pareja…<br>
+      y contigo."
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 10 · FRASE MAMÁ 2
+══════════════════════════════════════════════ -->
+<div class="slide slide-frase">
+  <div class="inner">
+    <blockquote>
+      "Una mujer que honra a su madre…<br>
+      deja de sobrevivir…<br>
+      y empieza a <em>crear."</em>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 11 · CONFRONTACIÓN MAMÁ
+══════════════════════════════════════════════ -->
+<div class="slide slide-confrontacion">
+  <div class="inner">
+    <div class="eyebrow">Confrontación</div>
+    <blockquote>
+      "Si sigues viviendo como tu mamá…<br>
+      <strong>no la honras,<br>la repites."</strong>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 12 · ACTO SISTÉMICO – DECRETO
+══════════════════════════════════════════════ -->
+<div class="slide slide-decreto">
+  <div class="inner">
+    <div class="titulo-texto" style="font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#9dbaaf;margin-bottom:36px;">Acto sistémico</div>
+    <div class="decreto-lines">
+      <div class="linea-decreto">"Mamá… no fue perfecto lo que viví contigo…"</div>
+      <div class="pausa">· pausa ·</div>
+      <div class="linea-decreto">"Y aun así… <em>honro que me diste la vida."</em></div>
+      <div class="pausa">· pausa ·</div>
+      <div class="linea-decreto">"Mamá… por amor tomé tu dolor,<br>tomé tus miedos,<br>tomé lo que no me correspondía…"</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 13 · DECRETO DEVOLUCIÓN
+══════════════════════════════════════════════ -->
+<div class="slide slide-decreto">
+  <div class="inner">
+    <div class="decreto-lines">
+      <div class="linea-decreto">"Hoy <em>te lo devuelvo…</em><br>con amor…<br>porque confío en que tú puedes con lo tuyo…"</div>
+      <div class="pausa">· pausa ·</div>
+      <div class="linea-decreto">"Y yo elijo vivir <strong>mi propia vida."</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 14 · DECRETO GRUPAL
+══════════════════════════════════════════════ -->
+<div class="slide slide-confrontacion">
+  <div class="inner">
+    <blockquote style="font-size: clamp(24px, 3.5vw, 50px);">
+      "Hoy dejo de cargar…<br>
+      hoy tomo mi lugar…<br>
+      hoy elijo vivir <strong>MI vida."</strong>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 15 · ORDEN SISTÉMICO MAMÁ
+══════════════════════════════════════════════ -->
+<div class="slide slide-decreto">
+  <div class="inner">
+    <div class="decreto-lines">
+      <div class="linea-decreto">"Tú eres la grande…<br>yo soy la pequeña…"</div>
+      <div class="pausa">· pausa ·</div>
+      <div class="linea-decreto">"Y tomo la vida de ti…<br><em>tal como vino."</em></div>
+      <div class="pausa">· pausa ·</div>
+      <div class="linea-decreto">"Tu mamá te dio lo que <em>tenía disponible."</em></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 16 · LINAJE FEMENINO – FRASES SANADORAS
+══════════════════════════════════════════════ -->
+<div class="slide slide-texto">
+  <div class="inner" style="justify-content: flex-start; padding-top: 50px; overflow-y: auto;">
+    <div class="titulo-texto">Frases sanadoras · Linaje femenino</div>
+    <div class="cuerpo">
+      <p>Mamá, abuelas, tías, bisabuelas y a todas las mujeres de mi clan familiar, <em>os honro por muchos motivos.</em></p>
+      <p>Honro el dolor que padecisteis en vuestra condición de mujer por la época que os tocó vivir.</p>
+      <p>Honro a vuestras niñas interiores heridas a las que muchas veces les faltó amor y cuando les fueron impuestas prohibiciones y obligaciones de forma arbitraria.</p>
+      <p>Honro el dolor que generaron en vuestros corazones los hombres que no os supieron respetar y valorar como merecíais.</p>
+      <p>Honro aquello que os frustró como madres y todo lo que os impidió que pudierais disfrutar más de vuestra maternidad.</p>
+      <p>Honro los límites que os impuso la sociedad en todo aquello en lo que no os dieron las mismas oportunidades que a los hombres.</p>
+      <p>Y os honro en las enfermedades y en los accidentes que fueron provocados por todo aquello que tuvisteis que callar.</p>
+      <p>También os honro en vuestras alegrías, en vuestras ilusiones y en todos vuestros instantes de felicidad ya que gracias a ellos pudisteis en muchos momentos difíciles manteneros de pie y seguir adelante.</p>
+      <p>Lo honro todo porque vuestro dolor sufrido no os convierte en mujeres desgraciadas, sino en <em>mujeres que crecieron y evolucionaron a través de sus experiencias.</em></p>
+      <p>A todas vosotras os llevo en mi corazón con mucho respeto y orgullo ya que fuisteis, sois y seréis siempre <em>grandes mujeres dignas de admirar.</em></p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 17 · SÍ A LA VIDA
+══════════════════════════════════════════════ -->
+<div class="slide slide-frase">
+  <div class="inner">
+    <blockquote>
+      "Sí a la vida…<br>
+      sí a mi historia…<br>
+      sí a lo que viene."
+    </blockquote>
+    <div class="linea"></div>
+    <div class="atribucion">Me inclino ante la vida que viene de ti</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 18 · SECCIÓN: PAPÁ
+══════════════════════════════════════════════ -->
+<div class="slide slide-seccion">
+  <div class="inner">
+    <div class="numero">04</div>
+    <div class="seccion-content">
+      <h2><em>Papá</em></h2>
+      <div class="sub">Orden y vida</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 19 · PAPÁ – CONEXIÓN
+══════════════════════════════════════════════ -->
+<div class="slide slide-frase">
+  <div class="inner">
+    <blockquote>
+      "Tu papá no es solo tu papá…<br>
+      es tu conexión con la vida,<br>
+      con el mundo, con el dinero,<br>
+      con el <em>merecimiento."</em>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 20 · PAPÁ – FRASES CLAVE
+══════════════════════════════════════════════ -->
+<div class="slide slide-frase">
+  <div class="inner">
+    <blockquote>
+      "No necesitas un papá perfecto…<br>
+      necesitas <em>tomar al papá que te tocó."</em>
+    </blockquote>
+    <div class="linea"></div>
+    <blockquote style="font-size: clamp(18px, 2.5vw, 38px); color: #4e5d54;">
+      "Mientras sigas peleando con tu papá…<br>
+      peleas con la vida."
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 21 · PAPÁ – DINERO
+══════════════════════════════════════════════ -->
+<div class="slide slide-confrontacion">
+  <div class="inner">
+    <div class="eyebrow">Papá · Dinero · Logro</div>
+    <blockquote>
+      "La forma en la que tomas a tu papá…<br>
+      es la forma en la que tomas<br>
+      <strong>el dinero, las oportunidades y el éxito."</strong>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 22 · PAPÁ – EL QUIEBRE
+══════════════════════════════════════════════ -->
+<div class="slide slide-confrontacion">
+  <div class="inner">
+    <div class="eyebrow">Distinción poderosa</div>
+    <blockquote>
+      "El problema no es tu papá…"
+    </blockquote>
+    <div style="margin-top:24px; font-size: clamp(16px,2.2vw,32px); color: #4e5d54; font-family:'Playfair Display',serif; font-style:italic;">
+      "El problema es que sigues siendo leal<br>
+      a la versión de él que construiste<br>
+      cuando eras <strong style="color:#b77360;font-style:normal;">niña."</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 23 · PAPÁ – UNA COSA / OTRA COSA
+══════════════════════════════════════════════ -->
+<div class="slide slide-frase">
+  <div class="inner">
+    <blockquote>
+      "Una cosa es tu papá…<br>
+      y otra muy diferente es<br>
+      <em>la historia que tú creaste sobre él."</em>
+    </blockquote>
+    <div class="linea"></div>
+    <blockquote style="font-size: clamp(18px, 2.5vw, 36px); color: #4e5d54;">
+      "Y esa historia… <em>hoy dirige tu vida."</em>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 24 · ORDEN SISTÉMICO PAPÁ
+══════════════════════════════════════════════ -->
+<div class="slide slide-frase">
+  <div class="inner">
+    <blockquote>
+      "Tomar a papá no es aprobar lo que hizo…<br>
+      es <em>dejar de pelear con la vida."</em>
+    </blockquote>
+    <div class="linea"></div>
+    <blockquote style="font-size: clamp(18px, 2.5vw, 36px); color: #4e5d54;">
+      "Porque la vida… vino a ti a través de él."
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 25 · DECRETO PAPÁ
+══════════════════════════════════════════════ -->
+<div class="slide slide-decreto">
+  <div class="inner">
+    <div class="decreto-lines">
+      <div class="linea-decreto">"Papá… hoy dejo de esperarte."</div>
+      <div class="pausa">· pausa ·</div>
+      <div class="linea-decreto">"Suelto la expectativa de que seas diferente."</div>
+      <div class="pausa">· pausa ·</div>
+      <div class="linea-decreto">"Dejo atrás la niña que necesitaba más."</div>
+      <div class="pausa">· pausa ·</div>
+      <div class="linea-decreto">"Hoy me libero de esperar lo que no llegó."</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 26 · DECRETO PAPÁ 2
+══════════════════════════════════════════════ -->
+<div class="slide slide-decreto">
+  <div class="inner">
+    <div class="decreto-lines">
+      <div class="linea-decreto">"Tú eres el grande… yo soy la pequeña."</div>
+      <div class="linea-decreto">"Tú eres el papá… yo soy la hija."</div>
+      <div class="pausa">· pausa ·</div>
+      <div class="linea-decreto">"Honro la vida que vino de ti."</div>
+      <div class="linea-decreto">"Reconozco que hiciste lo que pudiste<br>con lo que tenías."</div>
+      <div class="pausa">· pausa ·</div>
+      <div class="linea-decreto"><em>"Papá… tomo la vida que viene de ti.<br>La tomo completa… tal como fue."</em></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 27 · DECRETO PAPÁ – FUERZA
+══════════════════════════════════════════════ -->
+<div class="slide slide-confrontacion">
+  <div class="inner">
+    <blockquote>
+      "Hoy dejo de pelear con la vida."<br><br>
+      <strong>"Hoy tomo la fuerza que viene de ti."</strong><br><br>
+      "Y con esa fuerza… <strong>avanzo."</strong>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 28 · LINAJE MASCULINO
+══════════════════════════════════════════════ -->
+<div class="slide slide-decreto">
+  <div class="inner">
+    <div class="titulo-texto" style="font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#9dbaaf;margin-bottom:36px;">Linaje masculino</div>
+    <div class="decreto-lines">
+      <div class="linea-decreto">"Detrás de tu papá… están todos los hombres de tu sistema."</div>
+      <div class="pausa">· pausa ·</div>
+      <div class="linea-decreto">"Tu abuelo… bisabuelos… y más atrás…<br>Hombres que amaron como pudieron."</div>
+      <div class="pausa">· pausa ·</div>
+      <div class="linea-decreto"><em>"A los hombres de mi sistema… <strong style="color:#b77360;font-style:normal;">los veo."</strong></em></div>
+      <div class="linea-decreto">"Honro su historia… tal como fue."</div>
+      <div class="linea-decreto">"Tomo la fuerza de este linaje masculino."</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 29 · FRASE HONRAR
+══════════════════════════════════════════════ -->
+<div class="slide slide-frase">
+  <div class="inner">
+    <blockquote>
+      "Seguir esperando<br>te mantiene <em>pequeña."</em>
+    </blockquote>
+    <div class="linea"></div>
+    <blockquote style="font-size: clamp(22px, 3.2vw, 48px);">
+      "Honrar la historia…<br>te hace <em>libre."</em>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 30 · SECCIÓN: INTEGRACIÓN
+══════════════════════════════════════════════ -->
+<div class="slide slide-seccion">
+  <div class="inner">
+    <div class="numero">05</div>
+    <div class="seccion-content">
+      <h2>Ejercicio de<br><em>integración</em></h2>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 31 · PREGUNTAS INTEGRACIÓN
+══════════════════════════════════════════════ -->
+<div class="slide slide-preguntas">
+  <div class="inner">
+    <div class="titulo-bloque">Escritura · Integración</div>
+    <ul>
+      <li>"Mi mamá me enseñó que el amor es…"</li>
+      <li>"Mi papá me enseñó que la vida es…"</li>
+      <li>"Por eso hoy yo…"</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 32 · FRASE CIERRE DÍA 1
+══════════════════════════════════════════════ -->
+<div class="slide slide-confrontacion">
+  <div class="inner">
+    <blockquote style="font-size: clamp(26px, 4vw, 58px);">
+      "No eres víctima…<br>
+      eres <strong>leal."</strong>
+    </blockquote>
+    <div style="margin-top:32px; font-size: clamp(18px,2.5vw,36px); color:#4e5d54; font-family:'Playfair Display',serif; font-style:italic;">
+      "Y mañana… decides si lo sigues siendo."
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 33 · CIERRE
+══════════════════════════════════════════════ -->
+<div class="slide slide-cierre">
+  <div class="inner">
+    <div class="tag" style="font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#9dbaaf;margin-bottom:40px;">&#10022; Mónica Grizales</div>
+    <h2>Hoy <em>empieza</em><br>tu historia nueva.</h2>
+    <div class="sub">Reconociendo mi Poder · Día 1</div>
+  </div>
+</div>
+
+<!-- ── BARRA PROGRESO + NAVEGACIÓN ── -->
+<div id="barra"></div>
+
+<div id="nav">
+  <button onclick="anterior()">&#8592;</button>
+  <span id="contador">1 / 33</span>
+  <button onclick="siguiente()">&#8594;</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let actual = 0;
+
+  function mostrar(n) {
+    slides[actual].classList.remove('active');
+    actual = (n + slides.length) % slides.length;
+    slides[actual].classList.add('active');
+    document.getElementById('contador').textContent = (actual + 1) + ' / ' + slides.length;
+    const pct = ((actual + 1) / slides.length * 100).toFixed(1);
+    document.getElementById('barra').style.width = pct + '%';
+  }
+
+  function siguiente() { mostrar(actual + 1); }
+  function anterior()  { mostrar(actual - 1); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') siguiente();
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   anterior();
+  });
+
+  document.body.addEventListener('click', e => {
+    if (!e.target.closest('button')) siguiente();
+  });
+
+  mostrar(0);
+</script>
+</body>
+</html>
