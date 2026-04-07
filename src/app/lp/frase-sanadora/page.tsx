@@ -10,7 +10,7 @@ const frases = [
   "No vine a este mundo a ocupar poco espacio.",
   "Sanar no es traicionar. Es honrar lo que viene después de ti.",
   "Tu cuerpo sabe antes que tu mente. Escúchalo.",
-  "El lugar que buscas afuera, ya existe adentro de ti.",
+  "El lugar que buscas afuera, ya existe dentro de ti.",
   "Eres la primera mujer de tu linaje que se permite ser feliz sin culpa.",
   "No tienes que ganarte el derecho a existir.",
   "Lo que sientes es información, no una condena.",
