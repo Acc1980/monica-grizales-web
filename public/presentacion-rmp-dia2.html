@@ -598,8 +598,10 @@
   <button onclick="cambiar(-1)" title="Anterior">&#8592;</button>
   <span id="contador">1 / 25</span>
   <button onclick="cambiar(1)" title="Siguiente">&#8594;</button>
+  <button onclick="descargarSlide()" title="Descargar imagen" style="background:#b77360;">&#8595; PNG</button>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
   const slides = document.querySelectorAll('.slide');
   const total = slides.length;
@@ -614,6 +616,16 @@
   }
 
   function cambiar(dir) { mostrar(current + dir); }
+
+  function descargarSlide() {
+    const slide = slides[current];
+    html2canvas(slide, { scale: 2, useCORS: true, backgroundColor: null }).then(canvas => {
+      const link = document.createElement('a');
+      link.download = 'rmp-dia2-slide-' + (current + 1) + '.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+  }
 
   document.body.addEventListener('click', function(e) {
     if (e.target.closest('#nav')) return;
