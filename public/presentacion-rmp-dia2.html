@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reconociendo mi Poder · Día 2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f5f3ef;
+    font-family: 'Inter', sans-serif;
+    color: #2c2c2c;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    cursor: pointer;
+  }
+
+  .slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 900px 700px at 80% 10%, rgba(99,117,106,0.07) 0%, transparent 65%),
+      radial-gradient(ellipse 600px 500px at 10% 90%, rgba(183,115,96,0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 100px;
+    text-align: center;
+  }
+
+  /* PORTADA */
+  .slide-portada { background: #f5f3ef; }
+  .slide-portada .tag {
+    font-size: 13px; letter-spacing: 5px; text-transform: uppercase;
+    color: #63756a; margin-bottom: 40px;
+  }
+  .slide-portada h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 7vw, 100px);
+    font-weight: 700; line-height: 1.05;
+    color: #2c2c2c;
+  }
+  .slide-portada h1 em { color: #b77360; font-style: italic; display: block; }
+  .slide-portada .autor {
+    margin-top: 48px; font-size: 14px; letter-spacing: 5px;
+    text-transform: uppercase; color: rgba(78,93,84,0.55);
+  }
+  .slide-portada .dia-badge {
+    margin-top: 24px;
+    border: 1px solid rgba(99,117,106,0.35);
+    padding: 10px 36px; border-radius: 2px;
+    font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+    color: #63756a;
+  }
+
+  /* SECCIÓN */
+  .slide-seccion { background: #eae7e1; }
+  .slide-seccion .numero {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(120px, 18vw, 220px);
+    font-weight: 700; color: rgba(183,115,96,0.12);
+    line-height: 1; position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
+  .slide-seccion .seccion-content {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .slide-seccion .label {
+    font-size: 12px; letter-spacing: 5px; text-transform: uppercase;
+    color: #63756a; margin-bottom: 20px;
+  }
+  .slide-seccion h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 6vw, 78px);
+    font-weight: 700; color: #2c2c2c; line-height: 1.1;
+  }
+  .slide-seccion h2 em { color: #b77360; font-style: italic; }
+
+  /* FRASE */
+  .slide-frase { background: #f5f3ef; }
+  .slide-frase blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4.5vw, 62px);
+    font-style: italic; line-height: 1.35;
+    color: #2c2c2c; max-width: 900px;
+  }
+  .slide-frase blockquote em { color: #b77360; font-style: italic; }
+  .slide-frase .linea {
+    width: 60px; height: 2px;
+    background: rgba(99,117,106,0.3); margin: 36px auto;
+  }
+  .slide-frase .sub {
+    font-size: 16px; color: #63756a; letter-spacing: 2px;
+    text-transform: uppercase; max-width: 700px; line-height: 1.6;
+  }
+
+  /* FRASE CLAVE (terracota oscuro) */
+  .slide-frase-clave { background: #2d2820; }
+  .slide-frase-clave::before { display: none; }
+  .slide-frase-clave blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4.8vw, 66px);
+    font-style: italic; line-height: 1.3;
+    color: #f5f0e8; max-width: 900px;
+  }
+  .slide-frase-clave blockquote em { color: #c88d74; }
+  .slide-frase-clave .linea {
+    width: 60px; height: 1px;
+    background: rgba(200,141,116,0.3); margin: 36px auto;
+  }
+
+  /* LISTA */
+  .slide-lista { background: #f5f3ef; }
+  .slide-lista .eyebrow {
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: #b77360; margin-bottom: 44px;
+  }
+  .slide-lista ul {
+    list-style: none; display: flex; flex-direction: column; gap: 24px;
+    max-width: 820px; text-align: left;
+  }
+  .slide-lista ul li {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.8vw, 38px);
+    font-style: italic; color: #2c2c2c; line-height: 1.3;
+    padding-left: 32px; position: relative;
+  }
+  .slide-lista ul li::before {
+    content: '·';
+    position: absolute; left: 0;
+    color: #b77360; font-style: normal;
+    font-size: 32px; line-height: 1; top: 0;
+  }
+
+  /* LISTA VERDE */
+  .slide-lista-verde { background: #eef2ef; }
+  .slide-lista-verde .eyebrow {
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: #63756a; margin-bottom: 44px;
+  }
+  .slide-lista-verde ul {
+    list-style: none; display: flex; flex-direction: column; gap: 24px;
+    max-width: 820px; text-align: left;
+  }
+  .slide-lista-verde ul li {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.8vw, 38px);
+    font-style: italic; color: #2c2c2c; line-height: 1.3;
+    padding-left: 32px; position: relative;
+  }
+  .slide-lista-verde ul li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: #63756a; font-style: normal;
+    font-family: 'Inter', sans-serif; font-size: 20px; top: 6px;
+  }
+
+  /* CONFRONTACIÓN */
+  .slide-confrontacion { background: #f0ece5; }
+  .slide-confrontacion .eyebrow {
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: #b77360; margin-bottom: 32px; opacity: 0.8;
+  }
+  .slide-confrontacion blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 56px);
+    font-style: italic; line-height: 1.35;
+    color: #2c2c2c; max-width: 860px;
+  }
+  .slide-confrontacion blockquote strong { color: #b77360; font-style: normal; }
+
+  /* PREGUNTAS */
+  .slide-preguntas { background: #eef2ef; }
+  .slide-preguntas .titulo-bloque {
+    font-size: 12px; letter-spacing: 5px; text-transform: uppercase;
+    color: #63756a; margin-bottom: 48px;
+  }
+  .slide-preguntas ul {
+    list-style: none; display: flex; flex-direction: column; gap: 28px;
+    max-width: 800px; text-align: left;
+  }
+  .slide-preguntas ul li {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3vw, 36px);
+    font-style: italic; color: #2c2c2c; line-height: 1.3;
+    padding-left: 28px; position: relative;
+  }
+  .slide-preguntas ul li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: #b77360; font-style: normal;
+    font-family: 'Inter', sans-serif; font-size: 18px; top: 4px;
+  }
+
+  /* CIERRE */
+  .slide-cierre { background: #f5f3ef; }
+  .slide-cierre h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 72px);
+    font-weight: 700; color: #2c2c2c; line-height: 1.1;
+  }
+  .slide-cierre h2 em { color: #b77360; font-style: italic; }
+  .slide-cierre .sub {
+    margin-top: 32px; font-size: 16px; letter-spacing: 3px;
+    text-transform: uppercase; color: #63756a;
+  }
+
+  /* NAVEGACIÓN */
+  #nav {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 16px; z-index: 100;
+  }
+  #nav button {
+    background: rgba(99,117,106,0.12); border: 1px solid rgba(99,117,106,0.25);
+    color: #4e5d54; width: 44px; height: 44px; border-radius: 2px;
+    font-size: 18px; cursor: pointer; transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #nav button:hover { background: rgba(99,117,106,0.22); }
+  #contador {
+    font-size: 12px; letter-spacing: 3px; color: rgba(78,93,84,0.5);
+    min-width: 60px; text-align: center;
+  }
+  #barra {
+    position: fixed; top: 0; left: 0; height: 3px;
+    background: #b77360; transition: width 0.3s; z-index: 100;
+  }
+
+  /* Ajuste nav oscuro */
+  .slide-frase-clave ~ * #nav button,
+  .dark-nav #nav button { color: rgba(255,255,255,0.6); }
+</style>
+</head>
+<body>
+
+<!-- BARRA PROGRESO -->
+<div id="barra"></div>
+
+<!-- ══════════════════════════════
+     SLIDE 1 · PORTADA
+══════════════════════════════════ -->
+<div class="slide slide-portada active">
+  <div class="inner">
+    <div class="tag">&#10022; Mónica Grizales</div>
+    <h1>Repetición,<br>lealtad<br><em>y elección</em></h1>
+    <div class="autor">@monigrizales</div>
+    <div class="dia-badge">Día 2 · Sesión en vivo</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 2 · IDEA BASE
+══════════════════════════════════ -->
+<div class="slide slide-lista">
+  <div class="inner">
+    <p class="eyebrow">La base de hoy</p>
+    <ul>
+      <li>No repetimos por casualidad</li>
+      <li>Repetimos por pertenencia</li>
+      <li>Repetimos por lealtad</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 3 · SECCIÓN: MANDATOS
+══════════════════════════════════ -->
+<div class="slide slide-seccion">
+  <div class="inner">
+    <div class="numero">01</div>
+    <div class="seccion-content">
+      <p class="label">Bloque 1</p>
+      <h2>¿Qué son los<br><em>mandatos?</em></h2>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 4 · DEFINICIÓN MANDATO
+══════════════════════════════════ -->
+<div class="slide slide-lista-verde">
+  <div class="inner">
+    <p class="eyebrow">Definición</p>
+    <ul>
+      <li>Son creencias heredadas</li>
+      <li>Son frases internalizadas</li>
+      <li>Dirigen decisiones sin que lo notes</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 5 · EJEMPLOS MANDATOS
+══════════════════════════════════ -->
+<div class="slide slide-lista">
+  <div class="inner">
+    <p class="eyebrow">Ejemplos de mandatos</p>
+    <ul>
+      <li>"El amor duele"</li>
+      <li>"Los hombres no se quedan"</li>
+      <li>"Ser mujer es sacrificarse"</li>
+      <li>"Hay que poder con todo"</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 6 · MANDATOS SE EJECUTAN
+══════════════════════════════════ -->
+<div class="slide slide-confrontacion">
+  <div class="inner">
+    <p class="eyebrow">Lo que nadie te dijo</p>
+    <blockquote>
+      Estos mandatos no se cuestionan…<br>
+      <strong>se ejecutan.</strong>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 7 · IMPACTO MANDATOS
+══════════════════════════════════ -->
+<div class="slide slide-lista-verde">
+  <div class="inner">
+    <p class="eyebrow">Impacto de los mandatos</p>
+    <ul>
+      <li>Definen tus elecciones</li>
+      <li>Condicionan tus relaciones</li>
+      <li>Limitan tus posibilidades</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 8 · SECCIÓN: REPETICIÓN
+══════════════════════════════════ -->
+<div class="slide slide-seccion">
+  <div class="inner">
+    <div class="numero">02</div>
+    <div class="seccion-content">
+      <p class="label">Bloque 2</p>
+      <h2>¿Por qué<br><em>repetimos?</em></h2>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 9 · REPETICIÓN SISTÉMICA
+══════════════════════════════════ -->
+<div class="slide slide-lista-verde">
+  <div class="inner">
+    <p class="eyebrow">Repetición sistémica</p>
+    <ul>
+      <li>Repetir es inconsciente</li>
+      <li>Repetir genera pertenencia</li>
+      <li>Repetir mantiene el vínculo</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 10 · FRASE CLAVE
+══════════════════════════════════ -->
+<div class="slide slide-frase-clave">
+  <div class="inner">
+    <blockquote>
+      "Repetir es amar…<br><em>pero desde el dolor"</em>
+    </blockquote>
+    <div class="linea"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 11 · SECCIÓN: LEALTAD
+══════════════════════════════════ -->
+<div class="slide slide-seccion">
+  <div class="inner">
+    <div class="numero">03</div>
+    <div class="seccion-content">
+      <p class="label">Bloque 3</p>
+      <h2>¿Qué es una<br><em>lealtad?</em></h2>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 12 · DEFINICIÓN LEALTAD
+══════════════════════════════════ -->
+<div class="slide slide-lista">
+  <div class="inner">
+    <p class="eyebrow">Definición</p>
+    <ul>
+      <li>Vínculo invisible con el sistema</li>
+      <li>Fidelidad inconsciente</li>
+      <li>Amor expresado a través de repetición</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 13 · EJEMPLOS LEALTAD
+══════════════════════════════════ -->
+<div class="slide slide-lista-verde">
+  <div class="inner">
+    <p class="eyebrow">Ejemplos de lealtad</p>
+    <ul>
+      <li>Si mamá sufrió → yo también</li>
+      <li>Si hubo escasez → me limito</li>
+      <li>Si hubo abandono → lo repito</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 14 · FRASE CLAVE LEALTAD
+══════════════════════════════════ -->
+<div class="slide slide-frase-clave">
+  <div class="inner">
+    <blockquote>
+      "No lo estás repitiendo…<br><em>lo estás honrando"</em>
+    </blockquote>
+    <div class="linea"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 15 · SECCIÓN: NIÑA INTERIOR
+══════════════════════════════════ -->
+<div class="slide slide-seccion">
+  <div class="inner">
+    <div class="numero">04</div>
+    <div class="seccion-content">
+      <p class="label">Bloque 4</p>
+      <h2>La niña<br><em>interior</em></h2>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 16 · QUÉ ES LA NIÑA
+══════════════════════════════════ -->
+<div class="slide slide-lista">
+  <div class="inner">
+    <p class="eyebrow">¿Qué es la niña interior?</p>
+    <ul>
+      <li>La parte emocional de la infancia</li>
+      <li>Donde se formaron las creencias</li>
+      <li>Donde se tomaron las primeras decisiones</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 17 · CÓMO SE FORMA
+══════════════════════════════════ -->
+<div class="slide slide-lista-verde">
+  <div class="inner">
+    <p class="eyebrow">¿Cómo se forma?</p>
+    <ul>
+      <li>Experiencias emocionales tempranas</li>
+      <li>Relación con mamá y papá</li>
+      <li>Necesidades no cubiertas</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 18 · DECISIONES DE LA NIÑA
+══════════════════════════════════ -->
+<div class="slide slide-confrontacion">
+  <div class="inner">
+    <p class="eyebrow">La niña no analiza…</p>
+    <blockquote>
+      La niña <strong>interpreta.</strong><br>
+      Y desde ahí decide:<br>
+      <strong>"No soy suficiente"</strong>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 19 · IMPACTO ADULTA
+══════════════════════════════════ -->
+<div class="slide slide-frase">
+  <div class="inner">
+    <blockquote>
+      "Hoy no reaccionas como adulta…<br>
+      reaccionas desde <em>esa niña"</em>
+    </blockquote>
+    <div class="linea"></div>
+    <p class="sub">Por eso repites.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 20 · SECCIÓN: INTEGRACIÓN
+══════════════════════════════════ -->
+<div class="slide slide-seccion">
+  <div class="inner">
+    <div class="numero">05</div>
+    <div class="seccion-content">
+      <p class="label">Bloque 5</p>
+      <h2>Integración<br><em>sistémica</em></h2>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 21 · CONEXIÓN TOTAL
+══════════════════════════════════ -->
+<div class="slide slide-lista-verde">
+  <div class="inner">
+    <p class="eyebrow">Todo está conectado</p>
+    <ul>
+      <li>Mandatos → programan</li>
+      <li>Niña interior → reacciona</li>
+      <li>Lealtad → mantiene el patrón</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 22 · CLAVE FINAL
+══════════════════════════════════ -->
+<div class="slide slide-frase-clave">
+  <div class="inner">
+    <blockquote>
+      "No repites porque quieres…<br>
+      repites porque <em>aún no lo has visto"</em>
+    </blockquote>
+    <div class="linea"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 23 · APERTURA AL EJERCICIO
+══════════════════════════════════ -->
+<div class="slide slide-seccion">
+  <div class="inner">
+    <div class="numero">06</div>
+    <div class="seccion-content">
+      <p class="label">Ahora tú</p>
+      <h2>Vamos a<br><em>verlo en tu vida</em></h2>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 24 · LAS 3 PREGUNTAS
+══════════════════════════════════ -->
+<div class="slide slide-preguntas">
+  <div class="inner">
+    <p class="titulo-bloque">Tres preguntas para hoy</p>
+    <ul>
+      <li>¿Qué estás repitiendo?</li>
+      <li>¿De quién lo aprendiste?</li>
+      <li>¿A quién estás siendo leal?</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SLIDE 25 · CIERRE
+══════════════════════════════════ -->
+<div class="slide slide-cierre">
+  <div class="inner">
+    <h2>Cuando lo ves…<br><em>aparece la elección</em></h2>
+    <p class="sub">Reconociendo mi Poder · Día 2</p>
+  </div>
+</div>
+
+<!-- NAVEGACIÓN -->
+<div id="nav">
+  <button onclick="cambiar(-1)" title="Anterior">&#8592;</button>
+  <span id="contador">1 / 25</span>
+  <button onclick="cambiar(1)" title="Siguiente">&#8594;</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+
+  function mostrar(n) {
+    slides[current].classList.remove('active');
+    current = (n + total) % total;
+    slides[current].classList.add('active');
+    document.getElementById('contador').textContent = (current + 1) + ' / ' + total;
+    document.getElementById('barra').style.width = ((current + 1) / total * 100) + '%';
+  }
+
+  function cambiar(dir) { mostrar(current + dir); }
+
+  document.body.addEventListener('click', function(e) {
+    if (e.target.closest('#nav')) return;
+    cambiar(1);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') cambiar(1);
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') cambiar(-1);
+  });
+
+  mostrar(0);
+</script>
+</body>
+</html>
