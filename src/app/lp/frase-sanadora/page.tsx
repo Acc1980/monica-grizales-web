@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const STORAGE_KEY = "rmp_frase_sanadora";
+const STORAGE_KEY = "rmp_frase_sanadora_d2";
 const HOURS_24 = 24 * 60 * 60 * 1000;
 
 const frases = [
