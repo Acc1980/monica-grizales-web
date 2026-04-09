@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 const STORAGE_KEY = "rmp_frase_sanadora_d2";
-const HOURS_24 = 24 * 60 * 60 * 1000;
+const HOURS_24 = 12 * 60 * 60 * 1000;
 
 const frases = [
   "Hoy elijo desde mi poder, no desde mi miedo.",
