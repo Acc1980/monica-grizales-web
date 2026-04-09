@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const VIDEO_ID = "Uvn0rYVFTL0";
+const DRIVE_ID = "1PVGWCZGjxg4qR--3cqlZMnhcyx-y1RYr";
 
 export default function Sesion2Page() {
   return (
@@ -42,9 +42,9 @@ export default function Sesion2Page() {
           }}
         >
           <iframe
-            src={`https://www.youtube.com/embed/${VIDEO_ID}?rel=0&modestbranding=1`}
+            src={`https://drive.google.com/file/d/${DRIVE_ID}/preview`}
             title="Reconociendo mi Poder — Sesión 2"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="autoplay"
             allowFullScreen
             className="absolute inset-0 w-full h-full"
           />
