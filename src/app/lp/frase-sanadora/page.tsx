@@ -313,7 +313,7 @@ export default function FraseSanadoraPage() {
         {!canRequest && revealed && (
           <div className="flex flex-col items-center gap-2">
             <p className="text-xs" style={{ color: "rgba(245,240,255,0.4)" }}>
-              Tu próxima frase estará disponible en
+              Tu próxima frase estará disponible en:
             </p>
             <p
               className="font-mono text-2xl font-bold"
